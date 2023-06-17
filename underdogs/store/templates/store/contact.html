@@ -1,0 +1,86 @@
+{% extends 'store/layout.html' %}
+{% load static%}
+
+{% block title %} contact us {% endblock %}
+
+
+{% block body %}
+    <section id="contact" class="section-3">
+        <div id="contact-row" class="row">
+            <h1><span class="stylized-underline">CONTACT US</span></h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Opening Hours</h5>
+                        <p>Mon - Fri: 7am - 10pm</p>
+                        <p>Saturday: 8am - 10pm</p>
+                        <p>Sunday: 8am - 11pm</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><strong>Customer Service</strong></h5>
+                        <p>1-800-000-000</p>
+                        <p>123-456-7890</p>
+                        <p>info@my-domain.com</p>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="stockists" class="section-3">
+        <div id="stockists-row" class="row">
+            <h6><span class="stylized-underline blank-dot">&nbsp;</span></h6>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5>Stockists</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>Mon - Fri: 7am - 10pm</p>
+                        <p>Saturday: 8am - 10pm</p>
+                        <p>Sunday: 8am - 11pm</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Mon - Fri: 7am - 10pm</p>
+                        <p>Saturday: 8am - 10pm</p>
+                        <p>Sunday: 8am - 11pm</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>1-800-000-000</p>
+                        <p>123-456-7890</p>
+                        <p>info@my-domain.com</p>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="enquiry" class="section-3">
+        <div class="row">
+            <h6><span class="stylized-underline blank-dot">&nbsp;</span></h6>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-wrapper">
+                        <h5>For inquiries regarding an order, please include your order number and the date your order was placed</h5>
+                    </div>
+                </div>
+                <form class="subcribe-form contact-form-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input class="centered-button rectangular-button-inverted contact-form" type="text" id="name-contact" name="name-contact" placeholder="Name">
+                        </div>
+                        <div class="col-md-3">
+                            <input class="centered-button rectangular-button-inverted contact-form" type="email" id="email-contact" name="email-contact" placeholder="Email">
+                        </div>
+                        <div class="col-md-3">
+                            <input class="centered-button rectangular-button-inverted contact-form" type="text" id="message-contact" name="message-contact" placeholder="How Can We Help?">
+                        </div>
+                        <div id="contact-button" class="col-md-3">
+                            <input class="centered-button fade-button contact-form-button" type="submit" value="Submit">
+                        </div>   
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

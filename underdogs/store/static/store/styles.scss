@@ -1,0 +1,741 @@
+// Variables
+$orange: rgb(255, 98, 0, 1);
+// $orange: #D79922;
+// #05386B;
+// #BC986A
+// #907163
+// 379683
+//* #7E685A
+
+// Classes
+%section {
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+  padding: 30px;
+  padding-left: 0;
+  padding-right: 0;
+  font-family: 'heading-font', sans-serif;
+}
+
+%button-design {
+  background-color: $orange;
+  border: 3px solid $orange;
+  width: 5%;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+// Custom font
+@font-face {
+  font-family: heading-font;
+  src: url(fonts/PathwayGothicOneRegular-A9Xp.ttf);
+}
+
+/* Global */
+body {
+  background-color: white;
+  padding-top: 70px;
+}
+
+// Social media icons 
+.social-media-icon-container {
+  position: fixed;
+  top: 20%;
+  right: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.social-media-icon-container a {
+  margin-bottom: 10px;
+}
+
+.social-media-icon-container img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Global END */
+
+/* NAVBAR */
+/* -------------------------------------------------- */
+.navbar {
+  margin: 0 5%;
+  background-color: #fff;
+
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
+.navbar-brand-div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin-left: 0;
+  width: 10%;
+}
+.logo {
+  background-color: #000;
+  color: #fff;
+  padding: 0 1%;
+  margin-left: 0;
+  height: 60px;
+  text-align: center;
+  line-height: 2;
+  font-family: 'heading-font', sans-serif;
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+
+.logo:hover {
+  color: $orange;
+}
+
+/* Search bar */
+.search-bar {
+  position: relative;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 55px;
+  border-bottom: 1.5px solid transparent;
+  transition: border-bottom-color 0.3s;
+}
+
+.search-bar:hover,
+.search-bar:focus-within {
+  border-bottom-color: #181616;
+}
+
+.search-bar input[type="text"] {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding-left: 30px;
+  background: url(assets/search.png) no-repeat 5px center;
+  background-size: 16px;
+}
+
+.search-bar .clear-icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  display: none;
+  background-color: #D3D3D3;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 16px;
+  line-height: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.search-bar .clear-icon:hover {
+  background-color: #333;
+}
+
+#searchInput::placeholder {
+  color: #000;
+}
+
+/* Push options to the right  */
+.filler {
+  flex: 10;
+}
+.navbar-nav {
+  margin-left: auto;
+}
+
+.menu-items {
+  .nav-link:hover {
+    color: $orange;
+  }
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  color: $orange;
+}
+
+/* Cart Icon */
+.cart-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon #cartItemCount {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background-color: $orange;
+  border-radius: 50%;
+}
+
+
+/* -------------------------------------------------- */
+/* NAVBAR END */
+
+/* HOME PAGE */
+/* -------------------------------------------------- */
+
+/* Section design */
+.section-1 {
+  @extend %section;
+  background-color: $orange;
+  color: white;
+
+  h1, h3 {
+    padding: 10px;
+    margin: 0;
+    font-size: 5em;
+  }
+
+  h3 {
+    font-size: 2.5em;
+  }
+}
+
+.section-1 button {
+  margin: 10%;
+  width: 70%;
+}
+
+.section-2 {
+  @extend %section;
+  padding-top: 1%;
+  
+
+  .carousel-item {
+
+    .w-100 {
+      width:auto;
+      height:700px;
+    }
+  }
+}
+.section-3 {
+  @extend %section;
+}
+
+.stylized-underline {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0.25em;
+  font-size: 3em;
+  background-image: linear-gradient(to right, $orange, $orange);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 20px;
+  line-height: 0.8;
+}
+
+
+.stylized-underline::after {
+  
+  position: relative;
+  width: 100%;
+  height: 7px;
+  top: 50%;
+  padding: 0 10%;
+}
+
+
+/* Product range list */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 60px;
+  padding: 20px;
+}
+
+.grid-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+
+  img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  h3 {
+    margin-top: 10px;
+  }
+
+  p {
+    color: $orange;
+  }
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 5px;
+    padding: 5px;
+  }
+}
+
+/* Button design  */
+.rectangular-button {
+  padding: 10px 20px;
+  border: 3px solid #fff;
+  background-color: $orange;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.rectangular-button:hover {
+  background-color: #fff;
+  color: $orange;
+}
+
+/* Small Button design  */
+.rectangular-button-inverted {
+  padding: 10px 20px;
+  width: 10%;
+  border: 3px solid $orange;
+  background-color: #fff;
+  color: $orange;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.rectangular-button-inverted:hover {
+  background-color: $orange;
+  color: #fff;
+}
+
+.fade-button {
+  @extend %button-design;
+}
+
+.fade-button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/* Center div */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+.centered-button {
+  margin: 1px;
+  padding: 10px 20px;
+  font-size: 16px;
+  white-space: nowrap;
+  min-width: max-content;
+}
+
+.button-link {
+  text-decoration: none;
+  color: inherit;
+  width: inherit;
+}
+
+/* -------------------------------------------------- */
+/* HOME PAGE END */
+
+/* SHOP */
+#load-more {
+  @extend %button-design;
+  width: 20%;
+  font-size: 1.2em;
+  font-weight: 100;
+}
+/* SHOP END */
+
+/* ABOUT */
+.about {
+  padding: 10%;
+  .about-paragraph {
+    text-align: left;  
+    font-family: sans-serif;
+    font-weight: 100;
+  }
+}
+/* ABOUT END */
+
+/* CONTACT */
+#contact, #stockists, #enquiry {
+  
+  .col-md-6, .col-md-4, .col-md-12 {
+    font-family: sans-serif;
+
+    h5 {
+      font-weight:700;
+      margin: 5% 0;
+    }
+    p{
+      line-height: 0.4;
+      font-weight: 100;
+    }
+  }
+}
+
+#contact-row, #stockists-row {
+  padding: 0 20%;
+}
+
+.blank-dot {
+  width: 10px;
+  height: 10px;
+  text-align: center;
+}
+
+.text-wrapper {
+  display: flex;
+  justify-content: center;
+  h5 {
+    width: 50%; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    text-align: center;
+  }
+}
+
+.contact-form-body {
+  padding: 0 20%;
+  padding-bottom: 100px;
+}
+.contact-form {
+  transition: background-color 0.3s;
+  width: 100%;
+  font-weight: 100;
+
+  &:hover {
+    background-color: rgb($orange, 0.5);
+
+  }
+
+  &::placeholder {
+    color: $orange;
+    font-size: 18px;
+    font-weight: 100;
+  }
+
+  &:focus {
+    background-color: #D3D3D3;
+    outline: none;
+    color: $orange;
+  }
+
+}
+
+#contact-button {
+  padding-left: 0;
+}
+
+.contact-form-button {
+  width: 80%;
+}
+
+/* CONTACT END */
+
+/* SHIPPING & RETURNS & POLICY & PAYMENT */
+#shipping, #returns, #payment, #policy {
+  .col-md-12 {
+    padding: 4% 20%;
+  }
+  h5 {
+    padding-bottom: 1%;
+  }
+  p {
+    font-family: sans-serif;
+    line-height: 1.5;
+    font-weight: 100;
+    font-size: 14px;
+  }
+}
+/* SHIPPING & RETURNS END */
+
+/* FAQ */
+.faq-search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px; /* Adjust the max-width as needed */
+}
+
+.header-container h2 {
+  text-align: center;
+}
+
+.search-icon {
+  font-size: 20px;
+}
+
+.faq-section {
+  display: none;
+}
+
+.faq-section.active {
+  display: block;
+}
+
+.faq-navbar {
+  font-family: sans-serif;
+  margin: 10px 5% 30px;
+  display: flex;
+}
+
+.faq-navbar-item {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.faq-navbar-item.active {
+  font-weight: bold;
+  color: $orange;
+}
+
+
+.faq {
+  h2 {
+    letter-spacing: 2px;
+  }
+}
+
+.faq-item {
+  margin: 10px 5%;
+  border-bottom: 1px solid $orange;
+  text-align: left;
+  width: 90%;
+  padding-bottom: 2%;
+}
+
+.question {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.question p {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.answer {
+  display: none;
+  padding: 5% 0 2% 0;
+}
+
+.answer.show {
+  display: block;
+  font-family: sans-serif;
+}
+
+.dropdown-icon {
+  font-size: 0.6em;
+  margin-left: 10px;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.rotate-reverse {
+  transform: rotate(0deg);
+}
+
+// FAQ search bar animation 
+.faq-search-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Adjust the max-width as needed */
+}
+
+.header-container .faq-heading {
+  text-align: center;
+  margin-right: 10px; /* Add some right margin */
+}
+
+.search-container {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.search-input {
+  display: none;
+  width: 0;
+  padding: 5px;
+  transition: width 0.5s ease-in-out;
+}
+
+.close-icon {
+  display: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.search-icon {
+  cursor: pointer;
+}
+
+.search-container.show-input .search-icon {
+  display: none;
+}
+
+.search-container.show-input .search-input {
+  display: block;
+  width: 500px; /* Adjust the width as needed */
+}
+
+.search-container.show-input .close-icon {
+  display: block;
+}
+
+@keyframes slideIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 400px; /* Adjust the width as needed */
+  }
+}
+
+.search-container.show-input .search-input {
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* FAQ END */
+
+/* FOOTER */
+.footer {
+  @extend %section;
+  background-color: black;
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 90%;
+  div {
+    padding: 2% 5%;
+  }
+  
+}
+
+#links {
+  padding-right: 0; 
+  text-align: left; 
+  a {
+    text-decoration: none; 
+    color: #fff;
+  }
+}
+#form-subscribe {
+  text-align: left;
+  padding-top: 3%;
+  padding-left: 0;
+  line-height: 0.5;
+
+  strong {
+    font-size: larger;
+  }
+
+  form {
+    input {
+      display: block;
+      margin: 2% 0;
+      width: 60%;
+      height: 100%;
+      line-height: 1;
+      font-weight: 100;
+    }
+
+    input[type="email"] {
+      background-color: black;
+    }
+  }
+  
+}
+
+#email::placeholder {
+  color: #fff;
+  font-weight: 100;
+  margin-left: 5%;
+}
+
+.subscribe-form {
+  position: relative;
+  display: inline-block;
+}
+.email {
+  padding: 8px;
+  border: 2px solid;
+  color: #fff;
+}
+
+.email:hover {
+  border-width: 3px;
+  padding: 7px;
+}
+
+.email:focus {
+  outline: none;
+  border-width: 3px;
+  padding: 7px;
+}
+
+.email.invalid {
+  border-color: red;
+}
+
+#form-subscribe-heading {
+  padding-bottom: 0;
+}
+#form-subscribe-box {
+  padding-top: 0;
+}
+/* FOOTER END */

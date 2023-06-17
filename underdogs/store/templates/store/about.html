@@ -1,0 +1,33 @@
+{% extends 'store/layout.html' %}
+{% load static%}
+
+{% block title %} about {% endblock %}
+
+
+{% block body %}
+<section class="section-3">
+    <div class="row">
+        <h1> <span class="stylized-underline">OUR STORY</span></h1>
+        <div class="container">
+            <div class="row">
+                <div class="about col-md-7">
+                    <p class="about-paragraph">
+                        I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I'm a great place for you to tell a story and let your users know a little more about you.
+                    </p>
+                    <p class="about-paragraph">
+                        This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors.
+                    </p>
+                    <p class="about-paragraph">
+                        At Wix we're passionate about making templates that allow you to build fabulous websites and it's all thanks to the support and feedback from users like you! Keep up to date with New Releases and what's Coming Soon in Wixellaneous in Support. Feel free to tell us what you think and give us feedback in the Wix Forum.
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img src="{% static 'store/assets/blank-image.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</section>
+{% endblock %}
