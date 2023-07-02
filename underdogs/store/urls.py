@@ -12,4 +12,5 @@ urlpatterns = [
     path("faq", views.faq, name="faq"),
     path("returns", views.returns, name="returns"),
     path("policy", views.policy, name="policy"),
+    path("search", views.search, name="search"),
 ]

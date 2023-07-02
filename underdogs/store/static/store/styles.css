@@ -18,11 +18,22 @@
   transition: opacity 0.3s ease-in-out;
 }
 
+.search-result-input, .search-input {
+  padding: 5px;
+  padding-left: 4%;
+  font-family: sans-serif;
+  letter-spacing: 1.5px;
+  font-weight: 100;
+  font-size: small;
+  background: url(assets/search.png) no-repeat 10px center;
+}
+
 @font-face {
   font-family: heading-font;
   src: url(fonts/PathwayGothicOneRegular-A9Xp.ttf);
 }
 /* Global */
+/* -------------------------------------------------- */
 body {
   background-color: white;
   padding-top: 70px;
@@ -46,6 +57,7 @@ body {
   height: 16px;
 }
 
+/* -------------------------------------------------- */
 /* Global END */
 /* NAVBAR */
 /* -------------------------------------------------- */
@@ -235,11 +247,15 @@ body {
   grid-gap: 60px;
   padding: 20px;
 }
+.grid-container.search {
+  grid-gap: 30px;
+}
 
 .grid-item {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: left;
+  max-width: 300px;
 }
 .grid-item img {
   width: 100%;
@@ -327,14 +343,17 @@ body {
 /* -------------------------------------------------- */
 /* HOME PAGE END */
 /* SHOP */
+/* -------------------------------------------------- */
 #load-more {
   width: 20%;
   font-size: 1.2em;
   font-weight: 100;
 }
 
+/* -------------------------------------------------- */
 /* SHOP END */
 /* ABOUT */
+/* -------------------------------------------------- */
 .about {
   padding: 10%;
 }
@@ -344,8 +363,10 @@ body {
   font-weight: 100;
 }
 
+/* -------------------------------------------------- */
 /* ABOUT END */
 /* CONTACT */
+/* -------------------------------------------------- */
 #contact .col-md-6, #contact .col-md-4, #contact .col-md-12, #stockists .col-md-6, #stockists .col-md-4, #stockists .col-md-12, #enquiry .col-md-6, #enquiry .col-md-4, #enquiry .col-md-12 {
   font-family: sans-serif;
 }
@@ -411,8 +432,10 @@ body {
   width: 80%;
 }
 
+/* -------------------------------------------------- */
 /* CONTACT END */
 /* SHIPPING & RETURNS & POLICY & PAYMENT */
+/* -------------------------------------------------- */
 #shipping .col-md-12, #returns .col-md-12, #payment .col-md-12, #policy .col-md-12 {
   padding: 4% 20%;
 }
@@ -426,19 +449,13 @@ body {
   font-size: 14px;
 }
 
+/* -------------------------------------------------- */
 /* SHIPPING & RETURNS END */
 /* FAQ */
+/* -------------------------------------------------- */
 .faq-search-bar {
   display: flex;
   align-items: center;
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 800px; /* Adjust the max-width as needed */
 }
 
 .header-container h2 {
@@ -530,34 +547,47 @@ body {
   justify-content: space-between;
   position: relative;
   width: 100%;
-  max-width: 800px; /* Adjust the max-width as needed */
+  padding: 10%;
+  margin: 10px 5% 30px;
 }
 
 .header-container .faq-heading {
   text-align: center;
-  margin-right: 10px; /* Add some right margin */
+  width: 100%;
 }
 
 .search-container {
   position: absolute;
-  top: 10px;
+  width: inherit;
   right: 0;
+  left: 0;
   display: flex;
   align-items: center;
   overflow: hidden;
+  width: 90%;
+  font-weight: 100;
 }
 
 .search-input {
   display: none;
-  width: 0;
-  padding: 5px;
-  transition: width 0.5s ease-in-out;
+  padding-left: 30px;
+}
+
+.search-input::placeholder {
+  font-family: sans-serif;
+  letter-spacing: 1.5px;
+  font-weight: 100;
+  font-size: small;
 }
 
 .close-icon {
   display: none;
   margin-left: 10px;
   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 6px;
 }
 
 .search-icon {
@@ -570,27 +600,228 @@ body {
 
 .search-container.show-input .search-input {
   display: block;
-  width: 500px; /* Adjust the width as needed */
+  width: 100%;
 }
 
 .search-container.show-input .close-icon {
   display: block;
 }
 
-@keyframes slideIn {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 400px; /* Adjust the width as needed */
-  }
-}
-.search-container.show-input .search-input {
-  animation: slideIn 0.5s ease-in-out forwards;
+/* -------------------------------------------------- */
+/* FAQ END */
+/* SEARCH */
+/* -------------------------------------------------- */
+.search-page-search-bar-container {
+  position: relative;
+  display: inline-block;
 }
 
-/* FAQ END */
+.search-result-input {
+  font-family: sans-serif;
+  line-height: 2;
+  font-size: medium;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 35px;
+  outline: none;
+  margin-bottom: 4%;
+  width: 100%;
+}
+
+#search-page-close-icon {
+  display: none;
+  margin-left: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 23px;
+  right: 30px;
+}
+
+.search-results-container {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.search-results-container .search-filter-heading {
+  text-align: left;
+  font-weight: 100;
+  font-size: large;
+  font-family: sans-serif;
+  padding-top: 2%;
+  padding-left: 2%;
+}
+
+#skuTagsList {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-family: sans-serif;
+}
+#skuTagsList li {
+  font-weight: 100;
+}
+
+.checkbox-label {
+  margin-left: 2%; /* Add space between checkbox and tag name */
+}
+
+input[type=checkbox]:checked + label::after {
+  content: "";
+  position: absolute;
+  width: 1.6ex;
+  height: 0.8ex;
+  background: rgba(0, 0, 0, 0);
+  top: 1ex;
+  left: 0.6ex;
+  border: 3px solid rgb(255, 98, 0);
+  border-top: none;
+  border-right: none;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+input[type=checkbox] {
+  line-height: 2.1ex;
+}
+
+input[type=radio],
+input[type=checkbox] {
+  position: absolute;
+  left: -999em;
+}
+
+input[type=checkbox] + label {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+input[type=checkbox] + label::before {
+  content: "";
+  display: inline-block;
+  vertical-align: -25%;
+  height: 2ex;
+  width: 2ex;
+  background-color: white;
+  border: 1px solid #000;
+  margin-right: 0.5em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.sku-count {
+  color: gray;
+}
+
+#price-range {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 10px;
+}
+
+#selected-min-price, #selected-max-price {
+  position: absolute;
+  top: 15px;
+}
+
+#selected-min-price {
+  left: 0;
+}
+
+#selected-max-price {
+  right: 0;
+}
+
+#price-range .ui-slider {
+  margin: 0;
+  padding: 0;
+  height: 4px; /* Adjust the height of the slider track */
+}
+
+#price-range .ui-slider-handle {
+  border-radius: 50%;
+  background-color: rgb(255, 98, 0);
+  border: 1px solid rgb(255, 98, 0);
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.ui-slider-handle:active {
+  background-color: rgba(255, 98, 0, 0.5);
+  border: 1px solid rgb(255, 98, 0);
+}
+.ui-slider-handle:focus {
+  outline: none;
+}
+
+#price-range .ui-slider-range {
+  background-color: rgb(255, 98, 0);
+  height: 5px;
+  height: 100%;
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+}
+
+#price-range .ui-slider-range.ui-slider-range-min {
+  background-color: rgb(255, 98, 0);
+}
+
+#price-range .ui-slider-range.ui-slider-range-max {
+  background-color: rgb(255, 98, 0);
+}
+
+.ui-widget.ui-widget-content {
+  background-color: #D3D3D3;
+  height: 5px;
+  border: none;
+  cursor: pointer;
+  width: 98%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-keyword-result {
+  display: flex;
+  align-items: center;
+  padding-left: 2%;
+  padding-right: 2%;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.result-right {
+  margin-left: auto;
+}
+.result-right #sortDropdown {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: lighter;
+  width: auto;
+}
+
+/* -------------------------------------------------- */
+/* SEARCH END*/
 /* FOOTER */
+/* -------------------------------------------------- */
 .footer {
   background-color: black;
   color: #fff;
@@ -600,6 +831,14 @@ body {
 }
 .footer div {
   padding: 2% 5%;
+}
+.footer div.container-subscribe-box {
+  padding: 0;
+  margin: 0;
+  width: 60%;
+}
+.footer div.container-subscribe-box input {
+  width: 100%;
 }
 
 #links {
@@ -623,7 +862,7 @@ body {
 #form-subscribe form input {
   display: block;
   margin: 2% 0;
-  width: 60%;
+  width: 100%;
   height: 100%;
   line-height: 1;
   font-weight: 100;
@@ -672,6 +911,7 @@ body {
   padding-top: 0;
 }
 
+/* -------------------------------------------------- */
 /* FOOTER END */
 
 /*# sourceMappingURL=styles.css.map */

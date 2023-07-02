@@ -13,6 +13,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
+        {% comment %} this needs to be deleted  {% endcomment %}
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
         {% comment %} Bootstrap  {% endcomment %}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         
@@ -38,10 +41,11 @@
                 {% comment %} </div> {% endcomment %}
                 {% comment %} <img src="{% static 'store/assets/logo.png' %}" class="logo d-block w-100" alt="..."> {% endcomment %}
                 <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Search...">
-                    <span class="clear-icon">&times;</span>
+                    <form id="searchForm" action="{% url 'search' %}" method="GET">
+                        <input type="text" id="searchInput" name="search" placeholder="Search...">
+                        <span class="clear-icon">&times;</span>
+                    </form>
                 </div>
-                <div id="searchResults"></div>
                 <div class="filler"></div>
                 <div class="collapse right-menu-items navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-items">
@@ -130,8 +134,10 @@
                 <div id="form-subscribe-box" class="row">
                     <div class="col">
                         <form class="subcribe-form">
-                            <input class="centered-button rectangular-button-inverted email" type="email" id="email" name="email" placeholder="Enter your email here*">
-                            <input class="centered-button fade-button" type="submit" value="Subscribe Now">
+                            <div class="container-subscribe-box">
+                                <input class="centered-button rectangular-button-inverted email" type="email" id="email" name="email" placeholder="Enter your email here*">
+                                <input class="centered-button fade-button" type="submit" value="Subscribe Now">
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -140,9 +146,25 @@
         <footer class="footer">
             <p>&copy; 2035 by Underdogs. Powered and secured by Underdogs, Inc.</p>
         </footer>
-
         <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-        <script src="{% static 'store/script.js' %}" async defer></script>
+        <script>
+            var MEDIA_URL = "{{ MEDIA_URL }}";
+
+            // Access the dictionary data in index.js
+            {% comment %} var skuDict = JSON.parse('{{ sku_dict|escapejs }}'.replace(/&quot;/g, '\\"')); {% endcomment %}
+            var skuDict;
+            try {
+                skuDict = JSON.parse('{{ sku_dict|escapejs }}'.replace(/&quot;/g, '\\"'));
+            } catch {
+                // No action required if parsing fails
+            }
+        </script>
+        {% comment %} this needs to be deleted {% endcomment %}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        {% comment %} till here  {% endcomment %}
+        <script src="{% static 'store/helper.js' %}" async defer></script>
+        <script src="{% static 'store/index.js' %}" async defer></script>
     </body>
 </html>

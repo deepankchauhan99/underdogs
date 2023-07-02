@@ -1,0 +1,63 @@
+{% extends 'store/layout.html' %} {% load static%} {% block title %} search
+results {% endblock %} {% block body %}
+<section class="section-3">
+  <div class="row">
+    <h1><span class="stylized-underline">SEARCH RESULTS</span></h1>
+    <div class="container search-results-container">
+      <div class="row">
+        <div class="search-page-search-bar-container">
+          <form id="searchForm" action="{% url 'search' %}" method="GET">
+            <input
+              id="search-page-input"
+              type="text"
+              class="search-result-input"
+              name="search"
+              placeholder="Search..."
+            />
+            <span id="search-page-close-icon" class="close-icon">&#10005;</span>
+          </form>
+        </div>
+        <div class="col-md-2">
+          <p class="search-filter-heading">Category</p>
+          <form>
+            <ul id="skuTagsList">
+              <!-- Dynamic content will be added here -->
+            </ul>
+            <hr />
+          </form>
+          <p class="search-filter-heading">
+            <label for="price-range">Price</label>
+          </p>
+          <div id="price-range">
+            <span id="selected-min-price"></span>
+            <span id="selected-max-price"></span>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <div class="search-keyword-result">
+            <div class="result-left">
+              <span id="searchResults"></span>
+            </div>
+            <div class="result-right">
+              <span id="label-sortDropdown" for="sortDropdown">Sort by:</span>
+              <select id="sortDropdown">
+                <option value="bestMatch">Best Match</option>
+                <option value="lowToHigh">Price (low to high)</option>
+                <option value="highToLow">Price (high to low)</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid-container col-md-12 item-grid" id="search">
+            <!-- Grid items will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="button-container">
+      <button id="load-more" class="centered-button fade-button">
+        Load More
+      </button>
+    </div>
+  </div>
+</section>
+{% endblock %}

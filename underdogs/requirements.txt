@@ -1,1 +1,4 @@
 fontawesomefree==6.4.0
+psycopg2
+psycopg2-binary
+pillow

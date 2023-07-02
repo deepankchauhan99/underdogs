@@ -62,7 +62,7 @@
     <section class="section-3">
         <div class="row">
             <h1> <span class="stylized-underline">NEW ARRIVALS</span></h1>
-            <div class="grid-container col-md-12 new-arrivals" id="item-grid">
+            <div class="grid-container col-md-12 item-grid" id="new">
                 <!-- Grid items will be dynamically added here -->
             </div>
             <div class="button-container">
@@ -76,5 +76,16 @@
         
     </section>
 </div>
+{% comment %} <script>
+    // Access the dictionary data in index.js
+    var skuDict = JSON.parse('{{ sku_dict|escapejs }}');
+    // You can now use the skuDict variable in your JavaScript code
+    // ...
+
+    // Example usage: Log the SKU names
+    Object.values(skuDict).forEach(function(sku) {
+        console.log(sku.name);
+    });
+</script> {% endcomment %}
 
 {% endblock %}

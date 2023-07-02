@@ -1,5 +1,5 @@
 {% extends 'store/layout.html' %}
-{% load static%}
+{% load static %}
 
 {% block title %} FAQ {% endblock %}
 
@@ -10,60 +10,46 @@
         <h1><span class="stylized-underline">FAQ</span></h1>
         <div class="container faq">
             <div class="faq-head">
-                <div class="col-md-12 faq-search-bar">
-                    <div class="header-container">
+                <div class="header-container">
+                    <div class="search-container">
                         <h2 class="faq-heading">Frequently asked questions</h2>
-                        <div class="search-container">
-                            <span class="search-icon"><img src="{% static 'store/assets/search.png' %}"></span>
-                            <input type="text" class="search-input" placeholder="Looking for something?">
-                            <span class="close-icon">&#10005;</span>
-                        </div>
-                    </div>    
-                </div>
+                        <span class="search-icon"><img src="{% static 'store/assets/search.png' %}"></span>
+                        <input id="faq-search-input" type="text" class="search-input" placeholder="Looking for something?">
+                        <span class="close-icon">&#10005;</span>
+                    </div>
+                </div> 
+                <div id="faq-search-result"></div> 
             </div>
             <div class="faq-body">
                 <div class="faq-navbar">
-                    <div class="faq-navbar-item active" data-target="section1">General</div>
-                    <div class="faq-navbar-item" data-target="section2">Setting up FAQs</div>
+                    <div id="general" class="faq-navbar-item active" data-target="section1">General</div>
+                    <div id="setting-up-faqs" class="faq-navbar-item" data-target="section2">Setting up FAQs</div>
                 </div>
-
                 <div class="faq-section active" id="section1">
+                    {% for question, answer in faqs_section1.items %}
                     <div class="faq-item">
                         <div class="question">
-                            <p class="question">Question 1</p>
+                            <p class="question">{{ question }}</p>
                             <i class="fa fa-chevron-down dropdown-icon"></i>
                         </div>
-                        <div class="answer"><p>Answer 1</p></div>
+                        <div class="answer"><p>{{ answer }}</p></div>
                     </div>
-                    <div class="faq-item">
-                        <div class="question">
-                            <p class="question">Question 2</p>
-                            <i class="fa fa-chevron-down dropdown-icon"></i>
-                        </div>
-                        <div class="answer"><p>Answer 2</p></div>
-                    </div>
-                    <!-- Add more questions and answers for section 1 -->
+                    {% endfor%}
                 </div>
-
                 <div class="faq-section" id="section2">
+                    {% for question, answer in faqs_section2.items %}
                     <div class="faq-item">
                         <div class="question">
-                            <p class="question">Question 3</p>
+                            <p class="question">{{ question }}</p>
                             <i class="fa fa-chevron-down dropdown-icon"></i>
                         </div>
-                        <div class="answer"><p>Answer 3</p></div>
+                        <div class="answer"><p>{{ answer }}</p></div>
                     </div>
-                    <div class="faq-item">
-                        <div class="question">
-                            <p class="question">Question 4</p>
-                            <i class="fa fa-chevron-down dropdown-icon"></i>
-                        </div>
-                        <div class="answer"><p>Answer 4</p></div>
-                    </div>
-                    <!-- Add more questions and answers for section 2 -->
+                    {% endfor%}
                 </div>            
             </div>                  
         </div>
     </div>
 </section>
+<script src="{% static 'store/faq.js' %}"></script>
 {% endblock %}

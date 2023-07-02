@@ -1,6 +1,10 @@
 // Variables
-$orange: rgb(255, 98, 0, 1);
-// $orange: #D79922;
+$highlight-color: rgb(255, 98, 0, 1);
+$gray: #D3D3D3;
+// $highlight-color: #C8A2C8;
+//ff6200
+// $highlight-color: #F0EC62;
+// $highlight-color: #D79922;
 // #05386B;
 // #BC986A
 // #907163
@@ -19,13 +23,23 @@ $orange: rgb(255, 98, 0, 1);
 }
 
 %button-design {
-  background-color: $orange;
-  border: 3px solid $orange;
+  background-color: $highlight-color;
+  border: 3px solid $highlight-color;
   width: 5%;
   color: #fff;
   padding: 10px 20px;
   font-size: 16px;
   transition: opacity 0.3s ease-in-out;
+}
+
+%search-bar {
+  padding: 5px;
+  padding-left: 4%;
+  font-family: sans-serif;
+  letter-spacing: 1.5px;
+  font-weight: 100;
+  font-size: small;
+  background: url(assets/search.png) no-repeat 10px center;
 }
 
 // Custom font
@@ -35,6 +49,7 @@ $orange: rgb(255, 98, 0, 1);
 }
 
 /* Global */
+/* -------------------------------------------------- */
 body {
   background-color: white;
   padding-top: 70px;
@@ -58,7 +73,7 @@ body {
   width: 16px;
   height: 16px;
 }
-
+/* -------------------------------------------------- */
 /* Global END */
 
 /* NAVBAR */
@@ -98,7 +113,7 @@ body {
 }
 
 .logo:hover {
-  color: $orange;
+  color: $highlight-color;
 }
 
 /* Search bar */
@@ -136,7 +151,7 @@ body {
   width: 16px;
   height: 16px;
   display: none;
-  background-color: #D3D3D3;
+  background-color: $gray;
   border-radius: 50%;
   color: #fff;
   font-size: 16px;
@@ -163,12 +178,12 @@ body {
 
 .menu-items {
   .nav-link:hover {
-    color: $orange;
+    color: $highlight-color;
   }
 }
 
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
-  color: $orange;
+  color: $highlight-color;
 }
 
 /* Cart Icon */
@@ -189,7 +204,7 @@ body {
   font-size: 12px;
   font-weight: bold;
   color: #fff;
-  background-color: $orange;
+  background-color: $highlight-color;
   border-radius: 50%;
 }
 
@@ -203,7 +218,7 @@ body {
 /* Section design */
 .section-1 {
   @extend %section;
-  background-color: $orange;
+  background-color: $highlight-color;
   color: white;
 
   h1, h3 {
@@ -244,7 +259,7 @@ body {
   position: relative;
   margin-bottom: 0.25em;
   font-size: 3em;
-  background-image: linear-gradient(to right, $orange, $orange);
+  background-image: linear-gradient(to right, $highlight-color, $highlight-color);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 100% 20px;
@@ -268,13 +283,17 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 60px;
   padding: 20px;
+
+  &.search {
+    grid-gap: 30px;
+  }
 }
 
 .grid-item {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: left;
-
+  max-width: 300px;
   img {
     width: 100%;
     max-height: 200px;
@@ -286,7 +305,7 @@ body {
   }
 
   p {
-    color: $orange;
+    color: $highlight-color;
   }
 }
 
@@ -311,28 +330,28 @@ body {
 .rectangular-button {
   padding: 10px 20px;
   border: 3px solid #fff;
-  background-color: $orange;
+  background-color: $highlight-color;
   color: #fff;
   transition: background-color 0.3s ease-in-out;
 }
 
 .rectangular-button:hover {
   background-color: #fff;
-  color: $orange;
+  color: $highlight-color;
 }
 
 /* Small Button design  */
 .rectangular-button-inverted {
   padding: 10px 20px;
   width: 10%;
-  border: 3px solid $orange;
+  border: 3px solid $highlight-color;
   background-color: #fff;
-  color: $orange;
+  color: $highlight-color;
   transition: background-color 0.3s ease-in-out;
 }
 
 .rectangular-button-inverted:hover {
-  background-color: $orange;
+  background-color: $highlight-color;
   color: #fff;
 }
 
@@ -371,15 +390,18 @@ body {
 /* HOME PAGE END */
 
 /* SHOP */
+/* -------------------------------------------------- */
 #load-more {
   @extend %button-design;
   width: 20%;
   font-size: 1.2em;
   font-weight: 100;
 }
+/* -------------------------------------------------- */
 /* SHOP END */
 
 /* ABOUT */
+/* -------------------------------------------------- */
 .about {
   padding: 10%;
   .about-paragraph {
@@ -388,9 +410,11 @@ body {
     font-weight: 100;
   }
 }
+/* -------------------------------------------------- */
 /* ABOUT END */
 
 /* CONTACT */
+/* -------------------------------------------------- */
 #contact, #stockists, #enquiry {
   
   .col-md-6, .col-md-4, .col-md-12 {
@@ -438,20 +462,20 @@ body {
   font-weight: 100;
 
   &:hover {
-    background-color: rgb($orange, 0.5);
+    background-color: rgb($highlight-color, 0.5);
 
   }
 
   &::placeholder {
-    color: $orange;
+    color: $highlight-color;
     font-size: 18px;
     font-weight: 100;
   }
 
   &:focus {
-    background-color: #D3D3D3;
+    background-color: $gray;
     outline: none;
-    color: $orange;
+    color: $highlight-color;
   }
 
 }
@@ -463,10 +487,11 @@ body {
 .contact-form-button {
   width: 80%;
 }
-
+/* -------------------------------------------------- */
 /* CONTACT END */
 
 /* SHIPPING & RETURNS & POLICY & PAYMENT */
+/* -------------------------------------------------- */
 #shipping, #returns, #payment, #policy {
   .col-md-12 {
     padding: 4% 20%;
@@ -481,20 +506,14 @@ body {
     font-size: 14px;
   }
 }
+/* -------------------------------------------------- */
 /* SHIPPING & RETURNS END */
 
 /* FAQ */
+/* -------------------------------------------------- */
 .faq-search-bar {
   display: flex;
   align-items: center;
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 800px; /* Adjust the max-width as needed */
 }
 
 .header-container h2 {
@@ -526,7 +545,7 @@ body {
 
 .faq-navbar-item.active {
   font-weight: bold;
-  color: $orange;
+  color: $highlight-color;
 }
 
 
@@ -538,7 +557,7 @@ body {
 
 .faq-item {
   margin: 10px 5%;
-  border-bottom: 1px solid $orange;
+  border-bottom: 1px solid $highlight-color;
   text-align: left;
   width: 90%;
   padding-bottom: 2%;
@@ -590,34 +609,49 @@ body {
   justify-content: space-between;
   position: relative;
   width: 100%;
-  max-width: 800px; /* Adjust the max-width as needed */
+  padding: 10%;
+  margin: 10px 5% 30px;
 }
 
 .header-container .faq-heading {
   text-align: center;
-  margin-right: 10px; /* Add some right margin */
+  width: 100%;
 }
 
 .search-container {
   position: absolute;
-  top: 10px;
+  width: inherit;
   right: 0;
+  left: 0;
   display: flex;
   align-items: center;
   overflow: hidden;
+  width: 90%;
+  
+  font-weight: 100;
 }
 
 .search-input {
   display: none;
-  width: 0;
-  padding: 5px;
-  transition: width 0.5s ease-in-out;
+  @extend %search-bar;
+  padding-left: 30px;
+}
+
+.search-input::placeholder {
+  font-family: sans-serif;
+  letter-spacing: 1.5px;
+  font-weight: 100;
+  font-size: small;
 }
 
 .close-icon {
   display: none;
   margin-left: 10px;
-  cursor: pointer;
+  cursor: pointer; 
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 6px;
 }
 
 .search-icon {
@@ -630,29 +664,240 @@ body {
 
 .search-container.show-input .search-input {
   display: block;
-  width: 500px; /* Adjust the width as needed */
+  width: 100%;
 }
 
 .search-container.show-input .close-icon {
   display: block;
 }
-
-@keyframes slideIn {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 400px; /* Adjust the width as needed */
-  }
-}
-
-.search-container.show-input .search-input {
-  animation: slideIn 0.5s ease-in-out forwards;
-}
-
+/* -------------------------------------------------- */
 /* FAQ END */
 
+/* SEARCH */
+/* -------------------------------------------------- */
+.search-page-search-bar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-result-input {
+  @extend %search-bar;
+  font-family: sans-serif;
+  line-height: 2;
+  font-size: medium;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 35px;
+  outline: none;
+  margin-bottom: 4%;
+  width: 100%;
+}
+
+#search-page-close-icon {
+  display: none;
+  margin-left: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 23px;
+  // transform: translateY(-50%);
+  right: 30px;
+}
+
+.search-results-container {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+
+  .search-filter-heading {
+    text-align: left;
+    font-weight:100;
+    font-size: large;
+    font-family: sans-serif;
+    padding-top: 2%;
+    padding-left: 2%;
+  }
+}
+
+// Checklist
+#skuTagsList {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-family: sans-serif;
+  li {
+    font-weight: 100;
+  }
+}
+
+.checkbox-label {
+  margin-left: 2%; /* Add space between checkbox and tag name */
+}
+
+input[type="checkbox"]:checked + label::after {
+  content: '';
+  position: absolute;
+  width: 1.6ex;
+  height: 0.8ex;
+  background: rgba(0, 0, 0, 0);
+  top: 1.0ex;
+  left: 0.6ex;
+  border: 3px solid $highlight-color;
+  border-top: none;
+  border-right: none;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+       
+input[type="checkbox"] {
+  line-height: 2.1ex;
+}
+       
+input[type="radio"],
+  input[type="checkbox"] {
+  position: absolute;
+  left: -999em;
+    
+}
+       
+input[type="checkbox"] + label {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+ 
+}
+       
+input[type="checkbox"] + label::before {
+  content: "";
+  display: inline-block;
+  vertical-align: -25%;
+  height: 2ex;
+  width: 2ex;
+  background-color: white;
+  border: 1px solid #000;
+  margin-right: 0.5em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+}
+
+.sku-count {
+  color: gray;
+}
+
+// Slider
+#price-range {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 10px;
+}
+#selected-min-price, #selected-max-price {
+  position: absolute;
+  top: 15px;
+}
+#selected-min-price {
+  left: 0;
+}
+
+#selected-max-price {
+  right: 0;
+}
+#price-range .ui-slider {
+  margin: 0;
+  padding: 0;
+  height: 4px; /* Adjust the height of the slider track */
+}
+#price-range .ui-slider-handle {
+  border-radius: 50%;
+  background-color: $highlight-color;
+  border: 1px solid $highlight-color;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.ui-slider-handle {
+
+  &:active {
+  background-color: rgb($highlight-color, 0.5);
+  border: 1px solid $highlight-color;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+#price-range .ui-slider-range {
+  background-color: $highlight-color;
+  height: 5px;
+  height: 100%;
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+}
+
+#price-range .ui-slider-range.ui-slider-range-min {
+  background-color: $highlight-color;
+}
+
+#price-range .ui-slider-range.ui-slider-range-max {
+  background-color: $highlight-color;
+}
+
+.ui-widget.ui-widget-content {
+  background-color: $gray;
+  height: 5px;
+  border: none;
+  cursor: pointer;
+  width: 98%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+// Keyword result and sort option
+.search-keyword-result {
+  display: flex;
+  align-items: center;
+  padding-left: 2%;
+  padding-right: 2%;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.result-right {
+  margin-left: auto;
+  #sortDropdown {
+    // text-align: right;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: lighter;
+    width: auto;
+  }
+
+}
+
+
+/* -------------------------------------------------- */
+/* SEARCH END*/
+
 /* FOOTER */
+/* -------------------------------------------------- */
 .footer {
   @extend %section;
   background-color: black;
@@ -662,8 +907,16 @@ body {
   font-size: 90%;
   div {
     padding: 2% 5%;
+
+    &.container-subscribe-box {
+      padding: 0;
+      margin: 0;
+      width: 60%;
+      input {
+        width: 100%;
+      }
+    }
   }
-  
 }
 
 #links {
@@ -688,7 +941,7 @@ body {
     input {
       display: block;
       margin: 2% 0;
-      width: 60%;
+      width: 100%;
       height: 100%;
       line-height: 1;
       font-weight: 100;
@@ -738,4 +991,6 @@ body {
 #form-subscribe-box {
   padding-top: 0;
 }
+
+/* -------------------------------------------------- */
 /* FOOTER END */
