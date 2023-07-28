@@ -1,9 +1,14 @@
-from django.http import HttpResponse
-from django.shortcuts import render
-from .models import FAQ, SKU, SKUVariant, SKUImage, SKUTag, SKUReview, Inventory
 import json
+import logging
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login as django_login
+from .models import FAQ, SKU, SKUVariant, SKUImage, SKUTag, SKUReview, Inventory
 from .json_encoder import DecimalEncoder
 from .helper import listItem
+from .forms import LoginForm
+
+logger = logging.getLogger('yourapp')
 
 # Routes
 def index(request):
@@ -11,6 +16,26 @@ def index(request):
     return render(request, "store/index.html", {
         'sku_dict': json.dumps(sku_dict, cls=DecimalEncoder)
     })
+
+def login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            # print(username, password)
+            user = authenticate(request, username=username, password=password)
+            # print(user)
+            if user is not None:
+                django_login(request, user)
+                logger.info(f'User:{user} logged in!')
+                return redirect('shop')
+            else:
+                logger.warning('Invalid username or password')
+                form.add_error(None, 'Invalid username or password')
+    else:
+        form = LoginForm()
+    return render(request, "store/login.html", {'form': form})
 
 def shop(request):
     sku_dict = listItem()

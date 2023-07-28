@@ -1,91 +1,531 @@
-{% extends 'store/layout.html' %}
-{% load static%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %} home {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        nav {
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .menue {
+            /* border: 2px solid black; */
+            position: absolute;
+            top: 3%;
+            left: 2.2%;
+        }
+
+        .search {
+            /* border: 2px solid purple; */
+            position: absolute;
+            top: 3%;
+            right: 16%;
+        }
+
+        .shop {
+            /* border: 2px solid yellow; */
+            position: absolute;
+            top: 3%;
+            right: 2.7%;
+        }
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .dot {
+            height: 6px;
+            width: 30px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 20%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: rgb(249, 60, 0);
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .8
+            }
+
+            to {
+                opacity: 1
+            }
+
+        }
+
+        .btnmain {
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            position: absolute;
+            margin-top: -20%;
+            width: 50%;
+            height: 5%;
+            color: white;
+            font-weight: bold;
+            background-color: rgb(249, 60, 0);
+            border-style: none;
+            border-radius: 30px;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .new-ones {
+            margin-top: 10%;
+        }
+
+        .list {
+            display: flex;
+            text-align: center;
+        }
+
+        .list li {
+            list-style: none;
+            margin-left: 4.5%;
+            font-size: larger;
+            color: grey;
+
+        }
+
+        .new-arival-images {
+
+            text-align: center;
+        }
+
+        .new-arival-images img {
+            width: 100%;
+        }
+
+        .unit-info {
+
+            display: flex;
+        }
+
+        .text-desc {
+
+            width: 35%;
+        }
+
+        .text-desc span {
+            color: grey;
+        }
+
+        .price {
+
+            margin-left: 55%;
+            padding-top: 5%;
+            color: rgb(249, 60, 0);
+            font-weight: bold;
+        }
+
+        .explore {
+            margin-top: 7%;
+            height: 50px;
+            width: 55%;
+            background-color: transparent;
+            border: none;
+            border: 2px solid black;
+            border-radius: 30px;
+            color: black;
+            font-weight: bolder;
+            font-size: large;
+            text-align: center;
+            padding-top: 1.6%;
+        }
+
+        .discount {
+            margin-top: 20%;
+            text-align: center;
+        }
+
+        .discount img {
+            width: 100%;
+        }
+
+        .trending {
+            text-align: center;
+
+        }
+
+        .tags {
+            padding: 7px;
+        }
+
+        .tags span {
+            background-color: rgb(170, 169, 169);
+            font-size: medium;
+            margin: auto;
+            border-radius: 30px;
+        }
+
+        .features {
+            text-align: center;
+            margin-top: 10%;
+            background-color: rgb(241, 241, 241);
+            color: grey;
+            padding: 8%;
+        }
+
+        .features h1 {
+            color: black;
+        }
+
+        .delivery {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+
+        .checkbox {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+
+        .man {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+
+        @keyframes slidy {
+            from {
+                /*Has to be adjusted per Image amount.*/
+
+                left: 0%;
+            }
+
+            to {
+                left: -43%;
+            }
+        }
 
 
-{% block body %}
-<div class="container-fluid">
-    <section class="section-1">
-        <div class="row">
-            <h1>FREE SHIPPING</h1>
-            <h3>ON ORDERS OVER Rs. 500 - USE COUPON CODE OVER500</h3>
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="{% url 'women' %}" class="button-link">
-                        <button class="rectangular-button">Shop Women</button>
-                    </a>    
+        @keyframes slideAnimation {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+                /* Adjust the percentage based on the number of slides */
+            }
+        }
+
+
+        #slider {
+
+            width: 100%;
+            overflow: hidden;
+            margin: 100px auto;
+
+
+        }
+
+        #slider-image-container {
+            /*This needs to be large enough to house all Images*/
+            /*Take Image size, times by amount of Images (400x5=2000px)*/
+            width: 2000px;
+
+            margin: 0 auto;
+            position: relative;
+            /*Manually set centerish for Codepen*/
+            /*Animation repeats forwards and backwards with rubber-banding effect*/
+            animation: slideAnimation 15s linear infinite;
+            /* animation: slidy 10s infinite linear alternate-reverse ; */
+        }
+
+
+        .slider-image {
+            float: left;
+            padding: 10px;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .socials {
+            margin-top: 7%;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+
+        }
+
+        .top-options {
+            display: flex;
+            justify-content: center;
+        }
+
+        .colorBlack {
+            color: black;
+            font-weight: bolder;
+            margin: auto;
+            margin-bottom: 6%;
+        }
+
+        .colorGrey {
+            color: grey;
+            font-size: medium;
+
+        }
+
+        .marginTop {
+            margin-top: 7%;
+        }
+
+        .copyright {
+            margin-bottom: 9%;
+        }
+
+        .marginMedia {
+            margin: 5%;
+        }
+        .social-media img{
+            height: 40px;
+            width: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="menue"><img src="{% static 'store/assets/homepage/menue.png' %}" alt=""></div>
+        <div class="title">
+            <h3>UnderDogs</h3>
+        </div>
+        <div class="search"><img src="{% static 'store/assets/homepage/search.png' %}" alt=""></div>
+        <div class="shop"><img src="{% static 'store/assets/homepage/shop.png' %}" alt=""></div>
+    </nav>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <img src="{% static 'store/assets/homepage/tshirt.png' %}" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="{% static 'store/assets/homepage/tshirt.png' %}" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="{% static 'store/assets/homepage/tshirt.png' %}" style="width:100%">
+        </div>
+        <div class="btnmain">
+            <button class="btn">VIEW COLLECTION</button>
+        </div>
+
+        <div class="slide-bar" style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <div class="new-ones">
+        <h1 class="title">NEW ONES</h1>
+        <div class="list">
+            <li style="color: rgb(249, 60  , 0);">All</li>
+            <li>Shoes</li>
+            <li>Jeans</li>
+            <li>T-shirt</li>
+            <li>Headwear</li>
+        </div>
+        <div class="new-arival-images">
+            <img src="{% static 'store/assets/homepage/tshirt2.png' %}" alt="">
+            <div class="unit-info">
+                <div class="text-desc">
+
+                    <div class="unit-title">
+                        <h4>Shirt Polo</h4>
+                    </div>
+                    <span class="unit-desc">Short sleev polo shirt</span>
                 </div>
-                <div class="col-md-4">
-                    <a href="{% url 'men' %}" class="button-link">
-                        <button class="rectangular-button">Shop Men</button>
-                    </a>
+                <div class="price">
+                    <h4>₹679</h4>
                 </div>
-                <div class="col-md-4">
-                    <a href="{% url 'sale' %}" class="button-link">
-                        <button class="rectangular-button">Shop Sale</button>
-                    </a>
-                </div>
+            </div>
+
+            <button class="explore">EXPLORE MORE ></button>
+
+        </div>
+
+    </div>
+
+    <div class="discount">
+        <img src="{% static 'store/assets/homepage/discount.png' %}" alt="">
+    </div>
+
+    <div class="trending">
+        <h1>@TRENDING</h1>
+        <div class="tags">
+            <span>#2023</span>
+            <span>#fashion</span>
+            <span>#collection</span>
+            <span>#wibe</span>
+            <span>#genz</span>
+            <span>#underdogs</span>
+            <span>#tshirt</span>
+        </div>
+    </div>
+
+    <div class="features">
+        <h1>UnderDogs</h1>
+        <div class="one">
+            <span>We are proud to design and deliver quality and comfortable clothing for you.</span>
+        </div>
+        <div class="delivery">
+            <img src="{% static 'store/assets/homepage/vehicle.png' %}" alt="">
+        </div>
+        <div class="two">
+            <span>Fast shiping. Free on orders over ₹700</span>
+        </div>
+        <div class="checkbox">
+            <img src="{% static 'store/assets/homepage/checkbox.png' %}" alt="">
+        </div>
+        <div class="three">
+            <span>Sustainable process from start to finish.</span>
+        </div>
+        <div class="man">
+            <img src="{% static 'store/assets/homepage/man.png' %}" alt="">
+        </div>
+        <div class="four">
+            <span>Unique designs and high-quality materials.</span>
+        </div>
+    </div>
+
+    <div class="socials">
+        <h1>FOLLOW US</h1>
+        <div id="slider">
+            <div id="slider-image-container">
+
+                <figure class="slider-image">
+                    <img src="{% static 'store/assets/homepage/instagram1.png' %}" alt="">
+                </figure>
+
+                <figure class="slider-image">
+                    <img src="{% static 'store/assets/homepage/instagram2.png' %}" alt="">
+                </figure>
+
+                <figure class="slider-image">
+                    <img src="{% static 'store/assets/homepage/instagram1.png' %}" alt="">
+                </figure>
+
+                <figure class="slider-image">
+                    <img src="{% static 'store/assets/homepage/instagram3.png' %}" alt="">
+                </figure>
+                <figure class="slider-image">
+                    <img src="{% static 'store/assets/homepage/instagram1.png' %}" alt="">
+                </figure>
+                <figure class="slider-image">
+                    <img src="{% static 'store/assets/homepage/instagram1.png' %}" alt="">
+                </figure>
             </div>
         </div>
-    </section>
-    <section class="section-2">
-        <div class="row">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                    <img src="{% static 'store/assets/blank-image.jpg' %}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                    <img src="{% static 'store/assets/blank-image.jpg' %}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                    <img src="{% static 'store/assets/blank-image.jpg' %}" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+    </div>
+
+    <footer>
+        <div class="top-options">
+            <div class="about colorBlack">
+                <span>About</span>
+            </div>
+            <div class="Con colorBlack">
+                <span>Contact</span>
+            </div>
+            <div class="Blog colorBlack">
+                <span>Blog</span>
             </div>
         </div>
-    </section>
-    <section class="section-3">
-        <div class="row">
-            <h1> <span class="stylized-underline">NEW ARRIVALS</span></h1>
-            <div class="grid-container col-md-12 item-grid" id="new">
-                <!-- Grid items will be dynamically added here -->
+        <div class="contact">
+            <div class="email colorGrey">
+                <span>support@underdogs.com</span>
             </div>
-            <div class="button-container">
-                <a href="{% url 'shop' %}" class="button-link">
-                    <button class="centered-button rectangular-button-inverted"><strong>Shop All</strong></button>
-                    <button class="centered-button fade-button">&gt;</button>
-                </a>
+            <div class="phone colorGrey marginTop">
+                <span>(+91)9876543210</span>
             </div>
-            
+            <div class="timings colorGrey marginTop">
+                <span>07:00 - 21:00 - Everyday</span>
+            </div>
         </div>
-        
-    </section>
-</div>
-{% comment %} <script>
-    // Access the dictionary data in index.js
-    var skuDict = JSON.parse('{{ sku_dict|escapejs }}');
-    // You can now use the skuDict variable in your JavaScript code
-    // ...
+        <div class="social-media marginTop">
+            <img src="{% static 'store/assets/homepage/youtube.png' %}" alt="" class="youtube marginMedia">
+            <img src="{% static 'store/assets/homepage/insta.png' %}" alt="" class="instagram marginMedia">
+            <img src="{% static 'store/assets/homepage/twitter.png' %}" alt="" class="twitter marginMedia">
+        </div>
+        <div class="copyright colorGrey marginTop">
+            <span>Copyright&#169 UnderDogs All Rights Reserved</span>
+        </div>
+    </footer>
 
-    // Example usage: Log the SKU names
-    Object.values(skuDict).forEach(function(sku) {
-        console.log(sku.name);
-    });
-</script> {% endcomment %}
 
-{% endblock %}
+
+
+
+
+
+
+
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+
+
+        }
+    </script>
+</body>
+
+</html>

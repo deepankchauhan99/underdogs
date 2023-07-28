@@ -4,7 +4,6 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 
-
 # Helping functions
 def user_directory_path(instance, filename):
     # Upload the image to a directory specific to the user
@@ -67,6 +66,33 @@ class User(AbstractBaseUser):
     def __str__(self):
         return self.email
     
+    def has_module_perms(self, app_label):
+        return self.is_staff
+
+class Wishlist(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='wishlist')
+    items = models.ManyToManyField('SKUVariant', related_name='wishlists')
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"Wishlist for {self.user.get_full_name()}"
+
+class Cart(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='cart')
+    items = models.ManyToManyField('SKUVariant', through='CartItem', related_name='carts')
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"Cart for {self.user.get_full_name()}"
+
+class CartItem(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    sku_variant = models.ForeignKey('SKUVariant', on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
+    
+    def __str__(self):
+        return f"CartItem {self.pk} - Cart: {self.cart.id}, SKUVariant: {self.sku_variant.id}"
+        
 class FAQ(models.Model):
 
     SECTION_CHOICES = [
@@ -88,7 +114,7 @@ class SKU(models.Model):
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    tags = models.ManyToManyField('SKUTag')
+    tags = models.ManyToManyField('SKUTag') 
     quantity = models.PositiveIntegerField(default=0)
     
     def __str__(self):
@@ -146,6 +172,58 @@ class SKUReview(models.Model):
 
     def __str__(self):
         return f"Review for SKU: {self.sku.name} - {self.user.first_name} {self.user.last_name}"
+
+class Order(models.Model):
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('processing', 'Processing'),
+        ('shipped', 'Shipped'),
+        ('delivered', 'Delivered'),
+        ('cancelled', 'Cancelled'),
+    ]
+
+    PAYMENT_STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('paid', 'Paid'),
+        ('failed', 'Failed'),
+        ('refunded', 'Refunded'),
+    ]
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    items = models.ManyToManyField('SKUVariant', through='OrderItem')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    total_amount = models.DecimalField(max_digits=10, decimal_places=2)
+
+    # Shipping information
+    shipping_address = models.CharField(max_length=255)
+    shipping_city = models.CharField(max_length=100)
+    shipping_state = models.CharField(max_length=100)
+    shipping_country = models.CharField(max_length=100)
+    shipping_zip_code = models.CharField(max_length=20)
+
+    # Payment details
+    payment_method = models.CharField(max_length=100)
+    payment_status = models.CharField(max_length=100, choices=PAYMENT_STATUS_CHOICES)
+
+    # Order status
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+
+    # External order ID
+    external_order_id = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"Order #{self.external_order_id} - Amount: {self.total_amount} - {self.user.get_full_name()}"
+
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    sku_variant = models.ForeignKey(SKUVariant, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"Order Item #{self.pk} - Order: {self.order.pk}, SKU Variant: {self.sku_variant}"
+
+
 
 class Inventory(models.Model):
     sku_variant = models.OneToOneField(SKUVariant, on_delete=models.CASCADE, related_name='inventory')

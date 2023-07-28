@@ -83,6 +83,8 @@ WSGI_APPLICATION = 'underdogs.wsgi.application'
 #     }
 # }
 
+AUTHENTICATION_BACKENDS = ['store.backends.EmailOrPhoneBackend']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -139,3 +141,82 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+# Logging configuration
+# settings.py
+import os
+import logging
+from logging.handlers import RotatingFileHandler
+from django.utils.timezone import localtime
+
+# Define the logs folder path
+LOGS_FOLDER = os.path.join(BASE_DIR, 'logs')
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{asctime} {levelname} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'custom_verbose': {
+            'format': '{asctime} {levelname} {module} <process:{process:d}> <thread:{thread:d}> {message}',
+            'style': '{',
+            'datefmt': '%Y-%m-%d %H:%M:%S %Z',  # Add the date format with timezone (%Z)
+        },
+    },
+    'handlers': {
+        'debug_file': {
+            'class': 'logging.handlers.RotatingFileHandler',  # Use RotatingFileHandler for rotating log files
+            'filename': os.path.join(LOGS_FOLDER, 'debug.log'),  # Debug log file path
+            'formatter': 'custom_verbose',  # Include timestamps with timezone using the 'custom_verbose' formatter
+            'maxBytes': 100 * 1024 * 1024,  # Maximum log file size (100MB)
+            'backupCount': 5,  # Number of backup log files to keep
+            'level': 'DEBUG',  # Log level for debug logs and above (all messages)
+        },
+        'error_file': {
+            'class': 'logging.handlers.RotatingFileHandler',  # Use RotatingFileHandler for rotating log files
+            'filename': os.path.join(LOGS_FOLDER, 'error.log'),  # Error log file path
+            'formatter': 'custom_verbose',  # Include timestamps with timezone using the 'custom_verbose' formatter
+            'maxBytes': 100 * 1024 * 1024,  # Maximum log file size (100MB)
+            'backupCount': 5,  # Number of backup log files to keep
+            'level': 'ERROR',  # Log level for error logs and above
+        },
+        'django_file': {
+            'class': 'logging.handlers.RotatingFileHandler',  # Use RotatingFileHandler for rotating log files
+            'filename': os.path.join(LOGS_FOLDER, 'django.log'),  # Django log file path for internal logs
+            'formatter': 'verbose',  # Include timestamps using the 'verbose' formatter
+            'maxBytes': 100 * 1024 * 1024,  # Maximum log file size (100MB)
+            'backupCount': 5,  # Number of backup log files to keep
+            'level': 'INFO',  # Log level for Django's internal logs (INFO and above)
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['django_file'],  # Output Django's internal logs to 'django.log' file
+            'level': 'INFO',  # Log level for Django's internal logs (INFO and above)
+            'propagate': False,
+        },
+        'django.server': {
+            'handlers': ['django_file'],  # Output Django's internal server logs to 'django.log' file
+            'level': 'INFO',  # Log level for Django's internal server logs (INFO and above)
+            'propagate': False,
+        },
+        'django.request': {
+            'handlers': ['error_file'],
+            'level': 'ERROR',  # Set the log level for errors (500 responses) and above
+            'propagate': False,
+        },
+        'store': {  # Replace 'store' with the name of your Django app
+            'handlers': ['debug_file'],
+            'level': 'DEBUG',  # Set the log level for your app's debug messages
+            'propagate': False,
+        },
+    },
+    'root': {
+        'handlers': ['debug_file'],
+        'level': 'DEBUG',  # Set the root logger level to the lowest log level among handlers (DEBUG in this case)
+    },
+}

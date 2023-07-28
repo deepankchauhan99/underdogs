@@ -1,0 +1,23 @@
+{% extends 'store/layout.html' %}
+{% load static%}
+
+{% block title %} login {% endblock %}
+
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
+
+{% endblock %}

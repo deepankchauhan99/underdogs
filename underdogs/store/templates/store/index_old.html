@@ -1,0 +1,91 @@
+{% extends 'store/layout.html' %}
+{% load static%}
+
+{% block title %} home {% endblock %}
+
+
+{% block body %}
+<div class="container-fluid">
+    <section class="section-1">
+        <div class="row">
+            <h1>FREE SHIPPING</h1>
+            <h3>ON ORDERS OVER Rs. 500 - USE COUPON CODE OVER500</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="{% url 'women' %}" class="button-link">
+                        <button class="rectangular-button">Shop Women</button>
+                    </a>    
+                </div>
+                <div class="col-md-4">
+                    <a href="{% url 'men' %}" class="button-link">
+                        <button class="rectangular-button">Shop Men</button>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="{% url 'sale' %}" class="button-link">
+                        <button class="rectangular-button">Shop Sale</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-2">
+        <div class="row">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="{% static 'store/assets/blank-image.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="{% static 'store/assets/blank-image.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="{% static 'store/assets/blank-image.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="section-3">
+        <div class="row">
+            <h1> <span class="stylized-underline">NEW ARRIVALS</span></h1>
+            <div class="grid-container col-md-12 item-grid" id="new">
+                <!-- Grid items will be dynamically added here -->
+            </div>
+            <div class="button-container">
+                <a href="{% url 'shop' %}" class="button-link">
+                    <button class="centered-button rectangular-button-inverted"><strong>Shop All</strong></button>
+                    <button class="centered-button fade-button">&gt;</button>
+                </a>
+            </div>
+            
+        </div>
+        
+    </section>
+</div>
+{% comment %} <script>
+    // Access the dictionary data in index.js
+    var skuDict = JSON.parse('{{ sku_dict|escapejs }}');
+    // You can now use the skuDict variable in your JavaScript code
+    // ...
+
+    // Example usage: Log the SKU names
+    Object.values(skuDict).forEach(function(sku) {
+        console.log(sku.name);
+    });
+</script> {% endcomment %}
+
+{% endblock %}

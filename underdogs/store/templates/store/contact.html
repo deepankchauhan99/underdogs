@@ -1,86 +1,193 @@
-{% extends 'store/layout.html' %}
-{% load static%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %} contact us {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        /* nav bar css start  */
+        nav {
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .menue {
+            /* border: 2px solid black; */
+            position: absolute;
+            top: 3%;
+            left: 2.2%;
+        }
+
+        .search {
+            /* border: 2px solid purple; */
+            position: absolute;
+            top: 3%;
+            right: 16%;
+        }
+
+        .shop {
+            /* border: 2px solid yellow; */
+            position: absolute;
+            top: 3%;
+            right: 2.7%;
+        }
+
+        /* nav bar css end  */
 
 
-{% block body %}
-    <section id="contact" class="section-3">
-        <div id="contact-row" class="row">
-            <h1><span class="stylized-underline">CONTACT US</span></h1>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>Opening Hours</h5>
-                        <p>Mon - Fri: 7am - 10pm</p>
-                        <p>Saturday: 8am - 10pm</p>
-                        <p>Sunday: 8am - 11pm</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5><strong>Customer Service</strong></h5>
-                        <p>1-800-000-000</p>
-                        <p>123-456-7890</p>
-                        <p>info@my-domain.com</p>
-                    </div>   
-                </div>
-            </div>
+
+
+
+        /* footer css starts  */
+
+        footer {
+            text-align: center;
+
+        }
+
+        .top-options {
+            display: flex;
+            justify-content: center;
+        }
+
+        .colorBlack {
+            color: black;
+            font-weight: bolder;
+            margin: auto;
+            margin-bottom: 6%;
+        }
+
+        .colorGrey {
+            color: grey;
+            font-size: medium;
+
+        }
+
+        .marginTop {
+            margin-top: 7%;
+        }
+
+        .copyright {
+            margin-bottom: 9%;
+        }
+
+        .marginMedia {
+            margin: 5%;
+        }
+
+        .social-media img {
+            height: 40px;
+            width: 40px;
+        }
+
+
+        /* footer css ends  */
+
+        .dBlock {
+            display: block;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .mt-5 {
+            margin-top: 5%;
+        }
+
+        .mt-10 {
+            margin-top: 10%;
+        }
+
+        .mb-5 {
+            margin-bottom: 7%;
+        }
+        .mt-15{
+            margin-top: 15%;
+        }
+
+        .button {
+            width: 40%;
+            height: 47px;
+            background-color: rgb(249, 60, 0);
+            font-weight: bold;
+            color: white;
+            border-style: none;
+            border-radius: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="menue"><img src="{% static 'store/assets/contact/menu.png' %}"alt=""></div>
+        <div class="title">
+            <h3>UnderDogs</h3>
+        </div>
+        <div class="search"><img src="{% static 'store/assets/contact/search.png' %}" alt=""></div>
+        <div class="shop"><img src="{% static 'store/assets/contact/shop.png' %}" alt=""></div>
+    </nav>
+
+    <section class="contact-box ">
+        <div class="chat center mt-5">
+            <img src="{% static 'store/assets/contact/Chat.png' %}" alt="chat with us">
+            <span class="dBlock mt-5">Need an ASAP answer? Contact us via chat, 24/7! For existing furniture order,
+                please call us.</span>
+            <button class="button mt-5">CHAT WITH US</button>
+        </div>
+        <div class="message center mt-10">
+            <img src="{% static 'store/assets/contact/message.png' %}" alt="Message US">
+            <span class="dBlock mt-5">You can text us at 888-309-2622 or click the "send message" link below on your
+                mobile device. Please allow the system a simple greeting (even a "Welcome" will do!) before submitting
+                your question/order details. No consent is required for any purchase. Message and internet rates may
+                apply.</span>
+            <button class="button mt-5">TEXT US</button>
+        </div>
+        <div class="twitter center mt-10">
+            <img src="{% static 'store/assets/contact/twitter1.png' %}" alt="Message US">
+            <span class="dBlock mt-5">To send us a private or direct message, like @UnderDogs on Facebook or follow us on Twitter. We’ll get back to you ASAP. Please include your name, order number, and email address for a faster response!</span>
         </div>
     </section>
-    <section id="stockists" class="section-3">
-        <div id="stockists-row" class="row">
-            <h6><span class="stylized-underline blank-dot">&nbsp;</span></h6>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h5>Stockists</h5>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <p>Mon - Fri: 7am - 10pm</p>
-                        <p>Saturday: 8am - 10pm</p>
-                        <p>Sunday: 8am - 11pm</p>
-                    </div>
-                    <div class="col-md-4">
-                        <p>Mon - Fri: 7am - 10pm</p>
-                        <p>Saturday: 8am - 10pm</p>
-                        <p>Sunday: 8am - 11pm</p>
-                    </div>
-                    <div class="col-md-4">
-                        <p>1-800-000-000</p>
-                        <p>123-456-7890</p>
-                        <p>info@my-domain.com</p>
-                    </div>   
-                </div>
+
+
+    <footer class="mt-15">
+        <div class="top-options">
+            <div class="about colorBlack">
+                <span>About</span>
+            </div>
+            <div class="Con colorBlack">
+                <span>Contact</span>
+            </div>
+            <div class="Blog colorBlack">
+                <span>Blog</span>
             </div>
         </div>
-    </section>
-    <section id="enquiry" class="section-3">
-        <div class="row">
-            <h6><span class="stylized-underline blank-dot">&nbsp;</span></h6>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-wrapper">
-                        <h5>For inquiries regarding an order, please include your order number and the date your order was placed</h5>
-                    </div>
-                </div>
-                <form class="subcribe-form contact-form-body">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <input class="centered-button rectangular-button-inverted contact-form" type="text" id="name-contact" name="name-contact" placeholder="Name">
-                        </div>
-                        <div class="col-md-3">
-                            <input class="centered-button rectangular-button-inverted contact-form" type="email" id="email-contact" name="email-contact" placeholder="Email">
-                        </div>
-                        <div class="col-md-3">
-                            <input class="centered-button rectangular-button-inverted contact-form" type="text" id="message-contact" name="message-contact" placeholder="How Can We Help?">
-                        </div>
-                        <div id="contact-button" class="col-md-3">
-                            <input class="centered-button fade-button contact-form-button" type="submit" value="Submit">
-                        </div>   
-                    </div>
-                </form>
+        <div class="contact">
+            <div class="email colorGrey">
+                <span>support@underdogs.com</span>
+            </div>
+            <div class="phone colorGrey marginTop">
+                <span>(+91)9876543210</span>
+            </div>
+            <div class="timings colorGrey marginTop">
+                <span>07:00 - 21:00 - Everyday</span>
             </div>
         </div>
-    </section>
-{% endblock %}
+        <div class="social-media marginTop">
+            <img src="{% static 'store/assets/contact/youtube.png' %}" alt="" class="youtube marginMedia">
+            <img src="{% static 'store/assets/contact/insta.png' %}" alt="" class="instagram marginMedia">
+            <img src="{% static 'store/assets/contact/twitter.png' %}" alt="" class="twitter marginMedia">
+        </div>
+        <div class="copyright colorGrey marginTop">
+            <span>Copyright&#169 UnderDogs All Rights Reserved</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
