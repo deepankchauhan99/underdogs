@@ -17,6 +17,12 @@ def index(request):
         'sku_dict': json.dumps(sku_dict, cls=DecimalEncoder)
     })
 
+def register(request):
+    if request.method == 'POST':
+        pass
+    else:
+        return render(request, "store/register.html")
+
 def login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -43,31 +49,20 @@ def shop(request):
         'sku_dict': json.dumps(sku_dict, cls=DecimalEncoder)
     })
 
-def women(request):
-    sku_dict = listItem()
-    return render(request, "store/women.html", {
-        'sku_dict': json.dumps(sku_dict, cls=DecimalEncoder)
-    })
+def item_description(request, sku_id):
+    print(sku_id)
+    sku_data = SKU.objects.get(name=sku_id)
+    print('sku_data:')
+    print(sku_data.price)
+    return render(request, "store/item_description.html", {"sku_data": sku_data})
 
-def men(request):
-    sku_dict = listItem()
-    return render(request, "store/men.html", {
-        'sku_dict': json.dumps(sku_dict, cls=DecimalEncoder)
-    })
 
-def sale(request):
-    sku_dict = listItem()
-    return render(request, "store/sale.html", {
-        'sku_dict': json.dumps(sku_dict, cls=DecimalEncoder)
-    })
+# def user(request, username):
 
-def search(request):
-    sku_dict = listItem()
-    sku_tags = SKUTag.objects.all()
-    return render(request, "store/search.html", {
-        'sku_dict': json.dumps(sku_dict, cls=DecimalEncoder),
-        'sku_tags': sku_tags
-    })
+#     return render(request, )
+
+
+
 
 def faq(request):
     faqs = FAQ.objects.all()
@@ -99,3 +94,10 @@ def returns(request):
 
 def policy(request):
     return render(request, "store/policy.html")
+
+
+
+
+def user(request, name):
+    print(name)
+    return name

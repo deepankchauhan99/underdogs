@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'underdogs.wsgi.application'
 #     }
 # }
 
-AUTHENTICATION_BACKENDS = ['store.backends.EmailOrPhoneBackend']
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend','store.backends.EmailOrPhoneBackend']
 
 DATABASES = {
     'default': {

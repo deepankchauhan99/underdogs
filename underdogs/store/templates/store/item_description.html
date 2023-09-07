@@ -1,0 +1,495 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .menue {
+            /* border: 2px solid black; */
+            position: absolute;
+            top: 3%;
+            left: 2.2%;
+        }
+
+        .search {
+            /* border: 2px solid purple; */
+            position: absolute;
+            top: 3%;
+            right: 16%;
+        }
+
+        .shop {
+            /* border: 2px solid yellow; */
+            position: absolute;
+            top: 3%;
+            right: 2.7%;
+        }
+        .head{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .imgback{
+            position: absolute;
+            left: 2.2%;
+        }
+        .back{
+            position: absolute;
+            left: 8%;
+            padding-top: 2px;
+        }
+        .imglike{
+            position: absolute;
+            right: 16%;
+        }
+        .imgshare{
+            position: absolute;
+            right: 2.7%;
+        }
+        .itemcard{
+            padding-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .item{
+            width: 345px;
+            height: 500px;
+            flex-shrink: 0;
+            border-radius: 5px;
+        }
+        .zoom{
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            right: 3%;
+            top: 90%;
+        }
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .dot {
+            height: 6px;
+            width: 30px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 20%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: rgb(249, 60, 0);
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .8
+            }
+
+            to {
+                opacity: 1
+            }
+
+        }
+        .name{
+            display: flex;
+            justify-content: center;
+        }
+        .imgcart{
+            position: absolute;
+        }
+        .tshirt{
+            position: absolute;
+            left: 5%;
+        }
+        .imgcart{
+            position: absolute;
+            right: 5%;
+        }
+        .price{
+            height: 100px;
+            padding-top: 40px;
+            margin-left: 10px;
+        }
+        .price span{
+            color: rgba(249, 60, 0, 1);
+            font-weight:bolder;
+        }
+        .color{
+            display: flex;
+            align-content: center;
+        }
+        #blackclr{
+            background-color: black;
+            margin-left: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+        }
+        #orangeclr{
+            background-color:#f93c00 ;
+            margin-left: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+        }
+        #blueclr{
+            background-color: rgb(59, 59, 245);
+            margin-left: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+        }
+        .clrsize{
+            display: flex;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+        .size{
+            display: flex;
+            position: absolute;
+            right:6%;
+        }
+        #small{
+            margin-left: 20px;
+            text-align: center;
+        }
+
+        #medium{
+            margin-left: 20px;
+        }
+        #large{
+            margin-left: 20px;
+        }
+        .instruction{
+            margin-top: 50px;
+        }
+        .text{
+            color: rgba(136, 136, 136, 1);
+        }
+        .firstrow{
+            display: flex;
+            margin-top: 20px;
+        }
+        .caution{
+            width: 45%;
+            color: rgba(136, 136, 136, 1);
+        }
+        .layout{
+            width: 100%;
+            margin: auto;
+        }
+        .accordion{
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background: rgb(255, 255, 255);
+            border-radius: 10px;
+        }
+        .accordion__question p{
+            margin: 5px;
+            padding: 0;
+
+        }
+        .accordion__answer p{
+            margin: 5px;
+            padding: 10px;
+            color: rgb(0, 0, 0);
+
+            border-radius: 10px; 
+        }
+        .accordion:hover{
+            cursor: pointer;
+        }
+        .accordion__answer {
+            display: none;
+        } 
+        .accordion.active .accordion__answer {
+            display: block;
+        }
+        .accordion__question{
+            display: flex;
+            align-items: center;
+        }
+        #shipping{
+            width: 25px;
+            height: 25px;
+        }
+        .more{
+            font-size: x-large;
+            font-weight: bolder;
+            text-align: center;
+        }
+        .recommended{
+            
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        footer {
+            text-align: center;
+
+        }
+
+        .top-options {
+            display: flex;
+            justify-content: center;
+        }
+
+        .colorBlack {
+            color: black;
+            font-weight: bolder;
+            margin: auto;
+            margin-bottom: 6%;
+        }
+
+        .colorGrey {
+            color: grey;
+            font-size: medium;
+
+        }
+
+        .marginTop {
+            margin-top: 7%;
+        }
+
+        .copyright {
+            margin-bottom: 9%;
+        }
+
+        .marginMedia {
+            margin: 5%;
+        }
+        .social-media img{
+            height: 40px;
+            width: 40px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="menue"><img src="{% static 'store/assets/item_description/menue.png' %}" alt=""></div>
+        <div class="title">
+            <h3>UnderDogs</h3>
+        </div>
+        <div class="search"><img src="{% static 'store/assets/item_description/search.png' %}" alt=""></div>
+        <div class="shop"><img src="{% static 'store/assets/item_description/shop.png' %}" alt=""></div>
+        
+    </nav>
+    <div class="head">
+        <div class="imgback"><img src="{% static 'store/assets/item_description/back.png' %}" alt=""></div>
+        <div class="back">
+            <span>Back</span>
+        </div>
+        <div class="imglike"><img src="{% static 'store/assets/item_description/like.png' %}" alt=""></div>
+        <div class="imgshare"><img src="{% static 'store/assets/item_description/share.png' %}" alt=""></div>
+    </div>
+    
+    <div class="slideshow-container">
+
+        <div class="mySlides fade itemcard">
+            <img src="{% static 'store/assets/item_description/tshirt design.png' %}" style="width:100%">
+            <img class="zoom" src="{% static 'store/assets/item_description/zoom.png' %}" alt="zoom">
+        </div>
+
+        <div class="mySlides fade itemcard">
+            <img src="{% static 'store/assets/item_description/tshirt design.png' %}" style="width:100%">
+            <img class="zoom" src="{% static 'store/assets/item_description/zoom.png' %}" alt="zoom">
+        </div>
+
+        <div class="mySlides fade itemcard">
+            <img src="{% static 'store/assets/item_description/tshirt design.png' %}" style="width:100%">
+            <img class="zoom" src="{% static 'store/assets/item_description/zoom.png' %}" alt="zoom">
+        </div>
+
+        <div class="slide-bar" style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <div class="name">
+        <h3 class="tshirt">{{ sku_data.name }}</h3>
+        <img class="imgcart" src="{% static 'store/assets/item_description/addToCart.png' %}" alt="cart">
+    </div>
+    <div class="price">
+        <h4>{{ sku_data.description }}</h4>
+        <span>₹{{ sku_data.price }}</span>
+    </div>
+    <div class="clrsize">
+
+        <div class="color">
+            <div>Color</div>
+            <div id="blackclr"></div>
+            <div id="orangeclr"></div>
+            <div id="blueclr"></div>
+        </div>
+        <div class="size">
+            <div>Size:</div>
+            <div id="small">S</div>
+            <div id="medium">M</div>
+            <div id="large">L</div>
+        </div>
+    </div>
+    <div class="instruction">
+        <p>MATERIALS</p>
+        <span class="text">We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. </span>
+        <p>CARE</p>
+        <span class="text">To keep your jackets and coats clean, you only need to freshen them up and go over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful of the environment.</span>
+    </div>
+    <div class="firstrow">
+        <div class="caution">
+            <img src="{% static 'store/assets/item_description/inst1.png' %}" alt="">
+            <p>Iron at a maximum of 110ºC/230ºF</p>
+        </div>
+        <div class="caution">
+            <img src="{% static 'store/assets/item_description/inst2.png' %}" alt="">
+            <p>Dry clean with tetrachloroethylene</p>
+        </div>
+    </div>
+    <div class="firstrow">
+        <div class="caution">
+            <img src="{% static 'store/assets/item_description/inst3.png' %}" alt="">
+            <p>Do not use bleach</p>
+        </div>
+        <div class="caution">
+            <img src="{% static 'store/assets/item_description/inst4.png' %}" alt="">
+            <p>Do not tumble dry</p>
+        </div>
+    </div>
+    <div class="layout">
+        <div class="accordion">
+            <div class="accordion__question">
+                <img id="shipping" src="{% static 'store/assets/item_description/shipping.png' %}" alt="">
+                <p>Free Flat Rate Shipping</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>Estimated to be delivered on 
+                    15/07/2023 - 18/07/2023.
+                    </p>
+
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <img src="{% static 'store/assets/item_description/tag.png' %}" alt="">
+                <p>COD Policy</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae perferendis, tempora dicta cupiditate voluptatibus
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="more">
+        You may also like
+    </div>
+    <div class="recommended">
+        <img src="{% static 'store/assets/item_description/recommended.png' %}" alt="">
+    </div>
+
+    <div class="recommended">
+        <img src="{% static 'store/assets/item_description/recommended2.png' %}" alt="">
+    </div>
+    <footer>
+        <div class="top-options">
+            <div class="about colorBlack">
+                <span>About</span>
+            </div>
+            <div class="Con colorBlack">
+                <span>Contact</span>
+            </div>
+            <div class="Blog colorBlack">
+                <span>Blog</span>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="email colorGrey">
+                <span>support@underdogs.com</span>
+            </div>
+            <div class="phone colorGrey marginTop">
+                <span>(+91)9876543210</span>
+            </div>
+            <div class="timings colorGrey marginTop">
+                <span>07:00 - 21:00 - Everyday</span>
+            </div>
+        </div>
+        <div class="social-media marginTop">
+            <img src="{% static 'store/assets/item_description/yt.png' %}" alt="" class="youtube marginMedia">
+            <img src="{% static 'store/assets/item_description/insta.png' %}" alt="" class="instagram marginMedia">
+            <img src="{% static 'store/assets/item_description/x.png' %}" alt="" class="twitter marginMedia">
+        </div>
+        <div class="copyright colorGrey marginTop">
+            <span>Copyright&#169 UnderDogs All Rights Reserved</span>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+
+
+        }
+        let answers=document.querySelectorAll(".accordion");
+        answers.forEach((event)=>{
+            event.addEventListener('click',()=>{
+                if(event.classList.contains("active")){
+                    event.classList.remove("active");
+                }
+                else{
+                    event.classList.add("active");
+                }
+            })
+        })
+    </script>
+</body>
+</html>

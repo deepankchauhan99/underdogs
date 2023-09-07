@@ -29,6 +29,26 @@
             font-weight: 400;
             line-height: 22px;
             color: rgba(136, 136, 136, 1);
+            padding-bottom: 20px;
+        }
+        .firstname{
+            border-bottom: 1px solid rgba(136, 136, 136, 1);
+            border-left: none;
+            border-top: none;
+            border-right: none;
+            font-size: large;
+            width: 46%;
+            margin-left: 5px;
+            font-size: 17px;
+        }
+        .lastname{
+            border-bottom: 1px solid rgba(136, 136, 136, 1);
+            border-left: none;
+            border-top: none;
+            border-right: none;
+            font-size: large;
+            width: 46%;
+            font-size: 17px;
         }
         .email{
             display: block;
@@ -37,9 +57,10 @@
             border-top: none;
             border-right: none;
             font-size: large;
-            margin-top: 100px;
+            margin-top: 20px;
             width: 95%;
             margin-left: 5px;
+            font-size: 17px;
 
         }
         .password{
@@ -52,10 +73,8 @@
             font-size: large;
             width: 95%;
             margin-left: 5px;
+            font-size: 17px;
 
-        }
-        .fpass{
-            float: right;
         }
         .btn{
             display: flex;
@@ -113,21 +132,62 @@
             right: 30%;
             border-radius: 25px;
         }
+        .btnalign{
+            position: relative;
+            padding-top: 50px;
+        }
+        .tc{
+            padding-top: 30px;
+            margin-left: 10px;
+        }
+        #normal{
+            color: #888;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Be Vietnam Pro;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px; /* 157.143% */
+        }
+        #different{
+            color: #F93C00;
+            font-family: Be Vietnam Pro;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 22px;
+        }
     </style>
 </head>
 <body>
     <h1>UnderDogs</h1>
-    <h3>LOGIN</h3>
-    <h4>SIGNUP</h4>
+    <h3>SIGNUP</h3>
+    <h4>LOGIN</h4>
     <div class="container">
-        <p id="account">HAVE AN ACCOUNT?</p>
-        <p id="text">login to speed up the checkout process and manage your orders</p>
+        <p id="account">NEW TO UNDERDOG?</p>
+        <p id="text">Register to speed up the checkout process and manage your order</p>
+        <input class="firstname" type="text" placeholder="First Name">
+        <input class="lastname" type="text" placeholder="Last Name">
         <input class="email" type="text" placeholder="Email">
         <input class="password" type="password" placeholder="Password">
-        <p class="fpass">Forgot password</p>
     </div>
     <div class="btnalign">
         <button class="btn">Login</button>
+    </div>
+    <div class="tc">
+        <span id="normal"> 
+            By you clicking Register Now, you agree to our
+        </span>
+        <span id="different">
+            Term and condition
+        </span>
+        <span id="normal">
+           and 
+        </span>
+        <span id="different">
+            Privacy Policy.
+        </span>
+        
     </div>
     <div class="or">
         <div class="child">
