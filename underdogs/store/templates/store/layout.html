@@ -12,6 +12,78 @@
         <title>Underdogs: {% block title %}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            nav {
+                /* border: 2px solid red; */
+                display: flex;
+                justify-content: center;
+    
+            }
+    
+            .menue {
+                /* border: 2px solid black; */
+                position: absolute;
+                top: 3%;
+                left: 2.2%;
+            }
+    
+            .search {
+                /* border: 2px solid purple; */
+                position: absolute;
+                top: 3%;
+                right: 16%;
+            }
+    
+            .shop {
+                /* border: 2px solid yellow; */
+                position: absolute;
+                top: 3%;
+                right: 2.7%;
+            }
+            .socials {
+                margin-top: 7%;
+                text-align: center;
+            }
+    
+            footer {
+                text-align: center;
+    
+            }
+    
+            .top-options {
+                display: flex;
+                justify-content: center;
+            }
+    
+            .colorBlack {
+                color: black;
+                font-weight: bolder;
+                margin: auto;
+                margin-bottom: 6%;
+            }
+    
+            .colorGrey {
+                color: grey;
+                font-size: medium;
+    
+            }
+    
+            .marginTop {
+                margin-top: 7%;
+            }
+    
+            .copyright {
+                margin-bottom: 9%;
+            }
+    
+            .marginMedia {
+                margin: 5%;
+            }
+            .social-media img{
+                height: 40px;
+                width: 40px;
+            }
+        </style>
         
         {% comment %} this needs to be deleted  {% endcomment %}
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -34,73 +106,17 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                {% comment %} <div class="navbar-brand-div"> {% endcomment %}
-                    <a class="navbar-brand logo" href="{% url 'index' %}">UNDERDOGS</a>
-                {% comment %} </div> {% endcomment %}
-                {% comment %} <img src="{% static 'store/assets/logo.png' %}" class="logo d-block w-100" alt="..."> {% endcomment %}
-                <div class="search-bar">
-                    <form id="searchForm" action="{% url 'search' %}" method="GET">
-                        <input type="text" id="searchInput" name="search" placeholder="Search...">
-                        <span class="clear-icon">&times;</span>
-                    </form>
-                </div>
-                <div class="filler"></div>
-                <div class="collapse right-menu-items navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-items">
-
-                        {% url 'shop' as shop_url %}
-                        {% url 'women' as women_url %}
-                        {% url 'men' as men_url %}
-                        {% url 'sale' as sale_url %}
-                        {% url 'about' as about_url %}
-                        {% url 'contact' as contact_url %}
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == shop_url %}active{% endif %}" aria-current="page" href={{ shop_url }}>Shop All</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == women_url %}active{% endif %}" aria-current="page" href={{women_url}}>Women</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == men_url %}active{% endif %}" aria-current="page" href={{men_url}}>Men</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == sale_url %}active{% endif %}" aria-current="page" href={{sale_url}}>Sale</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == about_url %}active{% endif %}" aria-current="page" href={{about_url}}>About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == contact_url %}active{% endif %}" aria-current="page" href={{contact_url}}>Contact</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">    
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{% url 'shop' %}"><i class="fa-solid fa-circle-user fa-xl"></i> Log In</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">
-                                <span class="cart-icon">
-                                    <i class="fa-solid fa-bag-shopping fa-xl"></i>
-                                    <span id="cartItemCount">0</span>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        <nav>
+            <div class="menue"><img src="menue.png" alt=""></div>
+            <div class="title">
+                <h3>UnderDogs</h3>
             </div>
+            <div class="search"><img src="search.png" alt=""></div>
+            <div class="shop"><img src="shop.png" alt=""></div>
         </nav>
-
-        <div class="social-media-icon-container">
-            <a href="#"><img src="{% static 'store/assets/instagram.png' %}" alt="instagram-icon"></a>
-            <a href="#"><img src="{% static 'store/assets/pinterest.png' %}" alt="pinterest-icon"></a>
-            <a href="#"><img src="{% static 'store/assets/facebook.png' %}" alt="facebook-icon"></a>
-            <a href="#"><img src="{% static 'store/assets/twitter.png' %}" alt="twitter-icon"></a>
-          </div>
         {% block body %}{% endblock %}
 
-        <footer class="row footer">
+        {% comment %} <footer class="row footer">
             <div id="links" class="col-md-8">
                 <div class="row">
                     <div class="col-4">
@@ -142,29 +158,61 @@
                     </div>
                 </div>
             </div>
-        </footer>
-        <footer class="footer">
+        </footer> {% endcomment %}
+        {% comment %} <footer class="footer">
             <p>&copy; 2035 by Underdogs. Powered and secured by Underdogs, Inc.</p>
+        </footer> {% endcomment %}
+        <footer>
+            <div class="top-options">
+                <div class="about colorBlack">
+                    <span>About</span>
+                </div>
+                <div class="Con colorBlack">
+                    <span>Contact</span>
+                </div>
+                <div class="Blog colorBlack">
+                    <span>Blog</span>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="email colorGrey">
+                    <span>support@underdogs.com</span>
+                </div>
+                <div class="phone colorGrey marginTop">
+                    <span>(+91)9876543210</span>
+                </div>
+                <div class="timings colorGrey marginTop">
+                    <span>07:00 - 21:00 - Everyday</span>
+                </div>
+            </div>
+            <div class="social-media marginTop">
+                <img src="youtube.png" alt="" class="youtube marginMedia">
+                <img src="insta.png" alt="" class="instagram marginMedia">
+                <img src="twitter.png" alt="" class="twitter marginMedia">
+            </div>
+            <div class="copyright colorGrey marginTop">
+                <span>Copyright&#169 UnderDogs All Rights Reserved</span>
+            </div>
         </footer>
-        <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-        <script>
+        {% comment %} <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> {% endcomment %}
+        {% comment %} <script>
             var MEDIA_URL = "{{ MEDIA_URL }}";
 
-            // Access the dictionary data in index.js
-            {% comment %} var skuDict = JSON.parse('{{ sku_dict|escapejs }}'.replace(/&quot;/g, '\\"')); {% endcomment %}
+            Access the dictionary data in index.js
+            var skuDict = JSON.parse('{{ sku_dict|escapejs }}'.replace(/&quot;/g, '\\"'));
             var skuDict;
             try {
                 skuDict = JSON.parse('{{ sku_dict|escapejs }}'.replace(/&quot;/g, '\\"'));
             } catch {
-                // No action required if parsing fails
+                No action required if parsing fails
             }
-        </script>
+        </script> {% endcomment %}
         {% comment %} this needs to be deleted {% endcomment %}
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        {% comment %} <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> {% endcomment %}
         {% comment %} till here  {% endcomment %}
-        <script src="{% static 'store/helper.js' %}" async defer></script>
-        <script src="{% static 'store/index.js' %}" async defer></script>
+        {% comment %} <script src="{% static 'store/helper.js' %}" async defer></script>
+        <script src="{% static 'store/index.js' %}" async defer></script> {% endcomment %}
     </body>
 </html>
