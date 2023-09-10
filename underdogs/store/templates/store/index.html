@@ -1,11 +1,7 @@
+{% extends 'store/layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+{% block title %}Home Page{% endblock %}
     <style>
         * {
             box-sizing: border-box;
@@ -324,9 +320,8 @@
             width: 40px;
         }
     </style>
-</head>
 
-<body>
+{% block body %}
     <nav>
         <div class="menue"><img src="{% static 'store/assets/homepage/menue.png' %}" alt=""></div>
         <div class="title">
@@ -526,6 +521,4 @@
 
         }
     </script>
-</body>
-
-</html>
+{% endblock %}
