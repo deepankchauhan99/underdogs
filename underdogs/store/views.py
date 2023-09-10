@@ -17,44 +17,44 @@ def index(request):
         'sku_dict': json.dumps(sku_dict, cls=DecimalEncoder)
     })
 
-def register(request):
-    if request.method == 'POST':
-        pass
-    else:
-        return render(request, "store/register.html")
+# def register(request):
+#     if request.method == 'POST':
+#         pass
+#     else:
+#         return render(request, "store/register.html")
 
-def login(request):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            # print(username, password)
-            user = authenticate(request, username=username, password=password)
-            # print(user)
-            if user is not None:
-                django_login(request, user)
-                logger.info(f'User:{user} logged in!')
-                return redirect('shop')
-            else:
-                logger.warning('Invalid username or password')
-                form.add_error(None, 'Invalid username or password')
-    else:
-        form = LoginForm()
-    return render(request, "store/login.html", {'form': form})
+# def login(request):
+#     if request.method == 'POST':
+#         form = LoginForm(request.POST)
+#         if form.is_valid():
+#             username = form.cleaned_data['username']
+#             password = form.cleaned_data['password']
+#             # print(username, password)
+#             user = authenticate(request, username=username, password=password)
+#             # print(user)
+#             if user is not None:
+#                 django_login(request, user)
+#                 logger.info(f'User:{user} logged in!')
+#                 return redirect('shop')
+#             else:
+#                 logger.warning('Invalid username or password')
+#                 form.add_error(None, 'Invalid username or password')
+#     else:
+#         form = LoginForm()
+#     return render(request, "store/login.html", {'form': form})
 
-def shop(request):
-    sku_dict = listItem()
-    return render(request, "store/shop.html", {
-        'sku_dict': json.dumps(sku_dict, cls=DecimalEncoder)
-    })
+# def shop(request):
+#     sku_dict = listItem()
+#     return render(request, "store/shop.html", {
+#         'sku_dict': json.dumps(sku_dict, cls=DecimalEncoder)
+#     })
 
-def item_description(request, sku_id):
-    print(sku_id)
-    sku_data = SKU.objects.get(name=sku_id)
-    print('sku_data:')
-    print(sku_data.price)
-    return render(request, "store/item_description.html", {"sku_data": sku_data})
+# def item_description(request, sku_id):
+#     print(sku_id)
+#     sku_data = SKU.objects.get(name=sku_id)
+#     print('sku_data:')
+#     print(sku_data.price)
+#     return render(request, "store/item_description.html", {"sku_data": sku_data})
 
 
 # def user(request, username):
@@ -64,36 +64,36 @@ def item_description(request, sku_id):
 
 
 
-def faq(request):
-    faqs = FAQ.objects.all()
-    faqs_dict_section1 = {}
-    faqs_dict_section2 = {}
+# def faq(request):
+#     faqs = FAQ.objects.all()
+#     faqs_dict_section1 = {}
+#     faqs_dict_section2 = {}
     
-    print(faqs)
-    for faq in faqs:
-        if faq.section == 'General':
-            faqs_dict_section1[faq.question] = faq.answer
-        elif faq.section == 'Setting up FAQs':
-            faqs_dict_section2[faq.question] = faq.answer
+#     print(faqs)
+#     for faq in faqs:
+#         if faq.section == 'General':
+#             faqs_dict_section1[faq.question] = faq.answer
+#         elif faq.section == 'Setting up FAQs':
+#             faqs_dict_section2[faq.question] = faq.answer
     
-    print(faqs_dict_section1)
-    print(faqs_dict_section2)
-    return render(request, "store/faq.html", {
-        'faqs_section1': faqs_dict_section1,
-        'faqs_section2': faqs_dict_section2
-    })
+#     print(faqs_dict_section1)
+#     print(faqs_dict_section2)
+#     return render(request, "store/faq.html", {
+#         'faqs_section1': faqs_dict_section1,
+#         'faqs_section2': faqs_dict_section2
+#     })
 
-def about(request):
-    return render(request, "store/about.html")
+# def about(request):
+#     return render(request, "store/layout.html")
 
-def contact(request):
-    return render(request, "store/contact.html")
+# def contact(request):
+#     return render(request, "store/contact.html")
 
-def returns(request):
-    return render(request, "store/returns.html")
+# def returns(request):
+#     return render(request, "store/returns.html")
 
-def policy(request):
-    return render(request, "store/policy.html")
+# def policy(request):
+#     return render(request, "store/policy.html")
 
 
 
