@@ -47,3 +47,13 @@ This command will start the Django development server, and you can access the Un
 Enjoy exploring the latest fashion trends for underdogs!
 
 If you have any questions or encounter any issues, please feel free to [create an issue](https://github.com/deepankchauhan99/underdogs.git/issues) in this repository.
+
+## CSS Format
+
+## CSS conventions followed for underdogs
+
+all css unique classe have been named using the format given bellow
+ 
+{ 'filename'-'classname' }
+
+Other common classes have been defined on the top of the master css file.
