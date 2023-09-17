@@ -65,7 +65,7 @@ nav {
 /* nav bar css end  */
 
 
-<!-- footer css  -->
+/*  footer css  */
 
 footer {
     text-align: center;
@@ -110,7 +110,7 @@ footer {
 
 
 
-<!-- footer css ends here  -->
+/* footer css ends here  */
 
 
 
@@ -120,7 +120,7 @@ footer {
 
 
 
-/* ---------------------Home page------------------ */
+/* Home page */
 
 
 
@@ -139,34 +139,6 @@ body {
 
 img {
     vertical-align: middle;
-}
-
-nav {
-    /* border: 2px solid red; */
-    display: flex;
-    justify-content: center;
-
-}
-
-.menue {
-    /* border: 2px solid black; */
-    position: absolute;
-    top: 3%;
-    left: 2.2%;
-}
-
-.search {
-    /* border: 2px solid purple; */
-    position: absolute;
-    top: 3%;
-    right: 16%;
-}
-
-.shop {
-    /* border: 2px solid yellow; */
-    position: absolute;
-    top: 3%;
-    right: 2.7%;
 }
 
 .index-slideshow-container {
