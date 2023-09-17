@@ -1,515 +1,94 @@
-{% extends 'store/layout.html' %}
-{% load static %}
-
-{% block title %}Home Page{% endblock %}
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Verdana, sans-serif;
-        }
-
-        .mySlides {
-            display: none;
-        }
-
-        img {
-            vertical-align: middle;
-        }
-
-        nav {
-            /* border: 2px solid red; */
-            display: flex;
-            justify-content: center;
-
-        }
-
-        .menue {
-            /* border: 2px solid black; */
-            position: absolute;
-            top: 3%;
-            left: 2.2%;
-        }
-
-        .search {
-            /* border: 2px solid purple; */
-            position: absolute;
-            top: 3%;
-            right: 16%;
-        }
-
-        .shop {
-            /* border: 2px solid yellow; */
-            position: absolute;
-            top: 3%;
-            right: 2.7%;
-        }
-
-        .slideshow-container {
-            max-width: 1000px;
-            position: relative;
-            margin: auto;
-        }
-
-        .dot {
-            height: 6px;
-            width: 30px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 20%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-        .active {
-            background-color: rgb(249, 60, 0);
-        }
-
-        .fade {
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-
-        @keyframes fade {
-            from {
-                opacity: .8
-            }
-
-            to {
-                opacity: 1
-            }
-
-        }
-
-        .btnmain {
-
-            display: flex;
-            justify-content: center;
-        }
-
-        .btn {
-            position: absolute;
-            margin-top: -20%;
-            width: 50%;
-            height: 5%;
-            color: white;
-            font-weight: bold;
-            background-color: rgb(249, 60, 0);
-            border-style: none;
-            border-radius: 30px;
-        }
-
-        .title {
-            text-align: center;
-        }
-
-        .new-ones {
-            margin-top: 10%;
-        }
-
-        .list {
-            display: flex;
-            text-align: center;
-        }
-
-        .list li {
-            list-style: none;
-            margin-left: 4.5%;
-            font-size: larger;
-            color: grey;
-
-        }
-
-        .new-arival-images {
-
-            text-align: center;
-        }
-
-        .new-arival-images img {
-            width: 100%;
-        }
-
-        .unit-info {
-
-            display: flex;
-        }
-
-        .text-desc {
-
-            width: 35%;
-        }
-
-        .text-desc span {
-            color: grey;
-        }
-
-        .price {
-
-            margin-left: 55%;
-            padding-top: 5%;
-            color: rgb(249, 60, 0);
-            font-weight: bold;
-        }
-
-        .explore {
-            margin-top: 7%;
-            height: 50px;
-            width: 55%;
-            background-color: transparent;
-            border: none;
-            border: 2px solid black;
-            border-radius: 30px;
-            color: black;
-            font-weight: bolder;
-            font-size: large;
-            text-align: center;
-            padding-top: 1.6%;
-        }
-
-        .discount {
-            margin-top: 20%;
-            text-align: center;
-        }
-
-        .discount img {
-            width: 100%;
-        }
-
-        .trending {
-            text-align: center;
-
-        }
-
-        .tags {
-            padding: 7px;
-        }
-
-        .tags span {
-            background-color: rgb(170, 169, 169);
-            font-size: medium;
-            margin: auto;
-            border-radius: 30px;
-        }
-
-        .features {
-            text-align: center;
-            margin-top: 10%;
-            background-color: rgb(241, 241, 241);
-            color: grey;
-            padding: 8%;
-        }
-
-        .features h1 {
-            color: black;
-        }
-
-        .delivery {
-            margin-top: 5%;
-            margin-bottom: 5%;
-        }
-
-        .checkbox {
-            margin-top: 5%;
-            margin-bottom: 5%;
-        }
-
-        .man {
-            margin-top: 5%;
-            margin-bottom: 5%;
-        }
-
-        @keyframes slidy {
-            from {
-                /*Has to be adjusted per Image amount.*/
-
-                left: 0%;
-            }
-
-            to {
-                left: -43%;
-            }
-        }
-
-
-        @keyframes slideAnimation {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-100%);
-                /* Adjust the percentage based on the number of slides */
-            }
-        }
-
-
-        #slider {
-
-            width: 100%;
-            overflow: hidden;
-            margin: 100px auto;
-
-
-        }
-
-        #slider-image-container {
-            /*This needs to be large enough to house all Images*/
-            /*Take Image size, times by amount of Images (400x5=2000px)*/
-            width: 2000px;
-
-            margin: 0 auto;
-            position: relative;
-            /*Manually set centerish for Codepen*/
-            /*Animation repeats forwards and backwards with rubber-banding effect*/
-            animation: slideAnimation 15s linear infinite;
-            /* animation: slidy 10s infinite linear alternate-reverse ; */
-        }
-
-
-        .slider-image {
-            float: left;
-            padding: 10px;
-            height: 100%;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .socials {
-            margin-top: 7%;
-            text-align: center;
-        }
-
-        footer {
-            text-align: center;
-
-        }
-
-        .top-options {
-            display: flex;
-            justify-content: center;
-        }
-
-        .colorBlack {
-            color: black;
-            font-weight: bolder;
-            margin: auto;
-            margin-bottom: 6%;
-        }
-
-        .colorGrey {
-            color: grey;
-            font-size: medium;
-
-        }
-
-        .marginTop {
-            margin-top: 7%;
-        }
-
-        .copyright {
-            margin-bottom: 9%;
-        }
-
-        .marginMedia {
-            margin: 5%;
-        }
-        .social-media img{
-            height: 40px;
-            width: 40px;
-        }
-    </style>
+{% extends "store/layout.html" %} 
 
 {% block body %}
+ <body>
     <nav>
-        <div class="menue"><img src="{% static 'store/assets/homepage/menue.png' %}" alt=""></div>
+        <div class="checkout-menue"><img src="menue.png" alt=""></div>
         <div class="title">
             <h3>UnderDogs</h3>
         </div>
-        <div class="search"><img src="{% static 'store/assets/homepage/search.png' %}" alt=""></div>
-        <div class="shop"><img src="{% static 'store/assets/homepage/shop.png' %}" alt=""></div>
+        <div class="checkout-search"><img src="search.png" alt=""></div>
+        <div class="checkout-shop"><img src="shop.png" alt=""></div>
     </nav>
-    <div class="slideshow-container">
 
-        <div class="mySlides fade">
-            <img src="{% static 'store/assets/homepage/tshirt.png' %}" style="width:100%">
-        </div>
+    <section>
+        <h1 class="center">CHECKOUT</h1>
+        <div class="dflex">
 
-        <div class="mySlides fade">
-            <img src="{% static 'store/assets/homepage/tshirt.png' %}" style="width:100%">
+            <div class="address">
+                <h3 class="">New Delhi</h3>
+                <span class="color-grey dBlock">64-A Shyam Vihar Ph-2 street no. 8 najafgarh New Delhi</span>
+            </div>
+            <div class="arrow">
+                <img src="arrow.png" alt="arrow">
+            </div>
+            <!-- <div class="hrule"></div> -->
         </div>
+        <hr class="mt-5">
+        <div class="checkout-payment mt-5 dflex">
+            <img src="mastercard.png" alt="mastercard" class="cardimg mt-5">
+            <h3 class="dBlock">Master Card ending 8051</h3>
+            <img src="arrow.png" alt="" class="checkout-ar2">
+        </div>
+        <hr class="checkout-lastrule">
+    </section>
 
-        <div class="mySlides fade">
-            <img src="{% static 'store/assets/homepage/tshirt.png' %}" style="width:100%">
-        </div>
-        <div class="btnmain">
-            <button class="btn">VIEW COLLECTION</button>
-        </div>
 
-        <div class="slide-bar" style="text-align:center">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-
-    <div class="new-ones">
-        <h1 class="title">NEW ONES</h1>
-        <div class="list">
-            <li style="color: rgb(249, 60  , 0);">All</li>
-            <li>Shoes</li>
-            <li>Jeans</li>
-            <li>T-shirt</li>
-            <li>Headwear</li>
-        </div>
-        <div class="new-arival-images">
-            <img src="{% static 'store/assets/homepage/tshirt2.png' %}" alt="">
-            <div class="unit-info">
-                <div class="text-desc">
-
-                    <div class="unit-title">
-                        <h4>Shirt Polo</h4>
+    <section class="checkout-section mt-5">
+        <div class="checkout-outterbox dflex">
+            <img src="checkoutProduct.png" alt="Checkout Product" class="product">
+            <div class="checkout-innerbox">
+                <h4>SHIRT</h4>
+                <span class="checkout-desc">Short sleev polo shirt</span>
+                <div class="checkout-innerbox2 dflex">
+                    <div class="checkout-counter">
+                        <span class="checkout-down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="1">
+                        <span class="checkout-up" onClick='increaseCount(event, this)'>+</span>
                     </div>
-                    <span class="unit-desc">Short sleev polo shirt</span>
-                </div>
-                <div class="price">
-                    <h4>₹679</h4>
+                    <h3 class="color">₹689</h3>
                 </div>
             </div>
-
-            <button class="explore">EXPLORE MORE ></button>
-
         </div>
+    </section>
 
+    <div class="checkout-botomsec">
+        <hr>
+        <div class="total dflex">
+            <h4>TOTAL</h4>
+            <h3 class="color marginleft">₹689</h3>
+        </div>
+        <button class="checkout-btn dflex">
+            <img src="checkoutimg.png" alt="">
+            <h1>CHECKOUT</h1>
+        </button>
     </div>
 
-    <div class="discount">
-        <img src="{% static 'store/assets/homepage/discount.png' %}" alt="">
-    </div>
-
-    <div class="trending">
-        <h1>@TRENDING</h1>
-        <div class="tags">
-            <span>#2023</span>
-            <span>#fashion</span>
-            <span>#collection</span>
-            <span>#wibe</span>
-            <span>#genz</span>
-            <span>#underdogs</span>
-            <span>#tshirt</span>
-        </div>
-    </div>
-
-    <div class="features">
-        <h1>UnderDogs</h1>
-        <div class="one">
-            <span>We are proud to design and deliver quality and comfortable clothing for you.</span>
-        </div>
-        <div class="delivery">
-            <img src="{% static 'store/assets/homepage/vehicle.png' %}" alt="">
-        </div>
-        <div class="two">
-            <span>Fast shiping. Free on orders over ₹700</span>
-        </div>
-        <div class="checkbox">
-            <img src="{% static 'store/assets/homepage/checkbox.png' %}" alt="">
-        </div>
-        <div class="three">
-            <span>Sustainable process from start to finish.</span>
-        </div>
-        <div class="man">
-            <img src="{% static 'store/assets/homepage/man.png' %}" alt="">
-        </div>
-        <div class="four">
-            <span>Unique designs and high-quality materials.</span>
-        </div>
-    </div>
-
-    <div class="socials">
-        <h1>FOLLOW US</h1>
-        <div id="slider">
-            <div id="slider-image-container">
-
-                <figure class="slider-image">
-                    <img src="{% static 'store/assets/homepage/instagram1.png' %}" alt="">
-                </figure>
-
-                <figure class="slider-image">
-                    <img src="{% static 'store/assets/homepage/instagram2.png' %}" alt="">
-                </figure>
-
-                <figure class="slider-image">
-                    <img src="{% static 'store/assets/homepage/instagram1.png' %}" alt="">
-                </figure>
-
-                <figure class="slider-image">
-                    <img src="{% static 'store/assets/homepage/instagram3.png' %}" alt="">
-                </figure>
-                <figure class="slider-image">
-                    <img src="{% static 'store/assets/homepage/instagram1.png' %}" alt="">
-                </figure>
-                <figure class="slider-image">
-                    <img src="{% static 'store/assets/homepage/instagram1.png' %}" alt="">
-                </figure>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="top-options">
-            <div class="about colorBlack">
-                <span>About</span>
-            </div>
-            <div class="Con colorBlack">
-                <span>Contact</span>
-            </div>
-            <div class="Blog colorBlack">
-                <span>Blog</span>
-            </div>
-        </div>
-        <div class="contact">
-            <div class="email colorGrey">
-                <span>support@underdogs.com</span>
-            </div>
-            <div class="phone colorGrey marginTop">
-                <span>(+91)9876543210</span>
-            </div>
-            <div class="timings colorGrey marginTop">
-                <span>07:00 - 21:00 - Everyday</span>
-            </div>
-        </div>
-        <div class="social-media marginTop">
-            <img src="{% static 'store/assets/homepage/youtube.png' %}" alt="" class="youtube marginMedia">
-            <img src="{% static 'store/assets/homepage/insta.png' %}" alt="" class="instagram marginMedia">
-            <img src="{% static 'store/assets/homepage/twitter.png' %}" alt="" class="twitter marginMedia">
-        </div>
-        <div class="copyright colorGrey marginTop">
-            <span>Copyright&#169 UnderDogs All Rights Reserved</span>
-        </div>
-    </footer>
 
     <script>
-        let slideIndex = 0;
-        showSlides();
+        function increaseCount(a, b) {
+            var input = b.previousElementSibling;
+            var value = parseInt(input.value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            input.value = value;
+        }
 
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+        function decreaseCount(a, b) {
+            var input = b.nextElementSibling;
+            var value = parseInt(input.value, 10);
+            if (value > 1) {
+                value = isNaN(value) ? 0 : value;
+                value--;
+                input.value = value;
             }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 2000); // Change image every 2 seconds
-
-
         }
     </script>
+
+
+
+
+</body>
+
+
 {% endblock %}
