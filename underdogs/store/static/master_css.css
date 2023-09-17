@@ -64,6 +64,62 @@ nav {
 
 /* nav bar css end  */
 
+
+<!-- footer css  -->
+
+footer {
+    text-align: center;
+    margin-top: 15%;
+
+}
+
+.top-options {
+    display: flex;
+    justify-content: center;
+}
+
+.colorBlack {
+    color: black;
+    font-weight: bolder;
+    margin: auto;
+    margin-bottom: 6%;
+}
+
+.colorGrey {
+    color: grey;
+    font-size: medium;
+
+}
+
+.marginTop {
+    margin-top: 7%;
+}
+
+.copyright {
+    margin-bottom: 9%;
+}
+
+.marginMedia {
+    margin: 5%;
+}
+
+.social-media img {
+    height: 40px;
+    width: 40px;
+}
+
+
+
+<!-- footer css ends here  -->
+
+
+
+
+
+
+
+
+
 /* ---------------------Home page------------------ */
 
 

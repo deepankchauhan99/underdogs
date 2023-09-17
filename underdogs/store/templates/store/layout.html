@@ -1,9 +1,5 @@
 {% load static %}
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -12,100 +8,12 @@
         <title>Underdogs: {% block title %}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            nav {
-                
-                display: flex;
-                justify-content: center;
-    
-            }
-    
-            .menue {
-      
-                position: absolute;
-                top: 3%;
-                left: 2.2%;
-            }
-    
-            .search {
-    
-                position: absolute;
-                top: 3%;
-                right: 16%;
-            }
-    
-            .shop {
-    
-                position: absolute;
-                top: 3%;
-                right: 2.7%;
-            }
-    
-            footer {
-                text-align: center;
-                margin-top: 15%;
-    
-            }
-    
-            .top-options {
-                display: flex;
-                justify-content: center;
-            }
-    
-            .colorBlack {
-                color: black;
-                font-weight: bolder;
-                margin: auto;
-                margin-bottom: 6%;
-            }
-    
-            .colorGrey {
-                color: grey;
-                font-size: medium;
-    
-            }
-    
-            .marginTop {
-                margin-top: 7%;
-            }
-    
-            .copyright {
-                margin-bottom: 9%;
-            }
-    
-            .marginMedia {
-                margin: 5%;
-            }
-    
-            .social-media img {
-                height: 40px;
-                width: 40px;
-            }
-    
-    
-        </style>
+        <link rel="stylesheet" href="{% static 'master_css.css' %}">
         
-        {% comment %} this needs to be deleted  {% endcomment %}
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-        {% comment %} Bootstrap  {% endcomment %}
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         
-        {% comment %} Custom css {% endcomment %}
-        <link rel="stylesheet" href="{% static 'store/styles.css' %}">
-
-        {% comment %} fonts {% endcomment %}
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-
-        {% comment %} Font Awesome {% endcomment %}
-        <script src="https://kit.fontawesome.com/c4cc9ca380.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        
 
         
         {% comment %} current woring navbar {% endcomment %}
@@ -117,54 +25,29 @@
             <div class="search"><img src="search.png" alt=""></div>
             <div class="shop"><img src="shop.png" alt=""></div>
         </nav>
-        {% block body %}{% endblock %}
 
-        {% comment %} <footer class="row footer">
-            <div id="links" class="col-md-8">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="row"><span><a href="{% url 'shop' %}">Shop All</a></span></div>
-                        <div class="row"><span><a href="{% url 'about' %}">About</a></span></div>
-                        <div class="row"><span><a href="{% url 'contact' %}">Contact</a></span></div>
-                        <div class="row"><span><a href="{% url 'contact' %}#stockists">Stockists</a></span></div>
-                    </div>
-                    <div class="col-4">
-                        <div class="row"><span><a href="{% url 'faq' %}">FAQ</a></span></div>
-                        <div class="row"><span><a href="{% url 'returns' %}">Shipping &amp; Returns</a></span></div>
-                        <div class="row"><span><a href="{% url 'policy' %}">Store Policy</a></span></div>
-                        <div class="row"><span><a href="{% url 'policy' %}#payment">Payment Methods</a></span></div>
-                    </div>
-                    <div class="col-4">
-                        <div class="row"><span><a href="#links">Instagram</a></span></div>
-                        <div class="row"><span><a href="#">Pinterest</a></span></div>
-                        <div class="row"><span><a href="#">Facebook</a></span></div>
-                        <div class="row"><span><a href="#">Twitter</a></span></div>
-                    </div>
-                </div>
-            </div>
-            <div id="form-subscribe" class="col-md-4">
-                <div id="form-subscribe-heading" class="row">
-                    <div class="col">
-                        <h6><strong>Join our mailing list</strong></h6>
-                        <p>and get 10% off</p>
-                    </div>
-    
-                </div>
-                <div id="form-subscribe-box" class="row">
-                    <div class="col">
-                        <form class="subcribe-form">
-                            <div class="container-subscribe-box">
-                                <input class="centered-button rectangular-button-inverted email" type="email" id="email" name="email" placeholder="Enter your email here*">
-                                <input class="centered-button fade-button" type="submit" value="Subscribe Now">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </footer> {% endcomment %}
-        {% comment %} <footer class="footer">
-            <p>&copy; 2035 by Underdogs. Powered and secured by Underdogs, Inc.</p>
-        </footer> {% endcomment %}
+
+
+
+
+
+
+
+
+        {% block body %}
+
+
+        {% endblock %}
+
+        
+        
+        
+        
+        
+        
+        
+        
+   
         <footer>
             <div class="top-options">
                 <div class="about colorBlack">
@@ -197,25 +80,5 @@
                 <span>Copyright&#169 UnderDogs All Rights Reserved</span>
             </div>
         </footer>
-        {% comment %} <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> {% endcomment %}
-        {% comment %} <script>
-            var MEDIA_URL = "{{ MEDIA_URL }}";
-
-            Access the dictionary data in index.js
-            var skuDict = JSON.parse('{{ sku_dict|escapejs }}'.replace(/&quot;/g, '\\"'));
-            var skuDict;
-            try {
-                skuDict = JSON.parse('{{ sku_dict|escapejs }}'.replace(/&quot;/g, '\\"'));
-            } catch {
-                No action required if parsing fails
-            }
-        </script> {% endcomment %}
-        {% comment %} this needs to be deleted {% endcomment %}
-        {% comment %} <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> {% endcomment %}
-        {% comment %} till here  {% endcomment %}
-        {% comment %} <script src="{% static 'store/helper.js' %}" async defer></script>
-        <script src="{% static 'store/index.js' %}" async defer></script> {% endcomment %}
     </body>
 </html>
