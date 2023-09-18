@@ -12,10 +12,8 @@ logger = logging.getLogger('yourapp')
 
 # Routes
 def index(request):
-    sku_dict = listItem()
-    return render(request, "store/index.html", {
-        'sku_dict': json.dumps(sku_dict, cls=DecimalEncoder)
-    })
+   
+    return render(request, "store/home.html")
 
 # def register(request):
 #     if request.method == 'POST':
