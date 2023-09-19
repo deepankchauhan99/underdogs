@@ -1,19 +1,20 @@
 {% extends "store/layout.html" %}
+{% load static %}
 
 {% block body %}
 
 <div class="slideshow-container">
 
     <div class="mySlides fade">
-        <img src="sample1.png" style="width:100%">
+        <img src="{% static 'store/assets/sample1.png' %}" style="width:100%">
     </div>
 
     <div class="mySlides fade">
-        <img src="sample2.png" style="width:100%">
+        <img src="{% static 'store/assets/sample2.png' %}" style="width:100%">
     </div>
 
     <div class="mySlides fade">
-        <img src="sample3.png" style="width:100%">
+        <img src="{% static 'store/assets/sample3.png' %}" style="width:100%">
     </div>
     <div class="btnmain">
         <button class="btn">VIEW COLLECTION</button>
@@ -29,7 +30,7 @@
 <div class="new-ones">
     <h1 class="title">NEW ONES</h1>
     <div class="new-arival-images">
-        <img src="tshirt2.png" alt="">
+        <img src="{% static 'store/assets/tshirt2.png' %}" alt="">
         <div class="unit-info">
             <div class="text-desc">
 
@@ -46,7 +47,7 @@
 
     </div>
     <div class="new-arival-images">
-        <img src="tshirt2.png" alt="">
+        <img src="{% static 'store/assets/tshirt2.png' %}" alt="">
         <div class="unit-info">
             <div class="text-desc">
 
@@ -67,7 +68,7 @@
 </div>
 
 <div class="discount">
-    <img src="image 12.png" alt="">
+    <img src="{% static 'store/assets/image 12.png' %}" alt="">
 </div>
 
 <div class="trending">
@@ -89,19 +90,19 @@
         <span>We are proud to design and deliver quality and comfortable clothing for you.</span>
     </div>
     <div class="delivery">
-        <img src="vehicle.png" alt="">
+        <img src="{% static 'store/assets/vehicle.png' %}" alt="">
     </div>
     <div class="two">
         <span>Fast shiping. Free on orders over ₹700</span>
     </div>
     <div class="checkbox">
-        <img src="checkbox.png" alt="">
+        <img src="{% static 'store/assets/checkbox.png' %}" alt="">
     </div>
     <div class="three">
         <span>Sustainable process from start to finish.</span>
     </div>
     <div class="man">
-        <img src="man.png" alt="">
+        <img src="{% static 'store/assets/man.png' %}" alt="">
     </div>
     <div class="four">
         <span>Unique designs and high-quality materials.</span>
@@ -114,25 +115,25 @@
         <div id="slider-image-container">
 
             <figure class="slider-image">
-                <img src="instagram1.png" alt="">
+                <img src="{% static 'store/assets/instagram1.png' %}" alt="">
             </figure>
 
             <figure class="slider-image">
-                <img src="instagram2.png" alt="">
+                <img src="{% static 'store/assets/instagram2.png' %}" alt="">
             </figure>
 
             <figure class="slider-image">
-                <img src="instagram1.png" alt="">
+                <img src="{% static 'store/assets/instagram1.png' %}" alt="">
             </figure>
 
             <figure class="slider-image">
-                <img src="instagram3.png" alt="">
+                <img src="{% static 'store/assets/instagram3.png' %}" alt="">
             </figure>
             <figure class="slider-image">
-                <img src="instagram1.png" alt="">
+                <img src="{% static 'store/assets/instagram1.png' %}" alt="">
             </figure>
             <figure class="slider-image">
-                <img src="instagram1.png" alt="">
+                <img src="{% static 'store/assets/instagram1.png' %}" alt="">
             </figure>
         </div>
     </div>
