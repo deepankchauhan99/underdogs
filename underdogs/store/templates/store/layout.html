@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="icon" type="image/png" href="{% static 'store/assets/underdogs_icon.png' %}" sizes="64x64">
+        <link rel="icon" type="image/png" href="{% static 'store/assets/favicon.png' %}" />
         <title>Underdogs: {% block title %}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +18,7 @@
 
         
         {% comment %} current woring navbar {% endcomment %}
+        
         <nav>
             <label class="burger" for="burger">
                 <input type="checkbox" id="burger">
@@ -27,32 +29,22 @@
             <div class="title">
                 <img src="{% static 'store/assets/UDd1.png'%}" alt="">
             </div>
-            <div class="search"><img src="search.png" alt=""></div>
-            <div class="shop"><img src="shop.png" alt=""></div>
+            <div class="search"><img src="{% static 'store/assets/search.png' %}" alt=""></div>
+            <div class="shop"><img src="{% static 'store/assets/shop.png' %}" alt=""></div>
         </nav>
-
-
-
-
-
-
-
-
-
         {% block body %}
 
 
-        {% endblock %}
 
-        
-        
-        
-        
-        
-        
-        
-        
-   
+
+
+
+
+
+
+
+
+        {% endblock %}   
         <footer>
             <div class="top-options">
                 <div class="about colorBlack">
@@ -77,9 +69,9 @@
                 </div>
             </div>
             <div class="social-media marginTop">
-                <img src="youtube.png" alt="" class="youtube marginMedia">
-                <img src="insta.png" alt="" class="instagram marginMedia">
-                <img src="twitter.png" alt="" class="twitter marginMedia">
+                <img src="{% static 'store/assets/youtube.png' %}" alt="" class="youtube marginMedia">
+                <img src="{% static 'store/assets/insta.png' %}" alt="" class="instagram marginMedia">
+                <img src="{% static 'store/assets/twitter.png' %}" alt="" class="twitter marginMedia">
             </div>
             <div class="copyright colorGrey marginTop">
                 <span>Copyright&#169 UnderDogs All Rights Reserved</span>
