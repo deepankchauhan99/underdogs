@@ -42,24 +42,104 @@ nav {
 
 }
 
-.menue {
+.burger {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+  }
+  
+  .burger input {
+    display: none;
+  }
+  
+  .burger span {
+    display: block;
     position: absolute;
-    top: 3%;
-    left: 2.2%;
-}
+    height: 4px;
+    width: 100%;
+    background: black;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+  
+  .burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+  }
+  
+  .burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+  }
+  
+  .burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+  }
+  
+  .burger input:checked ~ span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0px;
+    left: 5px;
+  }
+  
+  .burger input:checked ~ span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  
+  .burger input:checked ~ span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+    left: 5px;
+  }
 
 .search {
-
     position: absolute;
     top: 3%;
-    right: 16%;
+    right: 8%;
 }
 
 .shop {
-
     position: absolute;
     top: 3%;
     right: 2.7%;
+}
+
+@media screen and (max-width: 600px){
+    nav {
+        display: flex;
+        justify-content: center;
+    
+    }
+    
+    .menue {
+        position: absolute;
+        top: 3%;
+        left: 2.2%;
+    }
+    
+    .search {
+    
+        position: absolute;
+        top: 3%;
+        right: 16%;
+    }
+    
+    .shop {
+    
+        position: absolute;
+        top: 3%;
+        right: 2.7%;
+    }
 }
 
 /* nav bar css end  */
@@ -68,9 +148,8 @@ nav {
 /*  footer css  */
 
 footer {
-    text-align: center;
-    margin-top: 15%;
-
+    width: 50%;
+    margin: auto;
 }
 
 .top-options {
@@ -88,7 +167,57 @@ footer {
 .colorGrey {
     color: grey;
     font-size: medium;
+    text-align: center;
+}
 
+.marginTop {
+    margin-top: 7%;
+}
+
+.copyright {
+    margin-bottom: 9%;
+}
+
+.marginMedia {
+    margin: 5%;
+
+}
+
+.social-media img {
+    height: 40px;
+    width: 40px;
+}
+
+.social-media {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px){
+
+    footer {
+        text-align: center;
+    margin-top: 15%;
+    
+}
+
+.top-options {
+    display: flex;
+    justify-content: center;
+}
+
+.colorBlack {
+    color: black;
+    font-weight: bolder;
+    margin: auto;
+    margin-bottom: 6%;
+}
+
+.colorGrey {
+    color: grey;
+    font-size: medium;
+    
 }
 
 .marginTop {
@@ -108,6 +237,7 @@ footer {
     width: 40px;
 }
 
+}
 
 
 /* footer css ends here  */
@@ -121,18 +251,65 @@ footer {
 
 
 /* Home page */
-
-nav {
-    display: flex;
-    justify-content: center;
-
-}
-
-.menue {
+.burger {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+  }
+  
+  .burger input {
+    display: none;
+  }
+  
+  .burger span {
+    display: block;
     position: absolute;
-    top: 3%;
-    left: 2.2%;
-}
+    height: 4px;
+    width: 100%;
+    background: black;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+  
+  .burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+  }
+  
+  .burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+  }
+  
+  .burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+  }
+  
+  .burger input:checked ~ span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0px;
+    left: 5px;
+  }
+  
+  .burger input:checked ~ span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  
+  .burger input:checked ~ span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+    left: 5px;
+  }
 
 .search {
     position: absolute;
@@ -166,6 +343,12 @@ nav {
 
 .title {
     text-align: center;
+}
+
+.title img {
+    height: 5vh;
+    width: auto;
+
 }
 
 .new-ones {
@@ -226,21 +409,23 @@ nav {
 
 .discount {
     margin-top: 3%;
+    display: flex;
+    justify-content: center;
 }
 
-.discount-img {
-    display: flex;
-    margin: auto;
+.discount img {
+    height: 80%;
 }
 
 .trending h1 {
     text-align: center;
 }
 
-.tags{
+.tags {
     display: flex;
     justify-content: center;
 }
+
 .tags span {
     margin-right: 5px;
     padding: 8px 10px;
@@ -249,6 +434,7 @@ nav {
     border-radius: 30px;
     background: #F1F1F1;
 }
+
 .features {
     text-align: center;
     margin-top: 10%;
@@ -275,9 +461,11 @@ nav {
     margin-top: 5%;
     margin-bottom: 5%;
 }
-.socials h1{
+
+.socials h1 {
     text-align: center;
 }
+
 @keyframes slidy {
     from {
         /*Has to be adjusted per Image amount.*/
@@ -338,10 +526,12 @@ nav {
     margin-top: 7%;
     text-align: center;
 }
-footer{
+
+footer {
     width: 50%;
-    margin: auto ;
+    margin: auto;
 }
+
 .top-options {
     display: flex;
     justify-content: center;
@@ -377,11 +567,13 @@ footer{
     height: 40px;
     width: 40px;
 }
-.social-media{
-    display:flex;
+
+.social-media {
+    display: flex;
     margin: auto;
     justify-content: center;
 }
+
 @media screen and (max-width: 600px) {
     * {
         box-sizing: border-box;

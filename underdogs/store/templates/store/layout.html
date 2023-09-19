@@ -17,10 +17,15 @@
 
         
         {% comment %} current woring navbar {% endcomment %}
-        <nav> 
-            <div class="menue"><img src="menue.png" alt=""></div>
+        <nav>
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <div class="title">
-                <h3>UnderDogs</h3>
+                <img src="{% static 'store/assets/UDd1.png'%}" alt="">
             </div>
             <div class="search"><img src="search.png" alt=""></div>
             <div class="shop"><img src="shop.png" alt=""></div>
