@@ -46,6 +46,9 @@
 
         {% endblock %}   
         <footer>
+        <div class="footer-for-phone">
+
+            
             <div class="top-options">
                 <div class="about colorBlack">
                     <span>About</span>
@@ -76,6 +79,67 @@
             <div class="copyright colorGrey marginTop">
                 <span>Copyright&#169 UnderDogs All Rights Reserved</span>
             </div>
+
+
+        </div>
+        <div class="footer-for-desktop">
+
+
+            <div class="footer-top">
+                <img src="{% static 'store/assets/UDd1' %}" alt="">
+                
+                <div class="mail-box">
+                    <form class="e-form">
+                        <input type="email" placeholder="Subscribe to stay tuned!">
+                        <button type="submit" class="sub-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="first">
+                    
+                    <p class="footer-underdogs-title">UNDERDOGS</p>
+                    <p class="footer-underdogs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae non officiis sapiente autem quaerat modi sequi saepe molestias soluta repellendus assumenda est veritatis, at deleniti ab odit dignissimos, facilis dolore.</p>
+                </div>
+                <div class="second">
+                    <p class="footer-second-title">Products</p>
+                    <p class="footer-products">random</p>
+                    <p class="footer-products">random</p>
+                    <p class="footer-products">random</p>
+                    <p class="footer-products">random</p>
+                </div>
+                <div class="third">
+                    <p class="footer-third-title">Company</p>
+                    <p class="footer-products">random</p>
+                    <p class="footer-products">random</p>
+                    <p class="footer-products">random</p>
+                    <p class="footer-products">random</p>
+                </div>
+                <div class="forth">
+                    <p class="footer-forth-title">Contact Us</p>
+                    <div class="footer-location">
+                        <img src="{% static 'store/assets/location-pin.png' %}" alt="">
+                        <p>location</p>
+                    </div>
+                    <div class="footer-mail">
+                        <img src="{% static 'store/assets/email.png' %}" alt="">
+                        <p>mail</p>
+                    </div>
+                    <p class="footer-socials">Follow us</p>
+                    <div class="footer-social-icon">
+                        <img src="{% static 'store/assets/youtube.png' %}" alt="">
+                        <img src="{% static 'store/assets/insta.png' %}" alt="">
+                        <img src="{% static 'store/assets/twitter.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-last">
+                <p>Copyright&#169 UnderDogs All Rights Reserved</p>
+            </div>
+
+
+        </div>
         </footer>
     </body>
 </html>
