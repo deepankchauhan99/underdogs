@@ -30,8 +30,23 @@
                 <img src="{% static 'store/assets/UDd1.png'%}" alt="">
             </div>
             <div class="search"><img src="{% static 'store/assets/search.png' %}" alt=""></div>
-            <div class="shop"><img src="{% static 'store/assets/shop.png' %}" alt=""></div>
+            <div class="shop card" onclick="openPopup()"><img src="{% static 'store/assets/shop.png' %}" alt=""></div>
+            <div class="overlay" id="overlay" onclick="closePopup()">
+                <div class="popup">
+                  <span class="close-button" onclick="closePopup()">X</span>
+                  <p>This is the floating div content.</p>
+                </div>
+              </div>
         </nav>
+        <script>
+            function openPopup() {
+              document.getElementById('overlay').style.display = 'flex';
+            }
+          
+            function closePopup() {
+              document.getElementById('overlay').style.display = 'none';
+            }
+          </script>
         {% block body %}
 
 
