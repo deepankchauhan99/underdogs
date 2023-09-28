@@ -22,7 +22,6 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    # path("", redirect("store:index")),  # Redirect root URL ("/") to the "index" view in the "store" app
     path('', lambda request: redirect('store/', permanent=True)),
     path("store/", include("store.urls")),
 ]
