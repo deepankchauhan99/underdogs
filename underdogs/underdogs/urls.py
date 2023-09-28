@@ -16,13 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from django.conf import settings
-from django.conf.urls.static import static
+# from django.conf import settings
+# from django.conf.urls.static import static
+from django.shortcuts import redirect
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('store/', include('store.urls')),
-    path('register/', include('store.urls')),
+    path("admin/", admin.site.urls),
+    # path("", redirect("store:index")),  # Redirect root URL ("/") to the "index" view in the "store" app
+    path('', lambda request: redirect('store/', permanent=True)),
+    path("store/", include("store.urls")),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
