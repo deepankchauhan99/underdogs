@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'master_css.css' %}">
+    <title>Register</title>
+
+  </head>
+  <body>
+    <div class="register-mainbox">
+      <div class="register-leftbox">
+        <div class="register-title">
+          <h1>New to here?</h1>
+          <span>Register now to speed up the checkout process</span>
+        </div>
+      </div>
+      <div class="register-mainfield">
+        <div class="register-form">
+          <div class="register-greeting">
+            <h3>Hello UnderDog</h3>
+            <span
+              >Fill in the details to complete the registration process</span
+            >
+          </div>
+          <div class="register-input">
+            <input
+              class="register-firstname"
+              type="text"
+              placeholder="First Name"
+            />
+            <input
+              class="register-lastname"
+              type="text"
+              placeholder="Last Name"
+            />
+            <input class="register-email" type="text" placeholder="Email" />
+            <input
+              class="register-password"
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+          <div class="register-btn">
+            <button class="btn">Register</button>
+          </div>
+        </div>
+        <div class="register-or">
+          <h3>or</h3>
+        </div>
+        <div class="register-authentication">
+          <img src="{% static 'store/assets/google.png' %}" alt="" class="register-google" />
+          <img src="{% static 'store/assets/apple.png'%}" alt="" class="register-apple" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
