@@ -966,6 +966,122 @@ nav {
   }
 
 }
+/* --------------Register page ends------------------- */
+
+/* -----------------Login Page-------------------- */
+
+.login-mainbox {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+  border-radius: 30px;
+}
+.login-leftbox {
+  width: 60%;
+  padding-left: 5%;
+  padding-top: 20%;
+  padding-bottom: 20%;
+  background-color: rgba(249, 60, 0, 1);
+  color: white;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.login-mainfield {
+  border: 3px solid rgb(255, 79, 4);
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  width: 40%;
+}
+.login-input {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-input input {
+  width: 80%;
+  margin-top: 4%;
+  height: 25px;
+  border-radius: 30px;
+  border-style: groove;
+  border: 1px solid black;
+}
+.login-btn {
+  text-align: center;
+  margin-top: 4%;
+}
+.login-btn button {
+  width: 60%;
+  cursor: pointer;
+  height: 35px;
+  font-size: large;
+  font-weight: bold;
+  background-color: rgba(249, 60, 0, 1);
+  color: white;
+  border-radius: 30px;
+  border-style: none;
+  transition: background-color 0.3s ease;
+}
+.btn:active {
+  background-color: #922f04;
+}
+.login-authentication {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+.login-apple {
+  margin-left: 10%;
+}
+.login-greeting {
+  text-align: center;
+  margin-top: 15%;
+  font-size: large;
+  color: grey;
+}
+.register-or {
+  margin-top: 2%;
+  text-align: center;
+  color: grey;
+}
+@media only screen and (max-width: 600px) {
+  .login-mainbox{
+    margin-top: 60px;
+    display: block;
+    width: 100%;
+  }
+  .login-leftbox{
+    width: 100%;
+    background-color: white;
+    display: none;
+    color: black;
+  }
+  .login-mainfield{
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+  }
+  .login-input{
+    margin-top: 15%;
+  }
+  .login-btn{
+    margin-top: 10%;
+  }
+  .login-input input{
+    margin-top: 5%;
+    
+  }
+  .login-greeting span{
+    margin-top: 4%;
+
+  }
+
+}
+
+/* ------------------Login Page Ends------------------ */
+
+
 
 
 /* -----------------Checkout Page------------------------ */
