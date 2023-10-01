@@ -1,194 +1,219 @@
-{% extends "store/layout.html" %}
-{% load static %}
+{% extends "store/layout.html" %} {% load static %} {% block body %}
 
-{% block body %}
+<div class="mobile-view-only">
+  <div class="">
+    <img src="{% static 'store/assets/banner1.png' %}" style="width: 100%" />
+  </div>
+  <div class="btnmain">
+    <button class="btn">VIEW COLLECTION</button>
+  </div>
+</div>
 
-<div class="slideshow-container">
-
+<div class="desktop-view-only">
+  <div class="slideshow-container">
     <div class="mySlides fade">
-        <img src="{% static 'store/assets/sample1.png' %}" style="width:100%">
+      <img src="{% static 'store/assets/sample1.png' %}" style="width: 100%" />
     </div>
 
     <div class="mySlides fade">
-        <img src="{% static 'store/assets/sample2.png' %}" style="width:100%">
+      <img src="{% static 'store/assets/sample2.png' %}" style="width: 100%" />
     </div>
 
     <div class="mySlides fade">
-        <img src="{% static 'store/assets/sample3.png' %}" style="width:100%">
+      <img src="{% static 'store/assets/sample3.png' %}" style="width: 100%" />
     </div>
     <div class="btnmain">
-        <button class="btn">VIEW COLLECTION</button>
+      <button class="btn">VIEW COLLECTION</button>
     </div>
 
-    <div class="slide-bar" style="text-align:center">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+    <div class="slide-bar" style="text-align: center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
     </div>
+  </div>
 </div>
 
 <div class="new-ones">
-    <h1 class="title">NEW ONES</h1>
-    <div class="new-arival-images">
-        <img src="{% static 'store/assets/tshirt2.png' %}" alt="">
-        <div class="unit-info">
-            <div class="text-desc">
-
-                <div class="unit-title">
-                    <h4>Shirt Polo</h4>
-                </div>
-                <span class="unit-desc">Short sleev polo shirt</span>
-                <div class="price">
-                    <h4>₹679</h4>
-                </div>
-            </div>
-            <div class="hide">
-            <p class="unit-desc productheading-color">Colors</p>
-
-                <div class="product-color">
-                    <div class="color_options option1"></div>
-                    <div class="color_options option2"></div>
-                    <div class="color_options option3"></div>
-                </div>
-                <div class="more-img">
-                    <img class="extra-image" src="{% static 'store/assets/tshirt2.png' %}" alt="">
-                    <img class="extra-image" src="{% static 'store/assets/tshirt2.png' %}" alt="">
-                    <img class="extra-image" src="{% static 'store/assets/tshirt2.png' %}" alt="">
-                </div>
-            </div>
+  <h1 class="title">NEW ONES</h1>
+  <div class="new-arival-images">
+    <img src="{% static 'store/assets/tshirt2.png' %}" alt="" />
+    <div class="unit-info">
+      <div class="text-desc">
+        <div class="unit-title">
+          <h4>Shirt Polo</h4>
         </div>
+        <span class="unit-desc">Short sleev polo shirt</span>
+        <div class="price">
+          <h4>₹679</h4>
+        </div>
+      </div>
+      <div class="hide">
+        <p class="unit-desc productheading-color">Colors</p>
 
-
+        <div class="product-color">
+          <div class="color_options option1"></div>
+          <div class="color_options option2"></div>
+          <div class="color_options option3"></div>
+        </div>
+        <div class="more-img">
+          <img
+            class="extra-image"
+            src="{% static 'store/assets/tshirt2.png' %}"
+            alt=""
+          />
+          <img
+            class="extra-image"
+            src="{% static 'store/assets/tshirt2.png' %}"
+            alt=""
+          />
+          <img
+            class="extra-image"
+            src="{% static 'store/assets/tshirt2.png' %}"
+            alt=""
+          />
+        </div>
+      </div>
     </div>
-    <div class="new-arival-images">
-        <img src="{% static 'store/assets/tshirt2.png' %}" alt="">
-        <div class="unit-info">
-            <div class="text-desc">
-
-                <div class="unit-title">
-                    <h4>Shirt Polo</h4>
-                </div>
-                <span class="unit-desc">Short sleev polo shirt</span>
-                <div class="price">
-                    <h4>₹679</h4>
-                </div>
-            </div>
-            <div class="hide">
-
-                <p class="unit-desc productheading-color">Colors</p>
-                <div class="product-color">
-                    <div class="color_options option1"></div>
-                    <div class="color_options option2"></div>
-                    <div class="color_options option3"></div>
-                </div>
-                <div class="more-img">
-                    <img class="extra-image" src="{% static 'store/assets/tshirt2.png' %}" alt="">
-                    <img class="extra-image" src="{% static 'store/assets/tshirt2.png' %}" alt="">
-                    <img class="extra-image" src="{% static 'store/assets/tshirt2.png' %}" alt="">
-                </div>
-            </div>
+  </div>
+  <div class="new-arival-images">
+    <img src="{% static 'store/assets/tshirt2.png' %}" alt="" />
+    <div class="unit-info">
+      <div class="text-desc">
+        <div class="unit-title">
+          <h4>Shirt Polo</h4>
         </div>
-
-            
+        <span class="unit-desc">Short sleev polo shirt</span>
+        <div class="price">
+          <h4>₹679</h4>
         </div>
-    <button class="explore">EXPLORE MORE ></button>
-
+      </div>
+      <div class="hide">
+        <p class="unit-desc productheading-color">Colors</p>
+        <div class="product-color">
+          <div class="color_options option1"></div>
+          <div class="color_options option2"></div>
+          <div class="color_options option3"></div>
+        </div>
+        <div class="more-img">
+          <img
+            class="extra-image"
+            src="{% static 'store/assets/tshirt2.png' %}"
+            alt=""
+          />
+          <img
+            class="extra-image"
+            src="{% static 'store/assets/tshirt2.png' %}"
+            alt=""
+          />
+          <img
+            class="extra-image"
+            src="{% static 'store/assets/tshirt2.png' %}"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="explore">EXPLORE MORE ></button>
 </div>
 
 <div class="discount">
-    <img src="{% static 'store/assets/image 12.png' %}" alt="">
+  <img src="{% static 'store/assets/image 12.png' %}" alt="" />
 </div>
 
 <div class="trending">
-    <h1>@TRENDING</h1>
-    <div class="tags">
-        <span>#2023</span>
-        <span>#fashion</span>
-        <span>#collection</span>
-        <span>#wibe</span>
-        <span>#genz</span>
-        <span>#underdogs</span>
-        <span>#tshirt</span>
-    </div>
+  <h1>@TRENDING</h1>
+  <div class="tags">
+    <span>#2023</span>
+    <span>#fashion</span>
+    <span>#collection</span>
+    <span>#wibe</span>
+    <span>#genz</span>
+    <span>#underdogs</span>
+    <span>#tshirt</span>
+  </div>
 </div>
 
 <div class="features">
-    <h1>UnderDogs</h1>
-    <div class="one">
-        <span>We are proud to design and deliver quality and comfortable clothing for you.</span>
-    </div>
-    <div class="delivery">
-        <img src="{% static 'store/assets/vehicle.png' %}" alt="">
-    </div>
-    <div class="two">
-        <span>Fast shiping. Free on orders over ₹700</span>
-    </div>
-    <div class="checkbox">
-        <img src="{% static 'store/assets/checkbox.png' %}" alt="">
-    </div>
-    <div class="three">
-        <span>Sustainable process from start to finish.</span>
-    </div>
-    <div class="man">
-        <img src="{% static 'store/assets/man.png' %}" alt="">
-    </div>
-    <div class="four">
-        <span>Unique designs and high-quality materials.</span>
-    </div>
+  <h1>UnderDogs</h1>
+  <div class="one">
+    <span
+      >We are proud to design and deliver quality and comfortable clothing for
+      you.</span
+    >
+  </div>
+  <div class="delivery">
+    <img src="{% static 'store/assets/vehicle.png' %}" alt="" />
+  </div>
+  <div class="two">
+    <span>Fast shiping. Free on orders over ₹700</span>
+  </div>
+  <div class="checkbox">
+    <img src="{% static 'store/assets/checkbox.png' %}" alt="" />
+  </div>
+  <div class="three">
+    <span>Sustainable process from start to finish.</span>
+  </div>
+  <div class="man">
+    <img src="{% static 'store/assets/man.png' %}" alt="" />
+  </div>
+  <div class="four">
+    <span>Unique designs and high-quality materials.</span>
+  </div>
 </div>
 
 <div class="socials">
-    <h1>FOLLOW US</h1>
-    <div id="slider">
-        <div id="slider-image-container">
+  <h1>FOLLOW US</h1>
+  <div id="slider">
+    <div id="slider-image-container">
+      <figure class="slider-image">
+        <img src="{% static 'store/assets/instagram1.png' %}" alt="" />
+      </figure>
 
-            <figure class="slider-image">
-                <img src="{% static 'store/assets/instagram1.png' %}" alt="">
-            </figure>
+      <figure class="slider-image">
+        <img src="{% static 'store/assets/instagram2.png' %}" alt="" />
+      </figure>
 
-            <figure class="slider-image">
-                <img src="{% static 'store/assets/instagram2.png' %}" alt="">
-            </figure>
+      <figure class="slider-image">
+        <img src="{% static 'store/assets/instagram1.png' %}" alt="" />
+      </figure>
 
-            <figure class="slider-image">
-                <img src="{% static 'store/assets/instagram1.png' %}" alt="">
-            </figure>
-
-            <figure class="slider-image">
-                <img src="{% static 'store/assets/instagram3.png' %}" alt="">
-            </figure>
-            <figure class="slider-image">
-                <img src="{% static 'store/assets/instagram1.png' %}" alt="">
-            </figure>
-            <figure class="slider-image">
-                <img src="{% static 'store/assets/instagram1.png' %}" alt="">
-            </figure>
-        </div>
+      <figure class="slider-image">
+        <img src="{% static 'store/assets/instagram3.png' %}" alt="" />
+      </figure>
+      <figure class="slider-image">
+        <img src="{% static 'store/assets/instagram1.png' %}" alt="" />
+      </figure>
+      <figure class="slider-image">
+        <img src="{% static 'store/assets/instagram1.png' %}" alt="" />
+      </figure>
     </div>
+  </div>
 </div>
 
 <script>
-    let slideIndex = 0;
-    showSlides();
+  let slideIndex = 0;
+  showSlides();
 
-    function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1 }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
-
-
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
     }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
 </script>
 
 {% endblock %}
