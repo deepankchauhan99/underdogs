@@ -1,0 +1,174 @@
+{% extends "store/layout.html" %}
+ {% load static %} 
+ 
+ {% block body %}
+<div class="item-card-head">
+  <div class="item-card-imgback">
+    <img src="{% static 'store/assets/back.png' %}" alt="" />
+  </div>
+  <div class="item-back">
+    <span>Back</span>
+  </div>
+  <div class="item-like">
+    <img src="{% static 'store/assets/like.png' %}" alt="" />
+  </div>
+  <div class="item-share">
+    <img src="{% static 'store/assets/share.png' %}" alt="" />
+  </div>
+</div>
+
+<div class="item-card-main">
+  <div class="item-card-left">
+    <div class="slideshow-container">
+      <div class="mySlides fade itemcard">
+        <img src="{% static 'store/assets/tshirt1.png' %}" style="width: 100%" />
+        <img class="zoom" src="{% static 'store/assets/zoom.png' %}" alt="zoom" />
+      </div>
+
+      <div class="mySlides fade itemcard">
+        <img src="{% static 'store/assets/tshirt2.png' %}" style="width: 100%" />
+        <img class="zoom" src="{% static 'store/assets/zoom.png' %}" alt="zoom" />
+      </div>
+
+      <div class="mySlides fade itemcard">
+        <img src="{% static 'store/assets/tshirt1.png' %}" style="width: 100%" />
+        <img class="zoom" src="{% static 'store/assets/zoom.png' %}" alt="zoom" />
+      </div>
+
+      <div class="slide-bar" style="text-align: center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item-card-right">
+    <div class="name">
+      <h3 class="tshirt">Shirt Polo</h3>
+    </div>
+    <div class="item-card-price">
+      <span>Short sleeve polo shirt</span>
+      <p>$179</p>
+    </div>
+    <div class="clrsize">
+      <div class="itemcard-color">
+        <div>Color:</div>
+        <div id="blackclr"></div>
+        <div id="orangeclr"></div>
+        <div id="blueclr"></div>
+      </div>
+      <div class="size">
+        <div>Size:</div>
+        <div id="small">S</div>
+        <div id="medium">M</div>
+        <div id="large">L</div>
+      </div>
+    </div>
+    <div class="addtocart-btn">
+      <p>Add to cart</p>
+      <img class="imgcart" src="{% static 'store/assets/shop.png' %}" alt="cart" />
+    </div>
+    <div class="instruction">
+      <p>MATERIALS</p>
+      <span class="text"
+        >We work with monitoring programmes to ensure compliance with safety,
+        health and quality standards for our products.
+      </span>
+      <p>CARE</p>
+      <span class="text"
+        >To keep your jackets and coats clean, you only need to freshen them up
+        and go over them with a cloth or a clothes brush. If you need to dry
+        clean a garment, look for a dry cleaner that uses technologies that are
+        respectful of the environment.</span
+      >
+    </div>
+    <div class="firstrow">
+      <div class="caution">
+        <img src="{% static 'store/assets/inst1.png' %}" alt="" />
+        <p>Iron at a maximum of 110ºC/230ºF</p>
+      </div>
+      <div class="caution">
+        <img src="{% static 'store/assets/inst2.png' %}" alt="" />
+        <p>Dry clean with tetrachloroethylene</p>
+      </div>
+    </div>
+    <div class="firstrow">
+      <div class="caution">
+        <img src="{% static 'store/assets/inst3.png' %}" alt="" />
+        <p>Do not use bleach</p>
+      </div>
+      <div class="caution">
+        <img src="{% static 'store/assets/inst4.png' %}" alt="" />
+        <p>Do not tumble dry</p>
+      </div>
+    </div>
+    <div class="layout">
+      <div class="accordion">
+        <div class="accordion__question">
+          <img id="shipping" src="{% static 'store/assets/shipping.png' %}" alt="" />
+          <p>Free Flat Rate Shipping</p>
+        </div>
+        <div class="accordion__answer">
+          <p>Estimated to be delivered on 15/07/2023 - 18/07/2023.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion__question">
+          <img src="{% static 'store/assets/tag.png' %}" alt="" />
+          <p>COD Policy</p>
+        </div>
+        <div class="accordion__answer">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+            perferendis, tempora dicta cupiditate voluptatibus
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="more">You may also like</div>
+    <div class="recommended">
+      <!-- <img src="{% static 'store/assets/recommended.png' %}" alt="" /> -->
+    </div>
+
+    <div class="recommended">
+      <!-- <img src="recommended2.png" alt="" /> -->
+    </div>
+  </div>
+</div>
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 4000); // Change image every 4 seconds
+
+
+    }
+    let answers=document.querySelectorAll(".accordion");
+    answers.forEach((event)=>{
+        event.addEventListener('click',()=>{
+            if(event.classList.contains("active")){
+                event.classList.remove("active");
+            }
+            else{
+                event.classList.add("active");
+            }
+        })
+    })
+</script>
+{% endblock %}
+
