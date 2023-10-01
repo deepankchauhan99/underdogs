@@ -1,94 +1,219 @@
-{% extends "store/layout.html" %} 
+{% extends "store/layout.html" %} {% load static %} {% block body %}
 
-{% block body %}
- <body>
-    <nav>
-        <div class="checkout-menue"><img src="menue.png" alt=""></div>
-        <div class="title">
-            <h3>UnderDogs</h3>
-        </div>
-        <div class="checkout-search"><img src="search.png" alt=""></div>
-        <div class="checkout-shop"><img src="shop.png" alt=""></div>
-    </nav>
+<div class="mobile-view-only">
+  <div class="">
+    <img src="{% static 'store/assets/banner1.png' %}" style="width: 100%" />
+  </div>
+  <div class="btnmain">
+    <button class="btn">VIEW COLLECTION</button>
+  </div>
+</div>
 
-    <section>
-        <h1 class="center">CHECKOUT</h1>
-        <div class="dflex">
-
-            <div class="address">
-                <h3 class="">New Delhi</h3>
-                <span class="color-grey dBlock">64-A Shyam Vihar Ph-2 street no. 8 najafgarh New Delhi</span>
-            </div>
-            <div class="arrow">
-                <img src="arrow.png" alt="arrow">
-            </div>
-            <!-- <div class="hrule"></div> -->
-        </div>
-        <hr class="mt-5">
-        <div class="checkout-payment mt-5 dflex">
-            <img src="mastercard.png" alt="mastercard" class="cardimg mt-5">
-            <h3 class="dBlock">Master Card ending 8051</h3>
-            <img src="arrow.png" alt="" class="checkout-ar2">
-        </div>
-        <hr class="checkout-lastrule">
-    </section>
-
-
-    <section class="checkout-section mt-5">
-        <div class="checkout-outterbox dflex">
-            <img src="checkoutProduct.png" alt="Checkout Product" class="product">
-            <div class="checkout-innerbox">
-                <h4>SHIRT</h4>
-                <span class="checkout-desc">Short sleev polo shirt</span>
-                <div class="checkout-innerbox2 dflex">
-                    <div class="checkout-counter">
-                        <span class="checkout-down" onClick='decreaseCount(event, this)'>-</span>
-                        <input type="text" value="1">
-                        <span class="checkout-up" onClick='increaseCount(event, this)'>+</span>
-                    </div>
-                    <h3 class="color">₹689</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="checkout-botomsec">
-        <hr>
-        <div class="total dflex">
-            <h4>TOTAL</h4>
-            <h3 class="color marginleft">₹689</h3>
-        </div>
-        <button class="checkout-btn dflex">
-            <img src="checkoutimg.png" alt="">
-            <h1>CHECKOUT</h1>
-        </button>
+<div class="desktop-view-only">
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="{% static 'store/assets/sample1.png' %}" style="width: 100%" />
     </div>
 
+    <div class="mySlides fade">
+      <img src="{% static 'store/assets/sample2.png' %}" style="width: 100%" />
+    </div>
 
-    <script>
-        function increaseCount(a, b) {
-            var input = b.previousElementSibling;
-            var value = parseInt(input.value, 10);
-            value = isNaN(value) ? 0 : value;
-            value++;
-            input.value = value;
-        }
+    <div class="mySlides fade">
+      <img src="{% static 'store/assets/sample3.png' %}" style="width: 100%" />
+    </div>
+    <div class="btnmain">
+      <button class="btn">VIEW COLLECTION</button>
+    </div>
 
-        function decreaseCount(a, b) {
-            var input = b.nextElementSibling;
-            var value = parseInt(input.value, 10);
-            if (value > 1) {
-                value = isNaN(value) ? 0 : value;
-                value--;
-                input.value = value;
-            }
-        }
-    </script>
+    <div class="slide-bar" style="text-align: center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</div>
 
+<div class="new-ones">
+  <h1 class="title">NEW ONES</h1>
+  <div class="new-arival-images">
+    <img src="{% static 'store/assets/tshirt2.png' %}" alt="" />
+    <div class="unit-info">
+      <div class="text-desc">
+        <div class="unit-title">
+          <h4>Shirt Polo</h4>
+        </div>
+        <span class="unit-desc">Short sleev polo shirt</span>
+        <div class="price">
+          <h4>₹679</h4>
+        </div>
+      </div>
+      <div class="hide">
+        <p class="unit-desc productheading-color">Colors</p>
 
+        <div class="product-color">
+          <div class="color_options option1"></div>
+          <div class="color_options option2"></div>
+          <div class="color_options option3"></div>
+        </div>
+        <div class="more-img">
+          <img
+            class="extra-image"
+            src="{% static 'store/assets/tshirt2.png' %}"
+            alt=""
+          />
+          <img
+            class="extra-image"
+            src="{% static 'store/assets/tshirt2.png' %}"
+            alt=""
+          />
+          <img
+            class="extra-image"
+            src="{% static 'store/assets/tshirt2.png' %}"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="new-arival-images">
+    <img src="{% static 'store/assets/tshirt2.png' %}" alt="" />
+    <div class="unit-info">
+      <div class="text-desc">
+        <div class="unit-title">
+          <h4>Shirt Polo</h4>
+        </div>
+        <span class="unit-desc">Short sleev polo shirt</span>
+        <div class="price">
+          <h4>₹679</h4>
+        </div>
+      </div>
+      <div class="hide">
+        <p class="unit-desc productheading-color">Colors</p>
+        <div class="product-color">
+          <div class="color_options option1"></div>
+          <div class="color_options option2"></div>
+          <div class="color_options option3"></div>
+        </div>
+        <div class="more-img">
+          <img
+            class="extra-image"
+            src="{% static 'store/assets/tshirt2.png' %}"
+            alt=""
+          />
+          <img
+            class="extra-image"
+            src="{% static 'store/assets/tshirt2.png' %}"
+            alt=""
+          />
+          <img
+            class="extra-image"
+            src="{% static 'store/assets/tshirt2.png' %}"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="explore">EXPLORE MORE ></button>
+</div>
 
+<div class="discount">
+  <img src="{% static 'store/assets/image 12.png' %}" alt="" />
+</div>
 
-</body>
+<div class="trending">
+  <h1>@TRENDING</h1>
+  <div class="tags">
+    <span>#2023</span>
+    <span>#fashion</span>
+    <span>#collection</span>
+    <span>#wibe</span>
+    <span>#genz</span>
+    <span>#underdogs</span>
+    <span>#tshirt</span>
+  </div>
+</div>
 
+<div class="features">
+  <h1>UnderDogs</h1>
+  <div class="one">
+    <span
+      >We are proud to design and deliver quality and comfortable clothing for
+      you.</span
+    >
+  </div>
+  <div class="delivery">
+    <img src="{% static 'store/assets/vehicle.png' %}" alt="" />
+  </div>
+  <div class="two">
+    <span>Fast shiping. Free on orders over ₹700</span>
+  </div>
+  <div class="checkbox">
+    <img src="{% static 'store/assets/checkbox.png' %}" alt="" />
+  </div>
+  <div class="three">
+    <span>Sustainable process from start to finish.</span>
+  </div>
+  <div class="man">
+    <img src="{% static 'store/assets/man.png' %}" alt="" />
+  </div>
+  <div class="four">
+    <span>Unique designs and high-quality materials.</span>
+  </div>
+</div>
+
+<div class="socials">
+  <h1>FOLLOW US</h1>
+  <div id="slider">
+    <div id="slider-image-container">
+      <figure class="slider-image">
+        <img src="{% static 'store/assets/instagram1.png' %}" alt="" />
+      </figure>
+
+      <figure class="slider-image">
+        <img src="{% static 'store/assets/instagram2.png' %}" alt="" />
+      </figure>
+
+      <figure class="slider-image">
+        <img src="{% static 'store/assets/instagram1.png' %}" alt="" />
+      </figure>
+
+      <figure class="slider-image">
+        <img src="{% static 'store/assets/instagram3.png' %}" alt="" />
+      </figure>
+      <figure class="slider-image">
+        <img src="{% static 'store/assets/instagram1.png' %}" alt="" />
+      </figure>
+      <figure class="slider-image">
+        <img src="{% static 'store/assets/instagram1.png' %}" alt="" />
+      </figure>
+    </div>
+  </div>
+</div>
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+</script>
 
 {% endblock %}

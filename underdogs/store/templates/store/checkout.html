@@ -1,0 +1,94 @@
+{% extends "store/layout.html" %} 
+
+{% block body %}
+ <body>
+    <nav>
+        <div class="checkout-menue"><img src="menue.png" alt=""></div>
+        <div class="title">
+            <h3>UnderDogs</h3>
+        </div>
+        <div class="checkout-search"><img src="search.png" alt=""></div>
+        <div class="checkout-shop"><img src="shop.png" alt=""></div>
+    </nav>
+
+    <section>
+        <h1 class="center">CHECKOUT</h1>
+        <div class="dflex">
+
+            <div class="address">
+                <h3 class="">New Delhi</h3>
+                <span class="color-grey dBlock">64-A Shyam Vihar Ph-2 street no. 8 najafgarh New Delhi</span>
+            </div>
+            <div class="arrow">
+                <img src="arrow.png" alt="arrow">
+            </div>
+            <!-- <div class="hrule"></div> -->
+        </div>
+        <hr class="mt-5">
+        <div class="checkout-payment mt-5 dflex">
+            <img src="mastercard.png" alt="mastercard" class="cardimg mt-5">
+            <h3 class="dBlock">Master Card ending 8051</h3>
+            <img src="arrow.png" alt="" class="checkout-ar2">
+        </div>
+        <hr class="checkout-lastrule">
+    </section>
+
+
+    <section class="checkout-section mt-5">
+        <div class="checkout-outterbox dflex">
+            <img src="checkoutProduct.png" alt="Checkout Product" class="product">
+            <div class="checkout-innerbox">
+                <h4>SHIRT</h4>
+                <span class="checkout-desc">Short sleev polo shirt</span>
+                <div class="checkout-innerbox2 dflex">
+                    <div class="checkout-counter">
+                        <span class="checkout-down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="1">
+                        <span class="checkout-up" onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                    <h3 class="color">₹689</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="checkout-botomsec">
+        <hr>
+        <div class="total dflex">
+            <h4>TOTAL</h4>
+            <h3 class="color marginleft">₹689</h3>
+        </div>
+        <button class="checkout-btn dflex">
+            <img src="checkoutimg.png" alt="">
+            <h1>CHECKOUT</h1>
+        </button>
+    </div>
+
+
+    <script>
+        function increaseCount(a, b) {
+            var input = b.previousElementSibling;
+            var value = parseInt(input.value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            input.value = value;
+        }
+
+        function decreaseCount(a, b) {
+            var input = b.nextElementSibling;
+            var value = parseInt(input.value, 10);
+            if (value > 1) {
+                value = isNaN(value) ? 0 : value;
+                value--;
+                input.value = value;
+            }
+        }
+    </script>
+
+
+
+
+</body>
+
+
+{% endblock %}
