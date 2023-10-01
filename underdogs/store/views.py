@@ -12,7 +12,7 @@ logger = logging.getLogger('yourapp')
 
 # Routes
 def index(request):
-    return render(request, "store/home.html")
+    return render(request, "store/item-card.html")
 
 def register(request):
     return render(request, "store/register.html", name="register")
