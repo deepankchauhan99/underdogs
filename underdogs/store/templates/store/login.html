@@ -4,35 +4,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'master_css.css' %}">
+    <title>Login</title>
   </head>
   <body>
     <div class="login-mainbox">
       <div class="login-leftbox">
         <div class="login-title">
           <h1>Welcome Back</h1>
-          <span>Happy to see you arround, Login Back to manage your accont.</span>
+          <span>Happy to see you around, Login Back to manage your account.</span>
         </div>
       </div>
       <div class="login-mainfield">
         <div class="login-form">
           <div class="login-greeting">
-            <h3>Hello UnderDog</h3>
-            <span
-              >Fill in the details to login back into your account</span
-            >
+            <h3>Hello Underdog</h3>
+            <span>Fill in the details to login back into your account</span>
           </div>
-          <div class="login-input">
-            <input class="login-email" type="text" placeholder=" Email / Phone no." />
-            <input
-              class="login-password"
-              type="password"
-              placeholder=" Password "
-            />
-          </div>
-          <div class="login-btn">
-            <button class="btn">Login</button>
-          </div>
+          <form action="{% url 'store:login' %}" method="post">
+            {% csrf_token %}
+            <div class="login-input">
+              {{ form }}
+            </div>
+            <div class="login-btn">
+              <button class="btn">Login</button>
+            </div>
+          </form>
         </div>
         <div class="register-or">
           <h3>or</h3>

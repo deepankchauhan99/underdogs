@@ -2,21 +2,107 @@ import json
 import logging
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login as django_login
-from .models import FAQ, SKU, SKUVariant, SKUImage, SKUTag, SKUReview, Inventory
+from .models import FAQ, SKU, SKUVariant, SKUImage, SKUTag, SKUReview, Inventory, User
 from .json_encoder import DecimalEncoder
 from .helper import listItem
-from .forms import LoginForm
+from django import forms
+from django.urls import reverse
+from django.http import HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
+
 
 logger = logging.getLogger('yourapp')
 
+class RegistrationForm(forms.Form):
+    firstname = forms.CharField(label="First Name")
+    lastname = forms.CharField(label="Last Name")
+    email = forms.EmailField(label="Email")
+    password = forms.CharField(label="Password")
+    repeat = forms.CharField(label="Repeat Password")
+
+class LoginForm(forms.Form):
+    email = forms.EmailField(label="Email")
+    password = forms.CharField(label="Password")
+
 # Routes
 def index(request):
-    return render(request, "store/item-card.html")
+    return render(request, "store/index.html")
 
 def register(request):
-    return render(request, "store/register.html", name="register")
+    form = RegistrationForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            firstname = form.cleaned_data['firstname']
+            lastname = form.cleaned_data['lastname']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            repeat = form.cleaned_data['repeat']
+            
+            print(firstname)
+            print(lastname)
+            print(email)
+            print(password)
+            print(repeat)
+            
+            
+            # print(User.objects.all())
 
+            # print(User.objects.get(email=email))
+
+            if password == repeat:
+                user = User(first_name=firstname,last_name=lastname,email=email,password=password,is_staff=True)
+                user.save()
+                return HttpResponseRedirect(reverse("store:login"))
+            else:
+                error = "Password didn't match"
+                print(error)
+                return render(request, "store/register.html", {'form': form, 'error': error})
+                # password didn't match
+
+            # user = authenticate(request, username=username, password=password)
+            # print(user)
+            # if user is not None:
+            #     django_login(request, user)
+            #     logger.info(f'User:{user} logged in!')
+            #     return redirect('shop')
+            # else:
+            #     logger.warning('Invalid username or password')
+            #     form.add_error(None, 'Invalid username or password')
+            
+        else:
+            print("Form errors:", form.errors)
+            return render(request, "store/register.html", {'form': form})
+    else:
+        return render(request, "store/register.html", {'form': form})
+    
+
+def login(request):
+    form = LoginForm(request.POST)
+    if request.method == "POST":
+        # Accessing username and password from form data
+        email = request.POST["email"]
+        password = request.POST["password"]
+        print(email,password)
+        # Check if username and password are correct, returning User object if so
+        # user = authenticate(request, email=email, password=password)
+        user = User.objects.get(email=email)
+        print(user)
+        db_pass = user.password
+        print(db_pass)
+        # If user object is returned, log in and route to index page:
+        if db_pass == password:
+            print('Auth success!')
+            # login(request, user)
+            # return HttpResponseRedirect(reverse("index"))
+            return HttpResponseRedirect(reverse("store:index"))
+        # Otherwise, return login page again with new context
+        else:
+            print("Invalid Password")
+            return render(request, "store/login.html", {
+                "message": "Invalid Credentials",
+                "form": form
+            })
+    return render(request, "store/login.html", {'form': form})
 
 
 # def register(request):
@@ -97,9 +183,3 @@ def register(request):
 # def policy(request):
 #     return render(request, "store/policy.html")
 
-
-
-
-def user(request, name):
-    print(name)
-    return name

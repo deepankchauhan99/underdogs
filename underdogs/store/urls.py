@@ -1,11 +1,11 @@
 from django.urls import path
 from . import views
 
+app_name = "store"
 urlpatterns = [
     path("", views.index, name="index"),
-    # path("register/", views.register )
-    # path("login", views.login, name="login"),
-    # path("register", views.register, name="register"),
+    path("login", views.login, name="login"),
+    path("register", views.register, name="register"),
     # path ("user/<str:name>/", views.user, name='user'),
     # path("shop", views.shop, name="shop"),
     # path("about", views.about, name="about"),
