@@ -1287,6 +1287,219 @@ nav {
   justify-content: center;
   margin-bottom: 40px;
 }
+@media screen and (max-width: 900px){
+  .head{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.imgback{
+    position: absolute;
+    left: 2.2%;
+}
+.back{
+    position: absolute;
+    left: 8%;
+    padding-top: 2px;
+}
+.imglike{
+    position: absolute;
+    right: 16%;
+}
+.imgshare{
+    position: absolute;
+    right: 2.7%;
+}
+.itemcard{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.item{
+    width: 345px;
+    height: 500px;
+    flex-shrink: 0;
+    border-radius: 5px;
+}
+.zoom{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 3%;
+    top: 90%;
+}
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.dot {
+    height: 6px;
+    width: 30px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 20%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: rgb(249, 60, 0);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .8
+    }
+
+    to {
+        opacity: 1
+    }
+
+}
+.name{
+    display: flex;
+    justify-content: center;
+}
+.imgcart{
+    position: absolute;
+}
+.tshirt{
+    position: absolute;
+    left: 5%;
+}
+.imgcart{
+    position: absolute;
+    right: 5%;
+}
+.price{
+    height: 100px;
+    padding-top: 40px;
+    margin-left: 10px;
+}
+.price span{
+    color: rgba(249, 60, 0, 1);
+    font-weight:bolder;
+}
+.color{
+    display: flex;
+    align-content: center;
+}
+#blackclr{
+    background-color: black;
+    margin-left: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+#orangeclr{
+    background-color:#f93c00 ;
+    margin-left: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+#blueclr{
+    background-color: rgb(59, 59, 245);
+    margin-left: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+.clrsize{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+.size{
+    display: flex;
+    position: absolute;
+    right:6%;
+}
+#small{
+    margin-left: 20px;
+    text-align: center;
+}
+
+#medium{
+    margin-left: 20px;
+}
+#large{
+    margin-left: 20px;
+}
+.instruction{
+    margin-top: 50px;
+}
+.text{
+    color: rgba(136, 136, 136, 1);
+}
+.firstrow{
+    display: flex;
+    margin-top: 20px;
+}
+.caution{
+    width: 45%;
+    color: rgba(136, 136, 136, 1);
+}
+.layout{
+    width: 100%;
+    margin: auto;
+}
+.accordion{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.accordion__question p{
+    margin: 5px;
+    padding: 0;
+
+}
+.accordion__answer p{
+    margin: 5px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+
+    border-radius: 10px; 
+}
+.accordion:hover{
+    cursor: pointer;
+}
+.accordion__answer {
+    display: none;
+} 
+.accordion.active .accordion__answer {
+    display: block;
+}
+.accordion__question{
+    display: flex;
+    align-items: center;
+}
+#shipping{
+    width: 25px;
+    height: 25px;
+}
+.more{
+    font-size: x-large;
+    font-weight: bolder;
+    text-align: center;
+}
+.recommended{
+    
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+}
 
 /* ----------------Item-card-end------------------------------------- */
 
