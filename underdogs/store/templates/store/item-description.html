@@ -45,24 +45,25 @@
 
   <div class="item-card-right">
     <div class="name">
-      <h3 class="tshirt">Shirt Polo</h3>
+      <h3 class="tshirt">{{ item.name }}</h3>
     </div>
     <div class="item-card-price">
-      <span>Short sleeve polo shirt</span>
-      <p>$179</p>
+      <span>{{ item.description }}</span>
+      <p>₹{{ item.price }}</p>
     </div>
     <div class="clrsize">
       <div class="itemcard-color">
         <div>Color:</div>
-        <div id="blackclr"></div>
-        <div id="orangeclr"></div>
-        <div id="blueclr"></div>
+        {% for color in colors %}
+          <div id="{{ color }}clr"></div>
+        {% endfor %}
       </div>
       <div class="size">
         <div>Size:</div>
-        <div id="small">S</div>
-        <div id="medium">M</div>
-        <div id="large">L</div>
+        {% for size in sizes %}
+          <div id="small">{{ size }}</div> 
+          {% comment %} change id small to size  {% endcomment %}
+        {% endfor %}
       </div>
     </div>
     <div class="addtocart-btn">
