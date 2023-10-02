@@ -2,7 +2,7 @@ import json
 import logging
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import FAQ, SKU, SKUVariant, SKUImage, SKUTag, SKUReview, Inventory, User
+from .models import FAQ, SKU, SKUVariant, SKUImage, SKUTag, SKUColor, SKUSize, SKUReview, Inventory, User
 from .json_encoder import DecimalEncoder
 from .helper import listItem
 from django import forms
@@ -12,6 +12,11 @@ from django.contrib.auth import authenticate, login, logout
 
 
 logger = logging.getLogger('yourapp')
+
+colors = SKUColor.objects.all()
+sizes = SKUSize.objects.all()
+COLOR_DICT = {sku_color.id: sku_color.name for sku_color in colors}
+SIZE_DICT = {sku_size.id: sku_size.name for sku_size in sizes}
 
 class RegistrationForm(forms.Form):
     firstname = forms.CharField(label="First Name")
@@ -104,7 +109,25 @@ def login(request):
             })
     return render(request, "store/login.html", {'form': form})
 
+def item(request, sku):
+    item = SKU.objects.get(sku_id=sku)
+    itemVariant = SKUVariant.objects.filter(sku_id=item.id)
+    print(item)
+    print(item.price)
 
+  
+    colorid = set()
+    sizeid = set()
+
+    for entity in itemVariant:
+        colorid.add(entity.color_id)
+        sizeid.add(entity.size_id)
+    
+    colors = [COLOR_DICT[color] for color in colorid]
+    sizes = [SIZE_DICT[size] for size in sizeid]
+   
+
+    return render(request, "store/item-description.html", {"item": item, "colors": colors, "sizes": sizes})
 # def register(request):
 #     if request.method == 'POST':
 #         pass

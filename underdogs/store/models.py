@@ -110,6 +110,7 @@ class FAQ(models.Model):
 
 class SKU(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    sku_id = models.CharField(max_length=20, unique=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -128,26 +129,23 @@ class SKUImage(models.Model):
 
     def __str__(self):
         return f"Image {self.name} for SKU: {self.sku.name}"
-            
+
+class SKUColor(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.name     
+
+class SKUSize(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.name
+               
 class SKUVariant(models.Model):
-
-    # Define the choices for color and size
-    COLOR_CHOICES = [
-        ('red', 'Red'),
-        ('blue', 'Blue'),
-        ('green', 'Green'),
-        # Add more color choices as needed
-    ]
-
-    SIZE_CHOICES = [
-        ('s', 'Small'),
-        ('m', 'Medium'),
-        ('l', 'Large'),
-        # Add more size choices as needed
-    ]
     sku = models.ForeignKey(SKU, on_delete=models.CASCADE, related_name="skuvariant")
-    color = models.CharField(max_length=20, choices=COLOR_CHOICES)
-    size = models.CharField(max_length=20, choices=SIZE_CHOICES)
+    color = models.ForeignKey(SKUColor, on_delete=models.CASCADE, related_name="skucolor")
+    size = models.ForeignKey(SKUSize, on_delete=models.CASCADE, related_name="skusize")
 
     def __str__(self):
         return f"{self.sku.name} - {self.color} - {self.size}"
