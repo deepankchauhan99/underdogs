@@ -1,0 +1,47 @@
+{% extends "store/layout.html" %} {% load static %} {% block body %}
+
+<div class="cart_item-card">
+  <div class="cart_item-image">
+    <img src="{% static 'store/assets/banner1.png' %}" alt="" />
+  </div>
+  <div class="cart_item-content">
+    <div class="cart_item-description">
+      <h3>item name</h3>
+      <p>price</p>
+    </div>
+    <spam class="skuid-details">#112345678</spam>
+    <div class="cart_item-item-count">
+      <!-- js logit to determine the no. of item -->
+      <button onclick="decrement()">-</button>
+      <input type="number" id="number" value="1" min="1" readonly />
+      <button onclick="increment()">+</button>
+      <div class="cart_item-delete">Remove</div>
+    </div>
+  </div>
+</div>
+<script>
+  function increment() {
+    var numberElement = document.getElementById("number");
+    var currentNumber = parseInt(numberElement.value);
+
+    if (currentNumber < 1) {
+      currentNumber = 1;
+    } else {
+      currentNumber += 1;
+    }
+
+    numberElement.value = currentNumber;
+  }
+
+  function decrement() {
+    var numberElement = document.getElementById("number");
+    var currentNumber = parseInt(numberElement.value);
+
+    if (currentNumber > 1) {
+      currentNumber -= 1;
+    }
+
+    numberElement.value = currentNumber;
+  }
+</script>
+{% endblock %}
