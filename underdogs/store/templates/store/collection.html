@@ -1,0 +1,33 @@
+{% extends "store/layout.html" %} {% load static %} {% block body %}
+
+
+<div class="collection-main">
+    <div class="collection-image">
+        <img src="{% static 'store/assets/tshirt1.png' %}" alt="">
+    </div>
+    <div class="collection-item-description">
+        <h2>title</h2>
+        <p class="collection-short-description">sku-id-details</p>
+        <div class="collection-rating">
+            <div class="star active"></div>
+            <div class="star active"></div>
+            <div class="star active"></div>
+            <div class="star active"></div>
+            <div class="star"></div>
+        </div>
+        <p class="collection-decription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatibus beatae quod accusantium nemo molestias, quisquam a amet atque magnam quasi, et vitae reprehenderit, deserunt mollitia. Nisi laborum aspernatur soluta?</p>
+        <div class="collection-color">
+            <p>color</p>
+            <div class="collection-color-circle"></div>
+            <div class="collection-color-circle"></div>
+            <div class="collection-color-circle"></div>
+        </div>
+        <p class="collection-price">123</p>
+        <div class="collection-addtocart">
+            <p>Add to cart</p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

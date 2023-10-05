@@ -1126,7 +1126,7 @@ nav {
   right: 3%;
   top: 90%;
 }
-.slideshow-container {
+.item-card-slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
@@ -1683,3 +1683,143 @@ nav {
 }
 
 /* -------------------------Checkout2----------------------------- */
+/*-------------------------cart_item-----------------------------*/
+.cart_item-card{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  padding: 1% 1% 1% 1%;
+}
+
+.cart_item-image img{
+  width: 200px;
+}
+
+.cart_item-content{
+  width: 80%;
+  margin-left: 3%;
+}
+
+.cart_item-description{
+  display: flex;
+  align-items: center;
+}
+.cart_item-description p{
+  margin-left: 80%;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.cart_item-item-count{
+  display:flex ;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.cart_item-delete{
+  background-color: rgb(255, 0, 0);
+  padding: 1% 1% 1% 1%;
+  border-radius: 10%;
+  color: whitesmoke;
+  margin-left: 75%;
+  cursor: pointer;
+}
+
+.cart_item-item-count button{
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  border: none;
+  background-color: rgba(211, 211, 211, 0.22);
+  border-radius: 50%;
+}
+
+.cart_item-item-count button:hover {
+  background-color: #ff583393; /* Change to desired color */
+  color: #FFFFFF; /* Change to desired color */
+}
+
+.cart_item-item-count input{
+  width: 3%;
+  border: none;
+  font-size: x-large;
+  text-align: end;
+}
+
+.skuid-details{
+  color: gray;
+}
+/*-------------------------cart_item-----------------------------*/
+/*-------------------------Collection-----------------------------*/
+
+.collection-main{
+  display: flex;
+  /* background-color: pink; */
+  width: 50%;
+  margin: auto;
+}
+
+.collection-image{
+  padding: 2% 2% 2% 2%;
+}
+
+.collection-image img{
+  width: 300px;
+}
+
+.collection-short-description{
+  color: gray;
+}
+
+.collection-rating {
+  font-size: 24px;
+  display: flex;
+}
+.star {
+  margin: 0 5px;
+  background-color: white;
+}
+.star:before {
+  content: '★';
+}
+.star.active:before {
+  color: gold;
+}
+
+.collection-decription{
+  padding-top: 5%;
+}
+
+.collection-color{
+  display:flex ;
+  align-items: center;
+}
+
+.collection-color p{
+  padding-right: 2%;
+}
+
+.collection-color-circle{
+  height: 16px;
+  width:  16px;
+  border-radius: 50%;
+  background-color: red;
+  margin: 0% 1% 0% 1%;
+}
+
+.collection-price{
+  font-size: x-large;
+}
+
+.collection-addtocart{
+  background-color: rgb(255, 0, 0);
+  padding: 3px 5px 3px 5px;
+  border-radius: 5%;
+  color: whitesmoke;
+  cursor: pointer;
+  width: 15%;
+  text-align: center;
+}
+
+
+/*-------------------------collection-----------------------------*/
