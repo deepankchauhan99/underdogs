@@ -1,0 +1,28 @@
+{% extends "store/layout.html" %} {% block body %}
+
+<div class="contact-mainbox">
+  <div class="contact-mainheading">
+    <h1>LET'S ANSWER YOUR QUERIES, UNDERDOG!</h1>
+  </div>
+  <div class="contact-formbox">
+    <form action="Post">
+      <div class="contact-form-left">
+        <input placeholder="First Name" type="text" name="" id="" />
+        <input placeholder="Last Name" type="text" name="" id="" />
+        <input placeholder="E-mail" type="email" name="" id="" />
+      </div>
+      <div class="contact-form-right">
+        <textarea
+        placeholder=" Describe your query, we will get back to you"
+          id="myTextArea"
+          name="myTextArea"
+          rows="11"
+          cols="50"
+        ></textarea>
+        <button>SUBMIT</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

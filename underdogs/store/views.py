@@ -33,6 +33,9 @@ class LoginForm(forms.Form):
 def index(request):
     return render(request, "store/index.html")
 
+def contact_us(request):
+    return render(request, "store/contact_us.html")
+
 def register(request):
     form = RegistrationForm(request.POST)
     if request.method == 'POST':
