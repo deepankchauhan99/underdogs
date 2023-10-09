@@ -1823,3 +1823,76 @@ nav {
 
 
 /*-------------------------collection-----------------------------*/
+
+
+/*---------------------------Contact Us--------------------------- */
+
+.contact-mainbox{
+  text-align: center;
+  margin-top: 3%;
+}
+.contact-formbox form{
+  display: flex;
+  justify-content: center;
+  margin-top: 4%;
+  margin-bottom: 7.7%;
+}
+.contact-form-left{
+  display: flex;
+  flex-direction: column;
+}
+.contact-form-left input{
+  margin-top: 9%;
+  border-radius: 20px;
+
+}
+.contact-form-right{
+  margin-left: 20%;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact-form-right textarea{
+  border-radius: 20px;
+}
+.contact-formbox input{
+  width: 180%;
+  height: 40px;
+}
+.contact-form-right button{
+  width: 60%;
+  height: 30px;
+  background-color: rgb(249, 60, 0) ;
+  color: white;
+  font-size: large;
+  margin-top: 5%;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 900px){
+  .contact-formbox form{
+    display: block;
+  }
+  .contact-form-left input{
+    width: 100%;
+    border: 1px solid rgb(249, 60, 0);
+  }
+  .contact-form-left{
+    display: block;
+    
+  }
+  .contact-form-right{
+    margin-left: auto;
+    
+  }
+  .contact-form-right textarea{
+    width: 100%;
+    margin-top: 4%;
+    border: 1px solid rgb(249, 60, 0);
+  }
+}
+

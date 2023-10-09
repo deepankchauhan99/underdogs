@@ -7,6 +7,7 @@ urlpatterns = [
     path("login", views.login, name="login"),
     path("register", views.register, name="register"),
     path ("item/<str:sku>/", views.item, name='item'),
+    path ("contact-us", views.contact_us, name='contact-us'),
     # path("shop", views.shop, name="shop"),
     # path("about", views.about, name="about"),
     # path("contact", views.contact, name="contact"),
