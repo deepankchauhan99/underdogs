@@ -2,9 +2,10 @@ import json
 import logging
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import FAQ, SKU, SKUVariant, SKUImage, SKUTag, SKUColor, SKUSize, SKUReview, Inventory, User
+from .models import FAQ, SKU, SKUVariant, SKUImage, SKUTag, SKUColor, SKUSize, SKUReview, Inventory, User, ContactUs
 from .json_encoder import DecimalEncoder
 from .helper import listItem
+from .forms import ContactForm
 from django import forms
 from django.urls import reverse
 from django.http import HttpResponseRedirect
@@ -34,6 +35,22 @@ def index(request):
     return render(request, "store/index.html")
 
 def contact_us(request):
+    if request.method=="POST":
+        form = ContactUs(request.POST)
+        if form.is_valid():
+            ContactUs.objects.create(
+                FirstName = form.cleaned_data['FirstName'],
+                LastName = form.cleaned_data['LastName'],
+                Query = form.cleaned_data['Query'],
+                email = form.cleaned_data['email']
+            )
+            return redirect('Success_Page')
+    else:
+        form = ContactForm()
+    return render(request, 'contact_us.html', {'form':form})
+
+            
+
     return render(request, "store/contact_us.html")
 
 def register(request):
