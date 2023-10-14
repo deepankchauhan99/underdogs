@@ -40,6 +40,8 @@ body{
 }
 nav{
   background-color:#000;
+  display: flex;
+  gap: 40px;
 }
 .menu-container {
   position: fixed;
@@ -106,10 +108,6 @@ nav{
   right: 10px;
   cursor: pointer;
 }
-nav {
-  display: flex;
-  gap: 40px;
-}
 
 .logo img {
   height: 5vh;
@@ -130,7 +128,9 @@ nav {
   cursor: pointer;
   position: absolute;
   left: 20px;
+  align-items: center;
   transition: left 0.3s; /* Added transition for smooth movement */
+  
 }
 
 .hamburger input {
@@ -150,6 +150,7 @@ nav {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 2;
+
   /* Define the transition for transforming the Stroke */
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
               stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
