@@ -36,6 +36,12 @@ def index(request):
 
 
 
+def collection(request):
+    return render(request, "store/collection.html")
+
+
+def item_description(request):
+    return render(request, "store/item_description.html")
 
 # def contact_us(request):
 #     # if request.method=="POST":
