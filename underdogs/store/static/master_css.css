@@ -35,6 +35,12 @@
 }
 
 /* -----------------navbar------------------- */
+body{
+  margin: 0;
+}
+nav{
+  background-color:#000;
+}
 .menu-container {
   position: fixed;
   top: 0;
@@ -114,8 +120,17 @@ nav {
   margin: 0 auto;
   align-self: center;
 }
+
+.hamburger-container {
+  transition: left 0.3s; /* Added transition for smooth movement */
+
+}
+
 .hamburger {
   cursor: pointer;
+  position: absolute;
+  left: 20px;
+  transition: left 0.3s; /* Added transition for smooth movement */
 }
 
 .hamburger input {
@@ -131,13 +146,13 @@ nav {
 
 .line {
   fill: none;
-  stroke: black; /* Change 'white' to 'black' */
+  stroke: white;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 3;
+  stroke-width: 2;
   /* Define the transition for transforming the Stroke */
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .line-top-bottom {
@@ -153,6 +168,22 @@ nav {
   stroke-dashoffset: -32.42;
 }
 
+.slideout-bar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden outside the viewport */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  transition: left 0.3s; /* Added transition for smooth movement */
+  z-index: 1;
+}
+
+.slideout-content {
+  padding: 20px;
+}
+
 .search {
   display: flex;
   align-items: center;
@@ -161,6 +192,7 @@ nav {
 .shop {
   display: flex;
   align-items: center;
+  margin-right: 20px;
 }
 
 @media screen and (max-width: 900px) {
@@ -525,7 +557,16 @@ nav {
   border-radius: 28px;
   border: 1px solid #000;
   background: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
+
+.explore:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid #000;
+}
+
 
 .discount {
   margin-top: 3%;

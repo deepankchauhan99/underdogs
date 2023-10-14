@@ -20,18 +20,28 @@
         {% comment %} current woring navbar {% endcomment %}
         
         <nav>
-            <label onclick="openMenu()" class="hamburger">
-                <input type="checkbox">
-                <svg viewBox="0 0 32 32">
-                  <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
-                  <path class="line" d="M7 16 27 16"></path>
-                </svg>
-              </label>
+            <div class="hamburger-container">
+                <label class="hamburger">
+                  <input type="checkbox">
+                  <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line" d="M7 16 27 16"></path>
+                  </svg>
+                </label>
+              </div>
+              
+              <div class="slideout-bar">
+                <div class="slideout-content">
+                  <!-- Content for slideout bar goes here -->
+                  <h2>Slideout Bar Content</h2>
+                  <p>Any additional content you want.</p>
+                </div>
+              </div>
             <div class="logo">
                 <img src="{% static 'store/assets/UDd1.png'%}" alt="">
             </div>
-            <div class="search"><img src="{% static 'store/assets/search.png' %}" alt=""></div>
-            <div class="shop card" onclick="openPopup()"><img src="{% static 'store/assets/shop.png' %}" alt=""></div>
+            <div class="search"><img src="{% static 'store/assets/search.svg' %}" alt=""></div>
+            <div class="shop card" onclick="openPopup()"><img src="{% static 'store/assets/cart.svg' %}" alt=""></div>
             <div class="overlay" id="overlay" onclick="closePopup()">
                 <div class="popup" onclick="event.stopPropagation();">
                   <span class="close-button" onclick="closePopup()">X</span>
@@ -40,30 +50,21 @@
                 </div>
             </div> 
 
-            <div class="menu-container" id="menuContainer">
-                <div class="close-button" onclick="closeMenu()">X</div>
-                <div class="menu-content">
-                  <h2>Login</h2>
-                  <!-- Add login form here -->
-                  <h2>Logout</h2>
-                  <!-- Add logout functionality here -->
-                  <h2>User Profile</h2>
-                  <!-- Add user profile content here -->
-                </div>
-            </div>
-
-            <div class="overlay-hamburger" id="overlayhamburger" onclick="closeMenu()"></div>
+           
         </nav>
         <script>
-            function openMenu() {
-                document.getElementById("menuContainer").style.left = "0";
-                document.getElementById("overlayhamburger").style.display = "block";
-              }
-          
-              function closeMenu() {
-                document.getElementById("menuContainer").style.left = "-250px";
-                document.getElementById("overlayhamburger").style.display = "none";
-              }
+            document.querySelector('.hamburger input').addEventListener('change', function() {
+                const slideoutBar = document.querySelector('.slideout-bar');
+                const hamburger = document.querySelector('.hamburger');
+                if (this.checked) {
+                  slideoutBar.style.left = '0'; // Slide in the bar from left
+                  hamburger.style.left = '250px'; // Move hamburger to right
+                } else {
+                  slideoutBar.style.left = '-250px'; // Slide out the bar to left
+                  hamburger.style.left = '20px'; // Reset hamburger position
+                }
+              });
+
 
             function openPopup() {
               document.getElementById('overlay').style.display = 'flex';
