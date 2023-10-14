@@ -236,6 +236,14 @@ nav {
 /* nav bar css end  */
 
 /*  footer css  */
+
+
+.footer-last{
+  text-align: center;
+  margin-top: 2%;
+}
+
+
 .footer-top {
   height: 100px;
   background: rgb(249, 60, 0);
