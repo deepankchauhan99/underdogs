@@ -87,7 +87,6 @@
   position: relative;
   width: 70%;
   height: 80%;
-
 }
 .popup p {
   font-size: larger;
@@ -237,12 +236,10 @@ nav {
 
 /*  footer css  */
 
-
-.footer-last{
+.footer-last {
   text-align: center;
   margin-top: 2%;
 }
-
 
 .footer-top {
   height: 100px;
@@ -428,6 +425,7 @@ nav {
 .btnmain {
   display: flex;
   margin: auto;
+  padding-top: 10px;
 }
 .title {
   text-align: center;
@@ -1781,7 +1779,6 @@ nav {
 }
 
 @media screen and (max-width: 900px) {
-
   .cart_item-card {
     display: flex;
     width: 80%;
@@ -1889,13 +1886,15 @@ nav {
 }
 
 .collection-addtocart {
-  background-color: rgb(255, 0, 0);
-  padding: 3px 5px 3px 5px;
-  border-radius: 5%;
-  color: whitesmoke;
+  display: inline-flex;
+  padding:0px 10px 0px 10px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background: var(--Primary, #f93c00);
+  backdrop-filter: blur(2px);
   cursor: pointer;
-  width: 15%;
-  text-align: center;
 }
 
 /*-------------------------collection-----------------------------*/

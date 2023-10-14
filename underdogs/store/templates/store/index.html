@@ -22,21 +22,82 @@
     <div class="mySlides fade">
       <img src="{% static 'store/assets/sample3.png' %}" style="width: 100%" />
     </div>
-    <div class="btnmain">
-      <button class="btn">VIEW COLLECTION</button>
-    </div>
-
+    
     <div class="slide-bar" style="text-align: center">
       <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
     </div>
   </div>
+  <div class="btnmain">
+    <button class="btn">VIEW COLLECTION</button>
+  </div>
 </div>
 
 <div class="new-ones">
-  <h1 class="title">NEW ONES</h1>
-  <div class="new-arival-images">
+  <h1 class="title">NEW ARRIVALS</h1>
+
+
+  <div class="collection-main">
+    <div class="collection-image">
+        <img src="{% static 'store/assets/tshirt1.png' %}" alt="">
+    </div>
+    <div class="collection-item-description">
+        <h2>title</h2>
+        <p class="collection-short-description">sku-id-details</p>
+        <div class="collection-rating">
+            <div class="star active"></div>
+            <div class="star active"></div>
+            <div class="star active"></div>
+            <div class="star active"></div>
+            <div class="star"></div>
+        </div>
+        <p class="collection-decription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatibus beatae quod accusantium nemo molestias, quisquam a amet atque magnam quasi, et vitae reprehenderit, deserunt mollitia. Nisi laborum aspernatur soluta?</p>
+        <div class="collection-color">
+            <p>color</p>
+            <div class="collection-color-circle"></div>
+            <div class="collection-color-circle"></div>
+            <div class="collection-color-circle"></div>
+        </div>
+        <p class="collection-price">123</p>
+        <div class="collection-addtocart">
+            <p>Add to cart</p>
+        </div>
+    </div>
+</div>
+
+<div class="collection-main">
+  <div class="collection-image">
+      <img src="{% static 'store/assets/tshirt1.png' %}" alt="">
+  </div>
+  <div class="collection-item-description">
+      <h2>title</h2>
+      <p class="collection-short-description">sku-id-details</p>
+      <div class="collection-rating">
+          <div class="star active"></div>
+          <div class="star active"></div>
+          <div class="star active"></div>
+          <div class="star active"></div>
+          <div class="star"></div>
+      </div>
+      <p class="collection-decription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatibus beatae quod accusantium nemo molestias, quisquam a amet atque magnam quasi, et vitae reprehenderit, deserunt mollitia. Nisi laborum aspernatur soluta?</p>
+      <div class="collection-color">
+          <p>color</p>
+          <div class="collection-color-circle"></div>
+          <div class="collection-color-circle"></div>
+          <div class="collection-color-circle"></div>
+      </div>
+      <p class="collection-price">123</p>
+      <div class="collection-addtocart">
+          <p>Add to cart</p>
+      </div>
+  </div>
+</div>
+
+
+
+
+  {% comment %} <div class="new-arival-images">
     <img src="{% static 'store/assets/tshirt2.png' %}" alt="" />
     <div class="unit-info">
       <div class="text-desc">
@@ -114,7 +175,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> {% endcomment %}
   <button class="explore">EXPLORE MORE ></button>
 </div>
 
@@ -194,26 +255,38 @@
 
 <script>
   let slideIndex = 0;
-  showSlides();
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+let slideshowInterval;
 
-  function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
     }
     slideIndex++;
     if (slideIndex > slides.length) {
-      slideIndex = 1;
+        slideIndex = 1;
     }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
-  }
+}
+
+function startSlideshow() {
+    slideshowInterval = setInterval(showSlides, 2000); // Change image every 2 seconds
+}
+
+function stopSlideshow() {
+    clearInterval(slideshowInterval);
+}
+
+document.querySelector(".slideshow-container").addEventListener("mouseenter", stopSlideshow);
+document.querySelector(".slideshow-container").addEventListener("mouseleave", startSlideshow);
+
+startSlideshow(); // Start slideshow initially
+
 </script>
 
 {% endblock %}
