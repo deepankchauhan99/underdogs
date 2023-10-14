@@ -35,11 +35,11 @@
 }
 
 /* -----------------navbar------------------- */
-body{
+body {
   margin: 0;
 }
-nav{
-  background-color:#000;
+nav {
+  background-color: #000;
   display: flex;
   gap: 40px;
 }
@@ -121,7 +121,6 @@ nav{
 
 .hamburger-container {
   transition: left 0.3s; /* Added transition for smooth movement */
-
 }
 
 .hamburger {
@@ -130,7 +129,6 @@ nav{
   left: 20px;
   align-items: center;
   transition: left 0.3s; /* Added transition for smooth movement */
-  
 }
 
 .hamburger input {
@@ -153,7 +151,7 @@ nav{
 
   /* Define the transition for transforming the Stroke */
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .line-top-bottom {
@@ -188,6 +186,32 @@ nav{
 .search {
   display: flex;
   align-items: center;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  align-self: center;
+  height: 10px;
+  padding: 12px 32px 12px 26px;
+  border: none;
+  position: absolute;
+  right:7%;
+  outline: none;
+  width: 20%; /* Set width to 30% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 28px;
+  background-color: rgba(255, 255, 255, 0.788);
+}
+
+.search-button {
+  cursor: pointer;
 }
 
 .shop {
@@ -567,7 +591,6 @@ nav{
   color: white;
   border: 1px solid #000;
 }
-
 
 .discount {
   margin-top: 3%;
@@ -1930,7 +1953,7 @@ nav{
 
 .collection-addtocart {
   display: inline-flex;
-  padding:0px 10px 0px 10px;
+  padding: 0px 10px 0px 10px;
   color: white;
   justify-content: center;
   align-items: center;

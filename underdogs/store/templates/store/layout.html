@@ -40,7 +40,8 @@
             <div class="logo">
                 <img src="{% static 'store/assets/UDd1.png'%}" alt="">
             </div>
-            <div class="search"><img src="{% static 'store/assets/search.svg' %}" alt=""></div>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search..." style="display:none">
+            <div class="search" onclick="toggleSearch()"><img src="{% static 'store/assets/search.svg' %}" alt=""></div>
             <div class="shop card" onclick="openPopup()"><img src="{% static 'store/assets/cart.svg' %}" alt=""></div>
             <div class="overlay" id="overlay" onclick="closePopup()">
                 <div class="popup" onclick="event.stopPropagation();">
@@ -53,6 +54,20 @@
            
         </nav>
         <script>
+            function toggleSearch() {
+                const searchInput = document.getElementById('searchInput');
+                if (searchInput.style.width === '20%') {
+                  searchInput.style.width = '0';
+                  searchInput.style.display = 'none';
+                } else {
+                  searchInput.style.width = '20%';
+                  searchInput.style.display = 'block';
+                  searchInput.focus();
+                }
+              }
+
+
+
             document.querySelector('.hamburger input').addEventListener('change', function() {
                 const slideoutBar = document.querySelector('.slideout-bar');
                 const hamburger = document.querySelector('.hamburger');
