@@ -221,11 +221,11 @@ class OrderItem(models.Model):
     def __str__(self):
         return f"Order Item #{self.pk} - Order: {self.order.pk}, SKU Variant: {self.sku_variant}"
 
-class ContactUs():
-    FirstName = models.CharField(max_length=100)
-    LastName = models.CharField(max_length=100)
-    Query = models.CharField(max_length=300)
-    email = models.EmailField()
+# class ContactUs():
+#     FirstName = models.CharField(max_length=100)
+#     LastName = models.CharField(max_length=100)
+#     Query = models.CharField(max_length=300)
+#     email = models.EmailField()
 
 
 class Inventory(models.Model):

@@ -6,7 +6,7 @@
   </div>
   <div class="contact-formbox">
     <form method="post">
-      {% csrf_token %} {{ form.as_p }}
+      {% comment %} {% csrf_token %} {{ form.as_p }} {% endcomment %}
       <div class="contact-form-left">
         <input placeholder="First Name" type="text" name="" id="" />
         <input placeholder="Last Name" type="text" name="" id="" />
