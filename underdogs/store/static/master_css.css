@@ -113,11 +113,13 @@ nav {
 .logo img {
   height: 5vh;
   width: auto;
+  margin-top: 4px;
+  margin-left: 140px;
 }
 
 .logo {
   margin: 0 auto;
-  align-self: center;
+  justify-items: center;
 }
 
 .hamburger-container {
@@ -187,8 +189,12 @@ nav {
 .search {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
+.search img {
+  width: 30px;
+}
 .search-container {
   position: relative;
   display: flex;
@@ -219,6 +225,12 @@ nav {
 .shop {
   display: flex;
   align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.shop img{
+  width: 30px;
 }
 
 @media screen and (max-width: 900px) {
@@ -285,6 +297,13 @@ nav {
     margin-right: 5%;
   }
 
+  .search img{
+    width: 30px;
+  }
+
+  .shop img{
+    width: 30px;
+  }
   .shop {
     display: flex;
     align-items: center;
@@ -482,6 +501,8 @@ nav {
   color: white;
   border: none;
   margin: auto;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .btnmain {
@@ -1942,9 +1963,10 @@ nav {
   font-size: x-large;
 }
 
-.collection-addtocart {
+.collection-addtocart{
   display: inline-flex;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 20px 0px 20px;
+  margin: 0 auto;
   color: white;
   justify-content: center;
   align-items: center;
