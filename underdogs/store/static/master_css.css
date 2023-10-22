@@ -208,6 +208,7 @@ nav {
   align-items: center;
   border-radius: 28px;
   background-color: rgba(255, 255, 255, 0.788);
+  transition: width 0.3s; /* Added transition for smooth width change */
 }
 
 .search-button {
@@ -217,7 +218,6 @@ nav {
 .shop {
   display: flex;
   align-items: center;
-  margin-right: 20px;
 }
 
 @media screen and (max-width: 900px) {
@@ -2031,4 +2031,117 @@ nav {
     margin-top: 4%;
     border: 1px solid rgb(249, 60, 0);
   }
+}
+
+/*---------------------------User Profile--------------------------- */
+
+.user_profile_main{
+  display: flex;
+  justify-content: center;
+}
+
+.user_profile_left{
+  width: 20%;
+}
+
+.user_profile_right{
+  width: 60%;
+}
+
+.user_profile_name{
+  border-bottom: 1px solid black;
+}
+
+.user_profile_account_settings h2 ,
+.user_profile_payments h2,
+.user_profile_myorder h2,
+.user_profile_my_stuff h2{
+  color: rgb(249, 60, 0);
+}
+
+.user_profile_personal_info{
+  padding: 5% 3%;
+}
+
+.user_name{
+  height: 40px;
+  width: 25%;
+}
+
+.user_profile_edit{
+  float: right;
+  color: rgb(56, 56, 172);
+}
+
+.user_profile_manage_address{
+  padding: 5% 3%;
+}
+
+.add_a_new_address{
+  border: 2px solid rgba(249, 58, 0, 0.599);
+  padding-left: 2%;
+}
+
+.added_addresses{
+  margin-top: 5%;
+}
+
+.user_profile_edit_address{
+  padding: 5% 3%;
+}
+
+.user_location{
+  width: 25%;
+  height: 40px;
+  background-color: rgb(249, 60, 0);
+  color: white;
+  font-size: large;
+  margin-top: 5%;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  margin-bottom: 3%;
+}
+
+.user_profile_edit_field{
+  height: 40px;
+  width: 25%; 
+  margin: 1% 1% 1% 1%;
+}
+
+.user_profile_address{
+  height: 60px;
+  width: 53%;
+  margin: 1% 1% 1% 1%;
+}
+
+.user_data_state{
+  width: 10%;
+  height: 40px;
+  background-color: rgb(249, 60, 0);
+  color: white;
+  font-size: large;
+  margin-top: 5%;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+}
+
+.coupons_template{
+  border: 1px solid rgba(148, 34, 0, 0.598);
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-left: 1%;
+}
+
+.user_profile_logout button{
+  width: 25%;
+  height: 40px;
+  background-color: rgb(249, 60, 0);
+  color: white;
+  font-size: large;
+  align-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
 }

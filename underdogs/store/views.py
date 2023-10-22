@@ -43,6 +43,9 @@ def collection(request):
 def item_description(request):
     return render(request, "store/item_description.html")
 
+def user_profile(request):
+    return render(request, "store/user_profile.html")
+
 # def contact_us(request):
 #     # if request.method=="POST":
 #     #     form = ContactUs(request.POST)
