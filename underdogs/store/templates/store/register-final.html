@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -443,7 +444,7 @@
       </div>
       <div id="video" class="video-box">
         <video autoplay muted loop>
-          <source src="UNDERDOGS.mp4" type="video/mp4" />
+          <source src="{% static 'store/assets/UNDERDOGS.mp4' %}" type="video/mp4" />
         </video>
       </div>
     </div>
@@ -455,19 +456,19 @@
         <div class=" img-hover-zoom">
 
           <a href="https://www.instagram.com/underdogs__clothing" target="_blank">
-            <img class="" src="instagram.png" alt="Instagram">
+            <img class="" src="{% static 'store/assets/instagram.png' %}" alt="Instagram">
           </a>
         </div>
         <div class=" img-hover-zoom twitter">
 
           <a href="https://twitter.com/Underdogscloths?t=EJ1VpT7nTr3XGF-hm339Dw&s=08">
-            <img class="" src="twitter.png" alt="Twitter">
+            <img class="" src="{% static 'store/assets/twitter2.png' %}" alt="Twitter">
           </a>
         </div>
         <div class=" img-hover-zoom">
 
           <a href="https://www.threads.net/@underdogs__clothing">
-            <img class="" src="threads.png" alt="Threads">
+            <img class="" src="{% static 'store/assets/threads.png' %}" alt="Threads">
           </a>
         </div>
       </div>
