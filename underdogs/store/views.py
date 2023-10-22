@@ -34,7 +34,8 @@ class LoginForm(forms.Form):
 def index(request):
     return render(request, "store/index.html")
 
-
+def register_auth(request):
+    return render(request, 'store/register-final.html')
 
 def collection(request):
     return render(request, "store/collection.html")

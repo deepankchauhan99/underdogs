@@ -10,6 +10,7 @@ urlpatterns = [
     path ("contact-us", views.contact_us, name='contact-us'),
     path ("user_profile", views.user_profile, name='user_profile'),
     path ("item_description", views.item_description, name='collection'),
+    path ("register-final", views.register_auth, name='register-auth'),
     # path("shop", views.shop, name="shop"),
     # path("about", views.about, name="about"),
     # path("contact", views.contact, name="contact"),
