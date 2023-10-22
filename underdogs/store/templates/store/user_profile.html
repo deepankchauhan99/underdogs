@@ -1,0 +1,122 @@
+{% extends "store/layout.html" %} {% load static %} {% block body %}
+
+<div class="user_profile_main">
+  <div class="user_profile_left">
+    <div class="user_profile_name">
+      <p>Hello, Kushagra Singh</p>
+    </div>
+
+    <div class="user_profile_options">
+      <div class="user_profile_myorder">
+        <h2>MY ORDERS</h2>
+      </div>
+      <div class="user_profile_account_settings">
+        <h2>ACCOUNT SETTINGS</h2>
+        <p onclick="toggleDiv('div1')" >Profile Information</p>
+        <p onclick="toggleDiv('div2')" >Manage Address</p>
+      </div>
+      <div class="user_profile_payments">
+        <h2>PAYMENT METHODS</h2>
+        <p onclick="toggleDiv('div4')" >Saved Cards</p>
+      </div>
+      <div class="user_profile_my_stuff">
+        <h2>MY STUFF</h2>
+        <p onclick="toggleDiv('div5')" >My Coupons</p>
+        <p onclick="toggleDiv('div7')" >Wishlist</p>
+      </div>
+      <div class="user_profile_logout">
+        <button>Log Out</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="user_profile_right">
+    <div class="user_profile_personal_info" id="div1">
+      <h2>Personal Information</h2>
+      
+      <input class="user_name" type="text" placeholder="Kushagra" />
+      <input class="user_name" type="text" placeholder="Singh" />
+      <span class="user_profile_edit">edit</span>
+      
+      <p>Your Gender</p>
+      <input type="radio" value="Male" />Male
+      <input type="radio" value="Female" />Female
+
+      <h3>Email Address</h3>
+      <span class="user_profile_edit">edit</span>
+      <input class="user_name" type="email" placeholder="kushagrasinghonline@gmail.com" />
+
+      <h3>Mobile Number</h3>
+      <span class="user_profile_edit">edit</span>
+      <input class="user_name" type="email" placeholder="8377851895" />
+    </div>
+
+    <div class="user_profile_manage_address" id="div2">
+      <h2>Manage Addresses</h2>
+      <div class="add_a_new_address">
+        <p>Add a New Address</p>
+      </div>
+
+      <div class="added_addresses">
+          <span class="user_profile_edit">edit</span>
+          <h3>Kushagra Singh 8377851895</h3>
+          <p>
+              H.no. 1301 rudra appartment flat no. 303, Gali no. 10, laxman vihar
+              phase 2, Gurugram, Haryana - 122006
+            </p>
+            <span class="user_profile_edit" >Delete</span>
+      </div>
+    </div>
+    <div class="user_profile_edit_address">
+        <div class="user_profile_current_location">
+            <button class="user_location">Use Current Location</button>
+            <div>
+                <input class="user_profile_edit_field" type="text" placeholder="Name">
+                <input class="user_profile_edit_field" type="tel" placeholder="Phone Number">
+            </div>
+            <div>
+                <input class="user_profile_edit_field" type="text" placeholder="Location">
+                <input class="user_profile_edit_field" type="text" placeholder="Pincode">
+            </div>
+            <input class="user_profile_address" type="text" placeholder="Address">
+            <div>
+                <input class="user_profile_edit_field" type="text" placeholder="City/District/Town">
+                <input class="user_profile_edit_field" type="text" placeholder="State">
+            </div>
+            <input class="user_profile_edit_field" type="text" placeholder="Landmark(Optional)">
+            <input class="user_profile_edit_field" type="text" placeholder="Alternate Phone(Optional)">
+            <h3>Address Type</h3>
+            <div>
+                <input type="radio" name="Home" id="">Home
+                <input type="radio" name="" id="">Work
+            </div>
+            
+            <button class="user_data_state">Save</button>
+            <button class="user_data_state">Cancle</button>
+        </div>
+      </div>
+      <div class="user_profile_coupons">
+        <h3>Available Coupons</h3>
+        <div class="coupons_template">
+            <h4>Flat 200 off</h4>
+            <h3 class="coupon_code">UNDERDOGS</h3>
+            <p class="coupons_validity">Valid till 29th Dec, 2023</p>
+            <p class="tandc">T&C</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<script>
+    function toggleDiv(divId) {
+        var div = document.getElementById(divId);
+        if (div.style.display === "none") {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
+      }
+      
+</script>
+
+{% endblock %}
