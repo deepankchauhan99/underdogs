@@ -10,6 +10,8 @@ from django import forms
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.hashers import make_password, check_password
+
 
 
 logger = logging.getLogger('yourapp')
@@ -97,7 +99,7 @@ def register(request):
             # print(User.objects.get(email=email))
 
             if password == repeat:
-                user = User(first_name=firstname,last_name=lastname,email=email,password=password,is_staff=True)
+                user = User(first_name=firstname,last_name=lastname,email=email,password=make_password(password),is_staff=True)
                 user.save()
                 return HttpResponseRedirect(reverse("store:login"))
             else:
@@ -137,7 +139,7 @@ def login(request):
         db_pass = user.password
         print(db_pass)
         # If user object is returned, log in and route to index page:
-        if db_pass == password:
+        if check_password(password, db_pass):
             print('Auth success!')
             # login(request, user)
             # return HttpResponseRedirect(reverse("index"))
