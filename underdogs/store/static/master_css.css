@@ -42,6 +42,7 @@ nav {
   background-color: #000;
   display: flex;
   gap: 40px;
+  align-self: center;
 }
 .menu-container {
   position: fixed;
@@ -225,19 +226,22 @@ nav {
     display: flex;
     gap: 0px;
     margin-bottom: 3%;
+    height: 5vh;
   }
 
   .logo img {
-    height: 5vh;
+    height: 4vh;
     width: auto;
+    margin: 0 auto;
+    
   }
 
   .logo {
-    align-self: center;
-    margin: 0 auto;
+    align-items: center;
   }
   .hamburger {
     cursor: pointer;
+    float: left;
   }
 
   .hamburger input {
@@ -253,10 +257,10 @@ nav {
 
   .line {
     fill: none;
-    stroke: black; /* Change 'white' to 'black' */
+    stroke: white; /* Change 'white' to 'black' */
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke-width: 3;
+    stroke-width: 2;
     /* Define the transition for transforming the Stroke */
     transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
       stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1911,20 +1915,7 @@ nav {
   color: gray;
 }
 
-.collection-rating {
-  font-size: 24px;
-  display: flex;
-}
-.star {
-  margin: 0 5px;
-  background-color: white;
-}
-.star:before {
-  content: "★";
-}
-.star.active:before {
-  color: gold;
-}
+
 
 .collection-decription {
   padding-top: 5%;
@@ -1962,6 +1953,114 @@ nav {
   backdrop-filter: blur(2px);
   cursor: pointer;
 }
+@media (max-width: 900px) {
+  .collection-main {
+    display: block;
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10%;
+    margin-bottom: 2%;
+  }
+
+  .collection-image {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .collection-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .collection-item-description {
+    text-align: center;
+  }
+
+  .collection-item-description h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+
+  .collection-short-description {
+    font-size: 1em;
+    color: gray;
+    margin: 5px 0;
+  }
+
+  .collection-rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+
+  .collection-decription {
+    font-size: 0.9em;
+    color: #555;
+    margin: 10px 0;
+    text-align: left;
+  }
+
+  .collection-color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .collection-color p {
+    margin: 0;
+    margin-right: 5px;
+  }
+
+  .collection-color-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 2px;
+  }
+
+  .collection-color-circle:nth-child(1) {
+    background-color: #ff0000;
+  }
+
+  .collection-color-circle:nth-child(2) {
+    background-color: #00ff00;
+  }
+
+  .collection-color-circle:nth-child(3) {
+    background-color: #0000ff;
+  }
+
+  .collection-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+  }
+
+  .collection-addtocart {
+    text-align: center;
+  }
+
+  .collection-addtocart p {
+    /* background-color: #007bff; */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0%;
+    transition: background-color 0.3s;
+  }
+}
+
 
 /*-------------------------collection-----------------------------*/
 
