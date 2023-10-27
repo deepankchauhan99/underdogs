@@ -31,7 +31,7 @@
   display: flex;
 }
 .color {
-  color: rgb(249, 60, 0);
+  color: #000000;
 }
 
 /* -----------------navbar------------------- */
@@ -323,7 +323,7 @@ nav {
 
 .footer-top {
   height: 100px;
-  background: rgb(249, 60, 0);
+  background: #000000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -497,7 +497,7 @@ nav {
   align-items: center;
   gap: 8px;
   border-radius: 30px;
-  background-color: rgba(249, 60, 0, 1);
+  background-color: #000000;
   color: white;
   border: none;
   margin: auto;
@@ -544,7 +544,7 @@ nav {
 }
 
 .unit-title h4 {
-  color: rgba(249, 60, 0, 1);
+  color: #000000;
   font-size: larger;
 }
 
@@ -555,7 +555,7 @@ nav {
 
 .price h4 {
   font-size: xx-large;
-  color: rgba(249, 60, 0, 1);
+  color: #000000;
 }
 
 .product-color {
@@ -764,7 +764,7 @@ nav {
   }
 
   .active {
-    background-color: rgb(249, 60, 0);
+    background-color: #000000;
   }
 
   .fade {
@@ -792,7 +792,7 @@ nav {
     width: 50%;
     color: white;
     font-weight: bold;
-    background-color: rgb(249, 60, 0);
+    background-color: #000000;
     border-style: none;
     border-radius: 30px;
   }
@@ -843,7 +843,7 @@ nav {
     display: none;
   }
   .price {
-    color: rgb(249, 60, 0);
+    color: #000000;
     font-weight: lighter;
   }
 
@@ -994,7 +994,7 @@ nav {
   padding-left: 5%;
   padding-top: 20%;
   padding-bottom: 20%;
-  background-color: rgba(249, 60, 0, 1);
+  background-color: #000000;
   color: white;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -1029,7 +1029,7 @@ nav {
   height: 35px;
   font-size: large;
   font-weight: bold;
-  background-color: rgba(249, 60, 0, 1);
+  background-color: #000000;
   color: white;
   border-radius: 30px;
   border-style: none;
@@ -1103,7 +1103,7 @@ nav {
   padding-left: 5%;
   padding-top: 20%;
   padding-bottom: 20%;
-  background-color: rgba(249, 60, 0, 1);
+  background-color: #000000;
   color: white;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -1138,7 +1138,7 @@ nav {
   height: 35px;
   font-size: large;
   font-weight: bold;
-  background-color: rgba(249, 60, 0, 1);
+  background-color: #000000;
   color: white;
   border-radius: 30px;
   border-style: none;
@@ -1266,7 +1266,7 @@ nav {
 }
 
 .active {
-  background-color: rgb(249, 60, 0);
+  background-color: #000000;
 }
 
 .fade {
@@ -1284,7 +1284,7 @@ nav {
   }
 }
 .item-card-price p {
-  color: rgba(249, 60, 0, 1);
+  color: #000000;
   font-weight: bolder;
   margin-bottom: 10px;
   font-size: large;
@@ -1294,7 +1294,7 @@ nav {
 }
 .addtocart-btn {
   align-items: center;
-  background-color: #f93c00;
+  background-color: #000000;
   display: flex;
   border-radius: 30px;
   justify-content: center;
@@ -1316,7 +1316,7 @@ nav {
   border-radius: 10px;
 }
 #orangeclr {
-  background-color: #f93c00;
+  background-color: #000000;
   margin-left: 20px;
   width: 20px;
   height: 20px;
@@ -1468,7 +1468,7 @@ nav {
   }
 
   .active {
-    background-color: rgb(249, 60, 0);
+    background-color: #000000;
   }
 
   .fade {
@@ -1506,7 +1506,7 @@ nav {
     margin-left: 10px;
   }
   .price span {
-    color: rgba(249, 60, 0, 1);
+    color: #000000;
     font-weight: bolder;
   }
   .color {
@@ -1521,7 +1521,7 @@ nav {
     border-radius: 10px;
   }
   #orangeclr {
-    background-color: #f93c00;
+    background-color: #000000;
     margin-left: 20px;
     width: 20px;
     height: 20px;
@@ -1628,7 +1628,7 @@ nav {
 .button {
   width: 40%;
   height: 47px;
-  background-color: rgb(249, 60, 0);
+  background-color: #000000;
   font-weight: bold;
   color: white;
   border-style: none;
@@ -1636,7 +1636,7 @@ nav {
 }
 
 .color {
-  color: rgb(249, 60, 0);
+  color: #000000;
 }
 
 .color-grey {
@@ -1736,7 +1736,7 @@ nav {
 }
 
 .checkout-btn {
-  background-color: rgb(249, 60, 0);
+  background-color: #000000;
   color: white;
   text-align: center;
   width: 95%;
@@ -1784,7 +1784,7 @@ nav {
 
 .address-btn {
   margin-top: 82%;
-  background-color: rgb(249, 60, 0);
+  background-color: #000000;
   color: white;
   text-align: center;
   width: 95%;
@@ -1971,7 +1971,7 @@ nav {
   justify-content: center;
   align-items: center;
   border-radius: 30px;
-  background: var(--Primary, #f93c00);
+  background: var(--Primary, #000000);
   backdrop-filter: blur(2px);
   cursor: pointer;
 }
@@ -2124,7 +2124,7 @@ nav {
 .contact-form-right button {
   width: 60%;
   height: 30px;
-  background-color: rgb(249, 60, 0);
+  background-color: #000000;
   color: white;
   font-size: large;
   margin-top: 5%;
@@ -2139,7 +2139,7 @@ nav {
   }
   .contact-form-left input {
     width: 100%;
-    border: 1px solid rgb(249, 60, 0);
+    border: 1px solid #000000;
   }
   .contact-form-left {
     display: block;
@@ -2150,7 +2150,7 @@ nav {
   .contact-form-right textarea {
     width: 100%;
     margin-top: 4%;
-    border: 1px solid rgb(249, 60, 0);
+    border: 1px solid #000000;
   }
 }
 
@@ -2177,7 +2177,7 @@ nav {
 .user_profile_payments h2,
 .user_profile_myorder h2,
 .user_profile_my_stuff h2{
-  color: rgb(249, 60, 0);
+  color: #000000;
 }
 
 .user_profile_personal_info{
@@ -2214,7 +2214,7 @@ nav {
 .user_location{
   width: 25%;
   height: 40px;
-  background-color: rgb(249, 60, 0);
+  background-color: #000000;
   color: white;
   font-size: large;
   margin-top: 5%;
@@ -2239,7 +2239,7 @@ nav {
 .user_data_state{
   width: 10%;
   height: 40px;
-  background-color: rgb(249, 60, 0);
+  background-color: #000000;
   color: white;
   font-size: large;
   margin-top: 5%;
@@ -2258,7 +2258,7 @@ nav {
 .user_profile_logout button{
   width: 25%;
   height: 40px;
-  background-color: rgb(249, 60, 0);
+  background-color: #000000;
   color: white;
   font-size: large;
   align-content: center;
