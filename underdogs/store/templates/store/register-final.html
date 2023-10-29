@@ -15,19 +15,21 @@
     rel="stylesheet" />
 </head>
 <style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        background-color: black;
-        font-family: "Be Vietnam Pro", sans-serif;
-        font-family: "Josefin Sans", sans-serif;
-    }
-    html,
-    body {
-        width: 100%;
-        height: 100%;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-family: "Josefin Sans", sans-serif;
   }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
   .btn {
     display: flex;
     align-items: center;
@@ -42,16 +44,19 @@
     transition: 0.6s;
     background-image: linear-gradient(to left, #cc5500, #ffa756);
   }
+
   .btn:hover {
     background-position: right;
   }
+
   .content {
     margin-top: 14%;
     color: white;
-  
+
     width: 100%;
     align-items: center;
   }
+
   .content h2 {
     font-size: 50px;
     font-weight: 600;
@@ -60,38 +65,45 @@
     margin-left: 5px;
     padding-right: 10px;
   }
+
   .content p {
     margin-left: 10px;
     c
   }
+
   span {
     color: #cc5500;
   }
+
   ::selection {
     background-color: #5454545a;
     color: #cc5500;
   }
-  
+
   .video-box {
     height: 100%;
   }
+
   .video-box video {
     width: 100%;
     height: 100%;
   }
-  
+
   .register-text {
     font-size: x-large;
     color: white;
     padding-left: ;
   }
+
   .register-mail-box h2 {
     color: #fff;
   }
+
   .register-mail-box {
     text-align: center;
     margin-top: 30px;
   }
+
   .e-form {
     width: 80%;
     display: flex;
@@ -102,6 +114,7 @@
     align-items: center;
     margin: auto;
   }
+
   .e-form input {
     border: 0;
     outline: 0;
@@ -110,40 +123,48 @@
     padding-left: 10px;
     background-color: white;
   }
+
   .about h2 {
     color: #fff;
     margin-left: 10px;
     margin-bottom: 20px;
   }
+
   .about {
     margin-top: 50px;
     text-align: center;
   }
+
   #about-content {
     font-size: 20px;
     color: #fff;
     padding-left: 10px;
     padding-right: 10px;
   }
+
   section {
     height: 500px;
   }
+
   section button {
     visibility: hidden;
   }
+
   .btn p {
     margin-left: 1%;
     color: black;
     background-color: transparent;
   }
+
   footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    border-top: 2px solid rgb(156, 156, 156);  
+    border-top: 2px solid rgb(156, 156, 156);
     text-align: center;
   }
+
   footer span {
     display: block;
     background-color: black;
@@ -151,6 +172,7 @@
     font-size: large;
     margin-bottom: 1px;
   }
+
   footer img {
     height: 30px;
     width: 30px;
@@ -158,36 +180,42 @@
     margin-bottom: 5px;
     border-radius: 8px;
   }
+
   .socials {
     display: flex;
     justify-content: center;
   }
+
   .img-hover-zoom {
     overflow: hidden;
   }
-  
+
   .img-hover-zoom img {
     transition: transform 0.5s ease;
   }
+
   .twitter {
     margin-left: 4px;
     margin-right: 4px;
   }
+
   .img-hover-zoom:hover img {
     transform: scale(1.5);
   }
+
   .f-elements {
     margin-top: 5px;
     align-items: center;
     justify-content: center;
   }
-  .register-content-main{
+
+  .register-content-main {
     border: 3px solid #cc5500;
     border-left: none;
     border-top: none;
     border-bottom: none;
   }
-  
+
   @media screen and (min-width: 1200px) {
     * {
       font-family: "Be Vietnam Pro", sans-serif;
@@ -197,30 +225,34 @@
       box-sizing: border-box;
       background-color: black;
     }
+
     html,
     body {
       width: 100%;
       height: 100%;
     }
+
     #main {
       width: 100%;
     }
-  
+
     #nav {
       height: 100px;
       display: flex;
       width: 100%;
     }
+
     .udlogo {
       height: 60%;
       width: 20%;
       margin-left: 6%;
     }
+
     #links {
       visibility: visible;
       margin-left: 60%;
     }
-  
+
     #links button {
       text-decoration: none;
       font-size: large;
@@ -230,9 +262,11 @@
       color: white;
       transition: 0.3s all;
     }
+
     #links button:hover {
       color: #cc5500;
     }
+
     .hk::after {
       content: "";
       display: block;
@@ -241,10 +275,12 @@
       background-color: #cc5500;
       transition: width 0.3;
     }
+
     .hk:hover::after {
       width: 100%;
       transition: width 0.6s;
     }
+
     .btn {
       display: flex;
       align-items: center;
@@ -259,9 +295,11 @@
       transition: 0.6s;
       background-image: linear-gradient(to left, #cc5500, #ffa756);
     }
+
     .btn:hover {
       background-position: right;
     }
+
     .content {
       margin-top: 5%;
       color: white;
@@ -269,47 +307,57 @@
       align-items: center;
       padding-left: 70px;
     }
+
     .content h1 {
       font-size: 70px;
       font-weight: 600;
       line-height: 85px;
       margin-bottom: 25px;
     }
-  
+
     span {
       color: #cc5500;
     }
+
     ::selection {
       background-color: #5454545a;
       color: #cc5500;
     }
+
     .register-content-main {
       display: flex;
       width: 50%;
     }
+
     h2 {
       color: white;
     }
+
     .video-box {
       width: 50%;
       height: 100%;
     }
+
     .video-box video {
       width: 100%;
       height: 100%;
     }
+
     .register-main-box {
       margin-top: 2%;
       display: flex;
       height: 550px;
     }
+
     .register-text {
       font-size: x-large;
     }
+
     .register-mail-box {
       text-align: center;
       margin-top: 30px;
     }
+
     .e-form {
       display: flex;
       background: #fff;
@@ -319,6 +367,7 @@
       align-items: center;
       margin-top: 30px;
     }
+
     .e-form input {
       border: 0;
       outline: 0;
@@ -327,23 +376,29 @@
       padding-left: 10px;
       background-color: white;
     }
+
     #aboutbox {
       display: none;
     }
+
     .about h2 {
       color: white;
     }
+
     .Abutton {
       border-style: none;
     }
+
     section {
       text-align: center;
       width: 80%;
       margin: auto;
     }
+
     section p {
       margin-top: 69px;
     }
+
     section button {
       display: none;
       margin-top: 10%;
@@ -352,20 +407,41 @@
       cursor: pointer;
       font-size: larger;
     }
-    .loader-wrapper{
+
+    .loader-wrapper {
       width: 100%;
       height: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      
+
+    }
+
+    .googlelogin {
+      display: flex;
+      width: 345px;
+      padding: 12px 32px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 28px;
+      background: var(--Primary, #F93C00);
+    }
+
+    .googlelogin img{
+      background: var(--Primary, #F93C00);
+    }
+    
+    .googlelogin p{
+      background: var(--Primary, #F93C00);
+      font-weight: bold;
     }
   }
-  
+
   @media screen and (max-width: 600px) {
     .btn {
       display: flex;
-  
+
       position: absolute;
       margin-top: 80px;
       font-size: larger;
@@ -381,55 +457,65 @@
       transition: 0.6s;
       background-image: linear-gradient(to left, #cc5500, #ffa756);
     }
+
     .btn p {
       margin-left: 35%;
       color: black;
       background-color: transparent;
     }
+
     .register-Hero-heading {
       margin-left: 15px;
     }
-  
+
     .video-box video {
       margin-top: 12%;
       width: 100%;
       height: 100%;
     }
+
     footer {
       position: inherit;
     }
+
     footer span {
       display: block;
     }
+
     .f-elements {
       display: block;
     }
+
     footer img {
       margin-top: 5px;
       margin: auto;
     }
-}
-
+  }
 </style>
+
 <body>
 
-    <div class="register-main-box">
-      <div class="register-content-main">
-        <div class="content">
-          <div class="register-Hero-heading">
+  <div class="register-main-box">
+    <div class="register-content-main">
+      <div class="content">
+        <div class="register-Hero-heading">
 
-            
-            <div class="register-mail-box">
-              
-              
-              <form class="e-form" action="" method="post">
+
+          <div class="register-mail-box">
+
+
+            <form class="e-form" action="" method="post">
               <h2>New <span>here?</span><br /></h2>
-            </div>
-            <p class="register-text">
-            Register now and join the revolution 
-            </p>
-            <br />
-              <!-- <input type="email" name="email" placeholder="email address" required />
+          </div>
+          <p class="register-text">
+            Register now and join the revolution
+          </p>
+          <br />
+          <div class="googlelogin">
+            <img src="{% static 'store/assets/Group 42172.svg' %}" alt="">
+            <p>Signin With Google</p>
+          </div>
+          <!-- <input type="email" name="email" placeholder="email address" required />
               <button type="submit" class="btn">
                 <p>Subscribe</p>
               </button>
@@ -437,19 +523,19 @@
               <button type="submit" class="btn">
                 <p>Subscribe</p>
               </button> -->
-              {% csrf_token %}
-    {{form }}
-    <!-- <input type="submit" value="Submit"> -->
-            </form>
-          </div>
+          {% csrf_token %}
+          {{form }}
+          <!-- <input type="submit" value="Submit"> -->
+          </form>
         </div>
       </div>
-      <div id="video" class="video-box">
-        <video autoplay muted loop>
-          <source src="{% static 'store/assets/UNDERDOGS.mp4' %}" type="video/mp4" />
-        </video>
-      </div>
     </div>
+    <div id="video" class="video-box">
+      <video autoplay muted loop>
+        <source src="{% static 'store/assets/UNDERDOGS.mp4' %}" type="video/mp4" />
+      </video>
+    </div>
+  </div>
 
   </div>
   <footer>
