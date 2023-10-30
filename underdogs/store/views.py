@@ -166,7 +166,9 @@ def item(request, sku):
     
     colors = [COLOR_DICT[color] for color in colorid]
     sizes = [SIZE_DICT[size] for size in sizeid]
-   
+    
+    print(colors)
+    print(sizes)
 
     return render(request, "store/item_description.html", {"item": item, "colors": colors, "sizes": sizes})
 # def register(request):
