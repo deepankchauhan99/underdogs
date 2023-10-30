@@ -5,7 +5,7 @@
     <img src="{% static 'store/assets/banner1.png' %}" style="width: 100%" />
   </div>
   <div class="btnmain">
-    <button class="btn">VIEW COLLECTION</button>
+    <a href="{% url 'store:collection' %}"<button class="btn">VIEW COLLECTION</button> </a>
   </div>
 </div>
 
@@ -30,21 +30,22 @@
     </div>
   </div>
   <div class="btnmain">
-    <a href='/store/login' <button class="btn">VIEW COLLECTION</button> </a>
+    <a href="{% url 'store:collection' %}"<button class="btn">VIEW COLLECTION</button> </a>
   </div>
 </div>
 
 <div class="new-ones">
   <h1 class="title">NEW ARRIVALS</h1>
 
-
+{% for sku in skus %}
+<a href="{% url 'store:item' sku=sku.sku_id %}">
   <div class="collection-main">
     <div class="collection-image">
         <img src="{% static 'store/assets/tshirt1.png' %}" alt="">
     </div>
     <div class="collection-item-description">
-        <h2>title</h2>
-        <p class="collection-short-description">sku-id-details</p>
+        <h2>{{ sku.name }}</h2>
+        <p class="collection-short-description">{{ sku.sku_id }}</p>
         <div class="collection-rating">
             <div class="star active"></div>
             <div class="star active"></div>
@@ -52,47 +53,22 @@
             <div class="star active"></div>
             <div class="star"></div>
         </div>
-        <p class="collection-decription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatibus beatae quod accusantium nemo molestias, quisquam a amet atque magnam quasi, et vitae reprehenderit, deserunt mollitia. Nisi laborum aspernatur soluta?</p>
+        <p class="collection-decription">{{ sku.description }}</p>
         <div class="collection-color">
             <p>color</p>
             <div class="collection-color-circle"></div>
             <div class="collection-color-circle"></div>
             <div class="collection-color-circle"></div>
         </div>
-        <p class="collection-price">123</p>
+        <p class="collection-price">₹{{ sku.price }}</p>
         <div class="collection-addtocart">
             <p>Add to cart</p>
         </div>
     </div>
-</div>
+  </div>
+</a>
+{% endfor %}
 
-<div class="collection-main">
-  <div class="collection-image">
-      <img src="{% static 'store/assets/tshirt1.png' %}" alt="">
-  </div>
-  <div class="collection-item-description">
-      <h2>title</h2>
-      <p class="collection-short-description">sku-id-details</p>
-      <div class="collection-rating">
-          <div class="star active"></div>
-          <div class="star active"></div>
-          <div class="star active"></div>
-          <div class="star active"></div>
-          <div class="star"></div>
-      </div>
-      <p class="collection-decription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatibus beatae quod accusantium nemo molestias, quisquam a amet atque magnam quasi, et vitae reprehenderit, deserunt mollitia. Nisi laborum aspernatur soluta?</p>
-      <div class="collection-color">
-          <p>color</p>
-          <div class="collection-color-circle"></div>
-          <div class="collection-color-circle"></div>
-          <div class="collection-color-circle"></div>
-      </div>
-      <p class="collection-price">123</p>
-      <div class="collection-addtocart">
-          <p>Add to cart</p>
-      </div>
-  </div>
-</div>
 
 
 
@@ -176,7 +152,7 @@
       </div>
     </div>
   </div> {% endcomment %}
-  <button class="explore">EXPLORE MORE > </button>
+  <a href="{% url 'store:collection' %}"><button class="explore">EXPLORE MORE > </button></a>
 </div>
 
 <div class="discount">
