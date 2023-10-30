@@ -608,6 +608,7 @@ nav {
   border: 1px solid #000;
   background: #fff;
   cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
@@ -615,6 +616,7 @@ nav {
   background-color: black;
   color: white;
   border: 1px solid #000;
+  text-decoration: none;
 }
 
 .discount {
@@ -859,6 +861,7 @@ nav {
     font-weight: bolder;
     font-size: large;
     text-align: center;
+    text-decoration: none;
     padding-top: 1.6%;
   }
 
@@ -1036,7 +1039,7 @@ nav {
   transition: background-color 0.3s ease;
 }
 .btn:active {
-  background-color: #922f04;
+  background-color: #444444;
 }
 .register-authentication {
   display: flex;
@@ -1145,7 +1148,7 @@ nav {
   transition: background-color 0.3s ease;
 }
 .btn:active {
-  background-color: #922f04;
+  background-color: #444444;
 }
 .login-authentication {
   display: flex;
@@ -1300,6 +1303,7 @@ nav {
   justify-content: center;
   align-items: center;
   margin-top: 25px;
+  width: 20%;
 }
 .imgcart {
   margin-left: 1%;
