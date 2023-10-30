@@ -14,7 +14,7 @@ from django.contrib.auth.hashers import make_password, check_password
 
 
 
-logger = logging.getLogger('yourapp')
+logger = logging.getLogger('store')
 
 colors = SKUColor.objects.all()
 sizes = SKUSize.objects.all()
@@ -34,13 +34,16 @@ class LoginForm(forms.Form):
 
 # Routes
 def index(request):
-    return render(request, "store/index.html")
+    skus = SKU.objects.all()
+    return render(request, "store/index.html", {'skus':skus})
 
 def register_auth(request):
     return render(request, 'store/register-final.html')
 
 def collection(request):
-    return render(request, "store/collection.html")
+    skus = SKU.objects.all()
+    print(skus)
+    return render(request, "store/collection.html", {'skus':skus})
 
 
 def item_description(request):
@@ -63,12 +66,6 @@ def user_profile(request):
 #     # else:
 #         # form = ContactForm()
 #     return render(request, 'store/contact_us.html')
-
-
-
-
-
-
 
 
 def contact_us(request):
@@ -171,7 +168,7 @@ def item(request, sku):
     sizes = [SIZE_DICT[size] for size in sizeid]
    
 
-    return render(request, "store/item-description.html", {"item": item, "colors": colors, "sizes": sizes})
+    return render(request, "store/item_description.html", {"item": item, "colors": colors, "sizes": sizes})
 # def register(request):
 #     if request.method == 'POST':
 #         pass

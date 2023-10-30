@@ -1,20 +1,24 @@
+{% extends "store/layout.html" %} {% load static %} {% block body %}
 
-
+{% for sku in skus %}
 <div class="collection-main">
     <div class="collection-image">
         <img src="{% static 'store/assets/tshirt1.png' %}" alt="">
     </div>
     <div class="collection-item-description">
-        <h2>title</h2>
-        <p class="collection-short-description">sku-id-details</p>
-        <p class="collection-decription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatibus beatae quod accusantium nemo molestias, quisquam a amet atque magnam quasi, et vitae reprehenderit, deserunt mollitia. Nisi laborum aspernatur soluta?</p>
+        <h2>{{ sku }}</h2>
+        <p class="collection-short-description">{{ sku.sku_id }}</p>
+        <p class="collection-decription">{{ sku.description }}</p>
         <div class="collection-color">
             <p>color</p>
             <div class="collection-color-circle"></div>
             <div class="collection-color-circle"></div>
             <div class="collection-color-circle"></div>
         </div>
-        <p class="collection-price">123</p>
+        <p class="collection-price">₹{{ sku.price }}</p>
         <button class="collection-addtocart">Add to cart</button>
     </div>
 </div>
+{% endfor %}
+
+{% endblock %}
