@@ -207,9 +207,8 @@ nav {
   padding: 12px 32px 12px 26px;
   border: none;
   position: absolute;
-  right:7%;
+  right:9%;
   outline: none;
-  width: 20%; /* Set width to 30% */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1215,13 +1214,23 @@ nav {
   margin-top: 10px;
   height: 30px;
 }
-.item-card-imgback {
+/* .item-card-imgback {
   position: absolute;
-  left: 1%;
-}
+  left: 10%;
+} */
 .item-back {
-  position: absolute;
+  position: relative;
   left: 2%;
+  bottom: 1%;
+  cursor: pointer;
+}
+.item-back:hover {
+  text-decoration: underline;
+}
+.item-back-text {
+  position: relative;
+  bottom: 15%;
+  right: 10%;
 }
 .item-like {
   position: absolute;
@@ -1304,6 +1313,9 @@ nav {
   align-items: center;
   margin-top: 25px;
   width: 20%;
+}
+.addtocart-btn .btn {
+  width: 100%;
 }
 .imgcart {
   margin-left: 1%;
