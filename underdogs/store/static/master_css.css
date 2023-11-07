@@ -1317,6 +1317,16 @@ nav {
 .addtocart-btn .btn {
   width: 100%;
 }
+.quantity-button {
+  width: 1px;
+  border-radius: 100px;
+}
+
+.quantity-count {
+  font: 1.5em serif;
+  background-color: white;
+  text-align: center;
+}
 .imgcart {
   margin-left: 1%;
 }
