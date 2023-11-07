@@ -3,12 +3,13 @@
  
  {% block body %}
 <div class="item-card-head">
-  <div class="item-card-imgback">
-    <img src="{% static 'store/assets/back.png' %}" alt="" />
+  
+  <div class="item-back" id="back-button">
+      <img src="{% static 'store/assets/back.png' %}" alt="" />
+      <span class="item-back-text"> Back</span>
   </div>
-  <div class="item-back">
-    <span>Back</span>
-  </div>
+  
+ 
   <div class="item-like">
     <img src="{% static 'store/assets/like.png' %}" alt="" />
   </div>
@@ -67,8 +68,7 @@
       </div>
     </div>
     <div class="addtocart-btn">
-      <button class='btn'>Add to cart
-      {% comment %} <img class="imgcart" src="{% static 'store/assets/shop.png' %}" alt="cart" /> {% endcomment %}
+      <button class='btn' data-sku-id="{{ item.sku_id }}" data-sku-name="{{ item.name }}" data-sku-price="{{ item.price }}">Add to cart
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_1_1179)">
         <path d="M6.33105 8H17.67C17.9584 7.99997 18.2434 8.06229 18.5054 8.1827C18.7674 8.30311 19.0003 8.47876 19.1881 8.6976C19.3759 8.91645 19.5141 9.17331 19.5933 9.45059C19.6726 9.72786 19.6909 10.019 19.647 10.304L18.392 18.456C18.2831 19.1644 17.9241 19.8105 17.38 20.2771C16.836 20.7438 16.1428 21.0002 15.426 21H8.57405C7.85745 21 7.16453 20.7434 6.62068 20.2768C6.07683 19.8102 5.71797 19.1643 5.60905 18.456L4.35405 10.304C4.31022 10.019 4.32854 9.72786 4.40775 9.45059C4.48697 9.17331 4.62521 8.91645 4.81299 8.6976C5.00078 8.47876 5.23367 8.30311 5.49569 8.1827C5.75772 8.06229 6.04268 7.99997 6.33105 8Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -80,8 +80,7 @@
         </clipPath>
         </defs>
         </svg>
-      </button>
-        
+      </button>   
     </div>
     <div class="instruction">
       <p>MATERIALS</p>
@@ -184,5 +183,43 @@
         })
     })
 </script>
+<script>
+  $(document).ready(function () {
+      $('#back-button').click(function () {
+          window.history.back();
+      });
+  });
+  </script>
+  <script>
+    $(document).ready(function () {
+        // Add to cart button click event listener
+        $(".addtocart-btn .btn").click(function () {
+            // Get item details from the data attributes
+            var skuId = $(this).data("sku-id");
+            //const skuName = $(this).data("sku-name");
+            //const skuPrice = $(this).data("sku-price");
+            
+
+            var cart;
+            if(localStorage.getItem("cart") == null) {
+              cart = {};
+            }
+            else {
+              cart = JSON.parse(localStorage.getItem("cart"));
+            }
+            if (cart[skuId] != undefined){
+              cart[skuId] += 1;
+            } else {
+              cart[skuId] = 1;
+            }
+            console.log(skuId);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            console.log(cart);
+            //console.log(localStorage.getItem("cart"));
+            
+          });
+          
+    });
+  </script>    
 {% endblock %}
 

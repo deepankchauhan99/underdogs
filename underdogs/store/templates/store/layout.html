@@ -4,13 +4,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="icon" type="image/png" href="{% static 'store/assets/underdogs_icon.png' %}" sizes="64x64">
         <link rel="icon" type="image/png" href="{% static 'store/assets/favicon.png' %}" />
         <title>Underdogs: {% block title %}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'master_css.css' %}">
-        
         
     </head>
     <body>
@@ -45,24 +43,33 @@
             <div class="shop card" onclick="openPopup()"><img src="{% static 'store/assets/cart.svg' %}" alt=""></div>
             <div class="overlay" id="overlay" onclick="closePopup()">
                 <div class="popup" onclick="event.stopPropagation();">
-                  <span class="close-button" onclick="closePopup()">X</span>
+                  <span class="close-button" onclick="closePopup()">
+                    <svg class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"  /></svg>
+                  </span>
                   <h2>CART</h2>
-                  <img class="emptycart-img" src="{% static 'store/assets/emptycart1.png' %}" alt="">                  
+                  {% if cart %}
+
+                  {% else %}
+                  <img class="emptycart-img" src="{% static 'store/assets/emptycart1.png' %}" alt="">
+                  {% endif %}                  
                 </div>
             </div> 
 
            
         </nav>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             function toggleSearch() {
                 const searchInput = document.getElementById('searchInput');
-                if (searchInput.style.width === '20%') {
+                if (searchInput.style.width === '15%') {
                   searchInput.style.width = '0';
                   searchInput.style.display = 'none';
+                  $(".search img").attr("src", "{% static 'store/assets/search.svg' %}");
                 } else {
-                  searchInput.style.width = '20%';
+                  searchInput.style.width = '15%';
                   searchInput.style.display = 'block';
                   searchInput.focus();
+                  $(".search img").attr("src", "{% static 'store/assets/cross-23.svg' %}");
                 }
               }
 
@@ -198,5 +205,6 @@
 
         </div>
         </footer>
+        
     </body>
 </html>
