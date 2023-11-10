@@ -176,7 +176,7 @@ nav {
   left: -250px; /* Initially hidden outside the viewport */
   width: 250px;
   height: 100%;
-  background-color: #333;
+  background-color: #000;
   color: #fff;
   transition: left 0.3s; /* Added transition for smooth movement */
   z-index: 1;
@@ -185,6 +185,30 @@ nav {
 .slideout-content {
   padding: 20px;
 }
+
+.logout-button{
+  border-bottom: 1px solid white;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 50px;
+}
+
+.logout-button:hover{
+  cursor: pointer;
+  color: rgb(255, 79, 4);
+  border-color: rgb(255, 79, 4);
+  transition: ;
+}
+
+.user-profile{
+  margin-bottom: 50px;
+  border-bottom: 1px solid white;
+}
+
+.user-profile h2{
+  color: rgba(255, 79, 4, 0.897);
+}
+
 
 .search {
   display: flex;
